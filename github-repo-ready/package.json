@@ -1,0 +1,10 @@
+{
+  "name": "case-intake-app-site",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Netlify site config + serverless functions for Case Intake App licensing (Stripe -> license code issuance/verification).",
+  "dependencies": {
+    "stripe": "^17.4.0",
+    "@netlify/blobs": "^8.1.0"
+  }
+}

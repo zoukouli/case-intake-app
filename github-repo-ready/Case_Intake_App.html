@@ -6,15 +6,26 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 <style>
   :root {
-    --navy: #1F3864;
-    --navy-light: #2E4E8C;
-    --bg: #F4F6F9;
+    --navy: #0E7490;
+    --navy-light: #22A6B3;
+    --bg: #F3FAFB;
     --card: #FFFFFF;
-    --border: #D8DEE8;
-    --text: #1C2536;
-    --muted: #6B7280;
+    --border: #CFE8EA;
+    --text: #16323A;
+    --muted: #5B7B80;
     --yellow: #FFF6D8;
-    --danger: #B3261E;
+    --danger: #C0392B;
+  }
+  html[data-theme="dark"] {
+    --navy: #047857;
+    --navy-light: #34D399;
+    --bg: #0F1720;
+    --card: #1A2430;
+    --border: #2C3A48;
+    --text: #E6EDF3;
+    --muted: #93A3B0;
+    --yellow: #3A331A;
+    --danger: #B91C1C;
   }
   * { box-sizing: border-box; }
   body {
@@ -25,28 +36,52 @@
     padding: 24px;
   }
   .wrap { max-width: 900px; margin: 0 auto; }
+  a { color: var(--navy-light); }
+  .link-remove { color: #B3261E; }
+  html[data-theme="dark"] .link-remove { color: #F87171; }
   h1 { color: var(--navy); font-size: 22px; margin: 0 0 4px; }
+  html[data-theme="dark"] h1 { color: var(--navy-light); }
   .subtitle { color: var(--muted); margin: 0 0 20px; font-size: 14px; }
+  .header-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+  #themeToggleBtn { padding: 6px 12px; font-size: 12.5px; white-space: nowrap; }
+  .plan-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; }
+  .plan-grid a { display: block; }
+  .plan-grid button {
+    width: 100%; min-height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center; white-space: normal; line-height: 1.3;
+  }
+  .plan-grid .plan-sub { display: block; font-weight: normal; font-size: 11px; opacity: 0.85; margin-top: 2px; }
   .stepper { display: flex; gap: 4px; margin-bottom: 20px; flex-wrap: wrap; }
   .step-dot {
     flex: 1; min-width: 70px; text-align: center; padding: 8px 4px; font-size: 11px;
-    border-radius: 6px; background: #E7EAF0; color: var(--muted); cursor: pointer;
+    border-radius: 6px; background: #E4F1F3; color: var(--muted); cursor: pointer;
     border: 1px solid transparent;
   }
+  html[data-theme="dark"] .step-dot { background: #24303C; }
   .step-dot.active { background: var(--navy); color: #fff; }
-  .step-dot.done { background: #DCE9E1; color: #1F5C3A; }
+  .step-dot.done { background: #DCEFE6; color: #1F5C3A; }
+  html[data-theme="dark"] .step-dot.done { background: #123524; color: #6EE7B7; }
+  .step-dot.locked { background: #F0E6D2; color: #8A6D1F; }
+  html[data-theme="dark"] .step-dot.locked { background: #2E2510; color: #E8C874; }
+  .step-dot.locked.active { background: #C9A227; color: #fff; }
+  html[data-theme="dark"] .step-dot.locked.active { background: #7A5A00; }
   .card {
     background: var(--card); border: 1px solid var(--border); border-radius: 10px;
     padding: 24px; margin-bottom: 16px;
+    box-shadow: 0 1px 4px rgba(14,116,144,0.08);
   }
+  html[data-theme="dark"] .card { box-shadow: 0 1px 4px rgba(0,0,0,0.35); }
   .card h2 { font-size: 17px; color: var(--navy); margin: 0 0 4px; }
+  html[data-theme="dark"] .card h2 { color: var(--navy-light); }
   .card .hint { color: var(--muted); font-size: 12.5px; margin: 0 0 16px; }
-  label { display: block; font-weight: bold; font-size: 13px; margin: 14px 0 4px; }
+  label { display: block; font-weight: bold; font-size: 13px; margin: 14px 0 4px; color: var(--text); }
   label .opt { font-weight: normal; color: var(--muted); }
   input[type=text], input[type=date], select, textarea {
     width: 100%; padding: 9px 10px; border: 1px solid var(--border); border-radius: 6px;
     font-family: inherit; font-size: 14px; background: #fff; color: var(--text);
   }
+  html[data-theme="dark"] input[type=text], html[data-theme="dark"] input[type=date],
+  html[data-theme="dark"] select, html[data-theme="dark"] textarea { background: #111A22; }
   textarea { min-height: 70px; resize: vertical; }
   .row { display: flex; gap: 12px; }
   .row > div { flex: 1; }
@@ -54,22 +89,32 @@
   button {
     font-family: inherit; font-size: 14px; padding: 10px 18px; border-radius: 6px;
     border: 1px solid var(--navy); background: var(--navy); color: #fff; cursor: pointer;
+    box-shadow: 0 1px 2px rgba(14,116,144,0.25);
   }
-  button.secondary { background: #fff; color: var(--navy); }
-  button.ghost { background: transparent; border-color: var(--border); color: var(--text); }
+  html[data-theme="dark"] button { box-shadow: 0 1px 2px rgba(0,0,0,0.4); }
+  button.secondary { background: #fff; color: var(--navy); box-shadow: none; }
+  html[data-theme="dark"] button.secondary { background: var(--card); color: var(--navy-light); border-color: var(--border); }
+  button.ghost { background: transparent; border-color: var(--border); color: var(--text); box-shadow: none; }
   button:disabled { opacity: 0.4; cursor: not-allowed; }
   .flag { background: var(--yellow); border: 1px solid #E3D08A; padding: 10px 12px; border-radius: 6px; font-size: 13px; margin-top: 10px; }
-  .code-pill { display: inline-block; background: #EDF1F8; border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 12.5px; margin: 2px 4px 2px 0; }
+  html[data-theme="dark"] .flag { border-color: #6B5A22; color: #F5E1A4; }
+  .code-pill { display: inline-block; background: #E7F4F5; border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 12.5px; margin: 2px 4px 2px 0; }
+  html[data-theme="dark"] .code-pill { background: #1E2A36; color: var(--text); }
   .out-tabs { display: flex; gap: 8px; margin-bottom: 12px; }
-  .out-tab { padding: 8px 14px; border-radius: 6px 6px 0 0; background: #E7EAF0; cursor: pointer; font-size: 13px; }
+  .out-tab { padding: 8px 14px; border-radius: 6px 6px 0 0; background: #E4F1F3; cursor: pointer; font-size: 13px; }
+  html[data-theme="dark"] .out-tab { background: #24303C; color: var(--muted); }
   .out-tab.active { background: var(--card); border: 1px solid var(--border); border-bottom: none; font-weight: bold; color: var(--navy); }
+  html[data-theme="dark"] .out-tab.active { color: var(--navy-light); }
   .out-panel { display: none; border: 1px solid var(--border); border-radius: 0 6px 6px 6px; padding: 20px; background: #fff; }
+  html[data-theme="dark"] .out-panel { background: var(--card); box-shadow: 0 1px 4px rgba(0,0,0,0.3); }
   .out-panel.active { display: block; }
   .out-panel h3 { color: var(--navy); margin-top: 0; }
+  html[data-theme="dark"] .out-panel h3 { color: var(--navy-light); }
   .out-panel table { width: 100%; border-collapse: collapse; font-size: 13px; }
   .out-panel td, .out-panel th { border-bottom: 1px solid var(--border); padding: 6px 4px; text-align: left; }
   .fee-input { width: 90px; text-align: right; padding: 4px 6px; }
   .total-row td { font-weight: bold; border-top: 2px solid var(--navy); }
+  html[data-theme="dark"] .total-row td { border-top-color: var(--navy-light); }
   .toolbar { display: flex; gap: 8px; margin-bottom: 12px; }
   .checklist label { font-weight: normal; display: flex; align-items: center; gap: 8px; margin: 6px 0; }
   .checklist input[type=checkbox] { width: auto; }
@@ -80,9 +125,13 @@
     background: #fff; border: 1px solid var(--border); color: var(--navy);
     font-size: 13px; vertical-align: middle; line-height: 1; cursor: pointer;
   }
-  .mic-btn.listening { background: var(--danger); border-color: var(--danger); color: #fff; animation: pulse 1s infinite; }
-  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(179,38,30,0.5); } 70% { box-shadow: 0 0 0 8px rgba(179,38,30,0); } 100% { box-shadow: 0 0 0 0 rgba(179,38,30,0); } }
+  html[data-theme="dark"] .mic-btn { background: var(--card); color: var(--navy-light); }
+  .mic-btn.listening { background: var(--danger); border-color: var(--danger); color: #fff; animation: pulse-light 1s infinite; }
+  html[data-theme="dark"] .mic-btn.listening { animation: pulse-dark 1s infinite; }
+  @keyframes pulse-light { 0% { box-shadow: 0 0 0 0 rgba(192,57,43,0.5); } 70% { box-shadow: 0 0 0 8px rgba(192,57,43,0); } 100% { box-shadow: 0 0 0 0 rgba(192,57,43,0); } }
+  @keyframes pulse-dark { 0% { box-shadow: 0 0 0 0 rgba(185,28,28,0.5); } 70% { box-shadow: 0 0 0 8px rgba(185,28,28,0); } 100% { box-shadow: 0 0 0 0 rgba(185,28,28,0); } }
   .guided-btn { background: var(--navy-light); margin-bottom: 14px; }
+  html[data-theme="dark"] .guided-btn { background: var(--navy); }
   #guidedBanner { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
   #guidedBanner button { padding: 6px 12px; font-size: 12.5px; }
   .dictation-note { font-size: 11.5px; color: var(--muted); margin: 10px 0 0; }
@@ -90,25 +139,37 @@
   .fdi-input { width: 110px !important; padding: 4px 8px !important; font-size: 12.5px !important; }
   .ai-status { font-size: 13px; margin: 8px 0 0; min-height: 18px; }
   .ai-status.loading { color: var(--navy); }
+  html[data-theme="dark"] .ai-status.loading { color: var(--navy-light); }
   .ai-status.success { color: #1F5C3A; }
+  html[data-theme="dark"] .ai-status.success { color: #4ADE80; }
   .ai-status.error { color: var(--danger); }
+  html[data-theme="dark"] .ai-status.error { color: #F87171; }
   .med-disclaimer { background: #FDECEA; border: 1px solid #E39A94; color: #7A1F17; padding: 12px 14px; border-radius: 6px; font-size: 12.5px; margin-bottom: 16px; font-weight: bold; }
+  html[data-theme="dark"] .med-disclaimer { background: #3A1A16; border-color: #6B2E26; color: #FCA5A5; }
   .med-badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 11.5px; font-weight: bold; color: #fff; margin-left: 8px; vertical-align: middle; }
   .med-badge.continue { background: #1F5C3A; }
+  html[data-theme="dark"] .med-badge.continue { background: #15803D; }
   .med-badge.hold { background: #B8860B; }
+  html[data-theme="dark"] .med-badge.hold { background: #92650A; }
   .med-badge.stop { background: var(--danger); }
   .med-badge.unknown { background: var(--muted); }
+  html[data-theme="dark"] .med-badge.unknown { background: #4B5563; }
   .med-card { border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin: 10px 0; background: #fff; }
+  html[data-theme="dark"] .med-card { background: #1E2A36; }
   .med-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--navy); }
+  html[data-theme="dark"] .med-card h4 { color: var(--navy-light); }
   .med-card p { margin: 4px 0; font-size: 12.5px; }
+  html[data-theme="dark"] .med-card p { color: var(--text); }
   .med-card .src { color: var(--muted); font-size: 11px; margin-top: 8px; }
   .med-not-found { color: var(--danger); font-weight: bold; }
+  html[data-theme="dark"] .med-not-found { color: #F87171; }
   .panel-copy-row { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
   .pill-group { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 4px; }
   .pill-btn {
     padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
     background: #fff; color: var(--text); font-size: 13px; cursor: pointer; font-family: inherit;
   }
+  html[data-theme="dark"] .pill-btn { background: #1E2A36; }
   .pill-btn.selected { background: var(--navy); border-color: var(--navy); color: #fff; }
   .pill-pts { font-size: 11px; opacity: 0.7; margin-left: 4px; }
   @media print {
@@ -120,9 +181,15 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>Case Intake &amp; Documentation Assistant</h1>
-  <p class="subtitle">Dictate once, generate the clinician report, material list, and quotation from the same case &mdash; v1 pilot tool</p>
+  <div class="header-row">
+    <div>
+      <h1>Case Intake &amp; Documentation Assistant</h1>
+      <p class="subtitle">Dictate once, generate the clinician report, material list, and quotation from the same case &mdash; v1 pilot tool</p>
+    </div>
+    <button id="themeToggleBtn" class="secondary" onclick="toggleTheme()">🌙 Dark mode</button>
+  </div>
 
+  <div id="licenseBar"></div>
   <div id="resumeBanner"></div>
   <div id="dictationArea"></div>
   <div class="stepper" id="stepper"></div>
@@ -479,7 +546,7 @@ const DATA = {
     "5.0",
     "6.0"
    ],
-   "display": "Southern Implants — Single Platform (SP1)",
+   "display": "Southern Implants - Single Platform (SP1)",
    "lengthByDiameter": {
     "3.5": [
      "8",
@@ -555,7 +622,7 @@ const DATA = {
     "13",
     "15"
    ],
-   "display": "Southern Implants — Internal Hex Tapered"
+   "display": "Southern Implants - Internal Hex Tapered"
   },
   {
    "manufacturer": "Southern Implants",
@@ -569,7 +636,7 @@ const DATA = {
     "5.0",
     "6.0"
    ],
-   "display": "Southern Implants — PROVATA (Straight)",
+   "display": "Southern Implants - PROVATA (Straight)",
    "lengthByDiameter": {
     "3.3": [
      "8.5",
@@ -623,7 +690,7 @@ const DATA = {
     "22",
     "24"
    ],
-   "display": "Southern Implants — Deep Conical PTERYGOID"
+   "display": "Southern Implants - Deep Conical PTERYGOID"
   },
   {
    "manufacturer": "Southern Implants",
@@ -635,7 +702,7 @@ const DATA = {
     "4.0",
     "5.0"
    ],
-   "display": "Southern Implants — External Hex INVERTA (Regular)",
+   "display": "Southern Implants - External Hex INVERTA (Regular)",
    "lengthByDiameter": {
     "4.0": [
      "10",
@@ -661,7 +728,7 @@ const DATA = {
     "4.0",
     "5.0"
    ],
-   "display": "Southern Implants — External Hex INVERTA (Co-Axis, 12°)",
+   "display": "Southern Implants - External Hex INVERTA (Co-Axis, 12°)",
    "lengthByDiameter": {
     "4.0": [
      "11.5",
@@ -690,7 +757,7 @@ const DATA = {
     "5.5",
     "6.5"
    ],
-   "display": "Straumann — BLC (Bone Level, cylindrical)",
+   "display": "Straumann - BLC (Bone Level, cylindrical)",
    "lengthByDiameter": {
     "3.3": [
      "8",
@@ -769,7 +836,7 @@ const DATA = {
     "5.5",
     "6.5"
    ],
-   "display": "Straumann — BLX",
+   "display": "Straumann - BLX",
    "lengthByDiameter": {
     "3.5": [
      "6",
@@ -847,7 +914,7 @@ const DATA = {
     "5.5",
     "6.5"
    ],
-   "display": "Straumann — TLC (Tissue Level, cylindrical)",
+   "display": "Straumann - TLC (Tissue Level, cylindrical)",
    "lengthByDiameter": {
     "3.3": [
      "8",
@@ -905,7 +972,7 @@ const DATA = {
     "5.5",
     "6.5"
    ],
-   "display": "Straumann — TLX",
+   "display": "Straumann - TLX",
    "lengthByDiameter": {
     "3.75": [
      "6",
@@ -945,7 +1012,7 @@ const DATA = {
   },
   {
    "manufacturer": "Southern Implants",
-   "line": "Single Platform (SP1) — Pterygoid",
+   "line": "Single Platform (SP1) - Pterygoid",
    "connection": "Internal, single platform, tapered pterygoid design",
    "diameters": "4.0",
    "lengths": "10 / 11.5 / 13 / 15 / 18 / 20 / 22 / 24",
@@ -962,7 +1029,7 @@ const DATA = {
     "22",
     "24"
    ],
-   "display": "Southern Implants — Single Platform (SP1) — Pterygoid"
+   "display": "Southern Implants - Single Platform (SP1) - Pterygoid"
   },
   {
    "manufacturer": "Southern Implants",
@@ -978,7 +1045,7 @@ const DATA = {
     "5.0",
     "6.0"
    ],
-   "display": "Southern Implants — External Hex (Straight)",
+   "display": "Southern Implants - External Hex (Straight)",
    "lengthByDiameter": {
     "3.0": [
      "8.5",
@@ -1046,7 +1113,7 @@ const DATA = {
     "5.0",
     "6.0"
    ],
-   "display": "Southern Implants — External Hex (Co-Axis, 12°)",
+   "display": "Southern Implants - External Hex (Co-Axis, 12°)",
    "lengthByDiameter": {
     "3.25": [
      "8.5",
@@ -1091,7 +1158,7 @@ const DATA = {
     "5.0",
     "6.0"
    ],
-   "display": "Southern Implants — External Hex (Co-Axis, 24°)",
+   "display": "Southern Implants - External Hex (Co-Axis, 24°)",
    "lengthByDiameter": {
     "4.0": [
      "8.5",
@@ -1131,7 +1198,7 @@ const DATA = {
     "4.0",
     "5.0"
    ],
-   "display": "Southern Implants — External Hex (Co-Axis, 36°)",
+   "display": "Southern Implants - External Hex (Co-Axis, 36°)",
    "lengthByDiameter": {
     "4.0": [
      "8.5",
@@ -1168,7 +1235,7 @@ const DATA = {
     "4.0",
     "5.0"
    ],
-   "display": "Southern Implants — PROVATA (Co-Axis, 12°)",
+   "display": "Southern Implants - PROVATA (Co-Axis, 12°)",
    "lengthByDiameter": {
     "3.3": [
      "8.5",
@@ -1208,7 +1275,7 @@ const DATA = {
     "8.0",
     "9.0"
    ],
-   "display": "Southern Implants — PROMAX",
+   "display": "Southern Implants - PROMAX",
    "lengthByDiameter": {
     "6.0": [
      "7",
@@ -1240,7 +1307,7 @@ const DATA = {
    "product": "Bio-Oss 0.25-1mm, 0.25g",
    "codes": "500609",
    "use": "Sinus lift, ridge preservation, GBR",
-   "display": "Geistlich — Bio-Oss (Small granules) — Bio-Oss 0.25-1mm, 0.25g"
+   "display": "Geistlich - Bio-Oss (Small granules) - Bio-Oss 0.25-1mm, 0.25g"
   },
   {
    "brand": "Geistlich",
@@ -1248,7 +1315,7 @@ const DATA = {
    "product": "Bio-Oss 0.25-1mm, 0.5g",
    "codes": "500610",
    "use": "Sinus lift, ridge preservation, GBR",
-   "display": "Geistlich — Bio-Oss (Small granules) — Bio-Oss 0.25-1mm, 0.5g"
+   "display": "Geistlich - Bio-Oss (Small granules) - Bio-Oss 0.25-1mm, 0.5g"
   },
   {
    "brand": "Geistlich",
@@ -1256,7 +1323,7 @@ const DATA = {
    "product": "Bio-Oss 0.25-1mm, 1g",
    "codes": "500611",
    "use": "Sinus lift, ridge preservation, GBR",
-   "display": "Geistlich — Bio-Oss (Small granules) — Bio-Oss 0.25-1mm, 1g"
+   "display": "Geistlich - Bio-Oss (Small granules) - Bio-Oss 0.25-1mm, 1g"
   },
   {
    "brand": "Geistlich",
@@ -1264,7 +1331,7 @@ const DATA = {
    "product": "Bio-Oss 0.25-1mm, 2g",
    "codes": "500612",
    "use": "Sinus lift, ridge preservation, GBR",
-   "display": "Geistlich — Bio-Oss (Small granules) — Bio-Oss 0.25-1mm, 2g"
+   "display": "Geistlich - Bio-Oss (Small granules) - Bio-Oss 0.25-1mm, 2g"
   },
   {
    "brand": "Geistlich",
@@ -1272,7 +1339,7 @@ const DATA = {
    "product": "Bio-Oss 1-2mm, 0.5g",
    "codes": "500613",
    "use": "Sinus lift, ridge preservation, GBR",
-   "display": "Geistlich — Bio-Oss (Large granules) — Bio-Oss 1-2mm, 0.5g"
+   "display": "Geistlich - Bio-Oss (Large granules) - Bio-Oss 1-2mm, 0.5g"
   },
   {
    "brand": "Geistlich",
@@ -1280,7 +1347,7 @@ const DATA = {
    "product": "Bio-Oss 1-2mm, 1g",
    "codes": "500614",
    "use": "Sinus lift, ridge preservation, GBR",
-   "display": "Geistlich — Bio-Oss (Large granules) — Bio-Oss 1-2mm, 1g"
+   "display": "Geistlich - Bio-Oss (Large granules) - Bio-Oss 1-2mm, 1g"
   },
   {
    "brand": "Geistlich",
@@ -1288,7 +1355,7 @@ const DATA = {
    "product": "Bio-Oss 1-2mm, 2g",
    "codes": "500615",
    "use": "Sinus lift, ridge preservation, GBR",
-   "display": "Geistlich — Bio-Oss (Large granules) — Bio-Oss 1-2mm, 2g"
+   "display": "Geistlich - Bio-Oss (Large granules) - Bio-Oss 1-2mm, 2g"
   },
   {
    "brand": "Geistlich",
@@ -1296,7 +1363,7 @@ const DATA = {
    "product": "Bio-Oss Pen 0.25-1mm, 0.25g",
    "codes": "500606",
    "use": "Faster, more precise application to surgical site",
-   "display": "Geistlich — Bio-Oss Pen (Small granules) — Bio-Oss Pen 0.25-1mm, 0.25g"
+   "display": "Geistlich - Bio-Oss Pen (Small granules) - Bio-Oss Pen 0.25-1mm, 0.25g"
   },
   {
    "brand": "Geistlich",
@@ -1304,7 +1371,7 @@ const DATA = {
    "product": "Bio-Oss Pen 0.25-1mm, 0.5g",
    "codes": "500607",
    "use": "Faster, more precise application to surgical site",
-   "display": "Geistlich — Bio-Oss Pen (Small granules) — Bio-Oss Pen 0.25-1mm, 0.5g"
+   "display": "Geistlich - Bio-Oss Pen (Small granules) - Bio-Oss Pen 0.25-1mm, 0.5g"
   },
   {
    "brand": "Geistlich",
@@ -1312,7 +1379,7 @@ const DATA = {
    "product": "Bio-Oss Pen 1-2mm, 0.5g",
    "codes": "500608",
    "use": "Faster, more precise application to surgical site",
-   "display": "Geistlich — Bio-Oss Pen (Large granules) — Bio-Oss Pen 1-2mm, 0.5g"
+   "display": "Geistlich - Bio-Oss Pen (Large granules) - Bio-Oss Pen 1-2mm, 0.5g"
   },
   {
    "brand": "Geistlich",
@@ -1320,7 +1387,7 @@ const DATA = {
    "product": "Bio-Oss Collagen 100mg",
    "codes": "500602",
    "use": "Extraction sockets, periodontal defects",
-   "display": "Geistlich — Bio-Oss Collagen — Bio-Oss Collagen 100mg"
+   "display": "Geistlich - Bio-Oss Collagen - Bio-Oss Collagen 100mg"
   },
   {
    "brand": "Geistlich",
@@ -1328,7 +1395,7 @@ const DATA = {
    "product": "Bio-Oss Collagen 250mg",
    "codes": "500603",
    "use": "Extraction sockets, periodontal defects",
-   "display": "Geistlich — Bio-Oss Collagen — Bio-Oss Collagen 250mg"
+   "display": "Geistlich - Bio-Oss Collagen - Bio-Oss Collagen 250mg"
   },
   {
    "brand": "Geistlich",
@@ -1336,7 +1403,7 @@ const DATA = {
    "product": "Bio-Oss Collagen 500mg",
    "codes": "500604",
    "use": "Extraction sockets, periodontal defects",
-   "display": "Geistlich — Bio-Oss Collagen — Bio-Oss Collagen 500mg"
+   "display": "Geistlich - Bio-Oss Collagen - Bio-Oss Collagen 500mg"
   },
   {
    "brand": "Geistlich",
@@ -1344,7 +1411,7 @@ const DATA = {
    "product": "Bio-Gide 13 x 25mm",
    "codes": "500616",
    "use": "GBR barrier",
-   "display": "Geistlich — Bio-Gide — Bio-Gide 13 x 25mm"
+   "display": "Geistlich - Bio-Gide - Bio-Gide 13 x 25mm"
   },
   {
    "brand": "Geistlich",
@@ -1352,7 +1419,7 @@ const DATA = {
    "product": "Bio-Gide 25 x 25mm",
    "codes": "500617",
    "use": "GBR barrier",
-   "display": "Geistlich — Bio-Gide — Bio-Gide 25 x 25mm"
+   "display": "Geistlich - Bio-Gide - Bio-Gide 25 x 25mm"
   },
   {
    "brand": "Geistlich",
@@ -1360,7 +1427,7 @@ const DATA = {
    "product": "Bio-Gide 30 x 40mm",
    "codes": "500618",
    "use": "GBR barrier",
-   "display": "Geistlich — Bio-Gide — Bio-Gide 30 x 40mm"
+   "display": "Geistlich - Bio-Gide - Bio-Gide 30 x 40mm"
   },
   {
    "brand": "Geistlich",
@@ -1368,7 +1435,7 @@ const DATA = {
    "product": "Bio-Gide Compressed 13 x 25mm",
    "codes": "500619",
    "use": "GBR barrier, alternative handling to standard Bio-Gide",
-   "display": "Geistlich — Bio-Gide Compressed — Bio-Gide Compressed 13 x 25mm"
+   "display": "Geistlich - Bio-Gide Compressed - Bio-Gide Compressed 13 x 25mm"
   },
   {
    "brand": "Geistlich",
@@ -1376,7 +1443,7 @@ const DATA = {
    "product": "Bio-Gide Compressed 20 x 30mm",
    "codes": "500620",
    "use": "GBR barrier, alternative handling to standard Bio-Gide",
-   "display": "Geistlich — Bio-Gide Compressed — Bio-Gide Compressed 20 x 30mm"
+   "display": "Geistlich - Bio-Gide Compressed - Bio-Gide Compressed 20 x 30mm"
   },
   {
    "brand": "Geistlich",
@@ -1384,7 +1451,7 @@ const DATA = {
    "product": "Bio-Gide Shape 14 x 24mm",
    "codes": "500621",
    "use": "Extraction socket treatment",
-   "display": "Geistlich — Bio-Gide Shape — Bio-Gide Shape 14 x 24mm"
+   "display": "Geistlich - Bio-Gide Shape - Bio-Gide Shape 14 x 24mm"
   },
   {
    "brand": "Geistlich",
@@ -1392,7 +1459,7 @@ const DATA = {
    "product": "Mucograft 15 x 20mm",
    "codes": "500625",
    "use": "Keratinised tissue augmentation, recession coverage",
-   "display": "Geistlich — Mucograft — Mucograft 15 x 20mm"
+   "display": "Geistlich - Mucograft - Mucograft 15 x 20mm"
   },
   {
    "brand": "Geistlich",
@@ -1400,7 +1467,7 @@ const DATA = {
    "product": "Mucograft 20 x 30mm",
    "codes": "500626",
    "use": "Keratinised tissue augmentation, recession coverage",
-   "display": "Geistlich — Mucograft — Mucograft 20 x 30mm"
+   "display": "Geistlich - Mucograft - Mucograft 20 x 30mm"
   },
   {
    "brand": "Geistlich",
@@ -1408,7 +1475,7 @@ const DATA = {
    "product": "Mucograft Seal 8mm diameter",
    "codes": "500628",
    "use": "Sealing extraction sockets, used with Bio-Oss Collagen",
-   "display": "Geistlich — Mucograft Seal — Mucograft Seal 8mm diameter"
+   "display": "Geistlich - Mucograft Seal - Mucograft Seal 8mm diameter"
   },
   {
    "brand": "Geistlich",
@@ -1416,7 +1483,7 @@ const DATA = {
    "product": "Mucograft Seal 12mm diameter",
    "codes": "500725",
    "use": "Sealing extraction sockets, used with Bio-Oss Collagen",
-   "display": "Geistlich — Mucograft Seal — Mucograft Seal 12mm diameter"
+   "display": "Geistlich - Mucograft Seal - Mucograft Seal 12mm diameter"
   },
   {
    "brand": "Geistlich",
@@ -1424,7 +1491,7 @@ const DATA = {
    "product": "Bio-Gide 16x22mm + Bio-Oss Collagen 100mg",
    "codes": "500624",
    "use": "Ridge preservation, minor augmentation",
-   "display": "Geistlich — Combi-Kit — Bio-Gide 16x22mm + Bio-Oss Collagen 100mg"
+   "display": "Geistlich - Combi-Kit - Bio-Gide 16x22mm + Bio-Oss Collagen 100mg"
   },
   {
    "brand": "Geistlich",
@@ -1432,39 +1499,39 @@ const DATA = {
    "product": "Bio-Gide Perio 16x22mm + Bio-Oss Collagen 100mg",
    "codes": "500623",
    "use": "Periodontal regeneration",
-   "display": "Geistlich — Perio-System Combi-Pack — Bio-Gide Perio 16x22mm + Bio-Oss Collagen 100mg"
+   "display": "Geistlich - Perio-System Combi-Pack - Bio-Gide Perio 16x22mm + Bio-Oss Collagen 100mg"
   },
   {
    "brand": "Geistlich",
    "category": "Soft tissue graft biomaterials",
    "product": "Fibro-Gide 15 x 20 x 3mm",
    "codes": "500840",
-   "use": "Soft tissue thickening — alternative to CTG",
-   "display": "Geistlich — Soft tissue graft biomaterials — Fibro-Gide 15 x 20 x 3mm"
+   "use": "Soft tissue thickening - alternative to CTG",
+   "display": "Geistlich - Soft tissue graft biomaterials - Fibro-Gide 15 x 20 x 3mm"
   },
   {
    "brand": "Geistlich",
    "category": "Soft tissue graft biomaterials",
    "product": "Fibro-Gide 15 x 20 x 6mm",
    "codes": "500630",
-   "use": "Soft tissue thickening — alternative to CTG",
-   "display": "Geistlich — Soft tissue graft biomaterials — Fibro-Gide 15 x 20 x 6mm"
+   "use": "Soft tissue thickening - alternative to CTG",
+   "display": "Geistlich - Soft tissue graft biomaterials - Fibro-Gide 15 x 20 x 6mm"
   },
   {
    "brand": "Geistlich",
    "category": "Soft tissue graft biomaterials",
    "product": "Fibro-Gide 20 x 40 x 3mm",
-   "codes": "code not confirmed for AU/NZ — supplier's AU/NZ brochure only lists 15x20 sizes; confirm availability before ordering",
-   "use": "Soft tissue thickening — alternative to CTG",
-   "display": "Geistlich — Soft tissue graft biomaterials — Fibro-Gide 20 x 40 x 3mm"
+   "codes": "code not confirmed for AU/NZ - supplier's AU/NZ brochure only lists 15x20 sizes; confirm availability before ordering",
+   "use": "Soft tissue thickening - alternative to CTG",
+   "display": "Geistlich - Soft tissue graft biomaterials - Fibro-Gide 20 x 40 x 3mm"
   },
   {
    "brand": "Geistlich",
    "category": "Soft tissue graft biomaterials",
    "product": "Fibro-Gide 20 x 40 x 6mm",
-   "codes": "code not confirmed for AU/NZ — supplier's AU/NZ brochure only lists 15x20 sizes; confirm availability before ordering",
-   "use": "Soft tissue thickening — alternative to CTG",
-   "display": "Geistlich — Soft tissue graft biomaterials — Fibro-Gide 20 x 40 x 6mm"
+   "codes": "code not confirmed for AU/NZ - supplier's AU/NZ brochure only lists 15x20 sizes; confirm availability before ordering",
+   "use": "Soft tissue thickening - alternative to CTG",
+   "display": "Geistlich - Soft tissue graft biomaterials - Fibro-Gide 20 x 40 x 6mm"
   },
   {
    "brand": "EthOss",
@@ -1472,7 +1539,7 @@ const DATA = {
    "product": "0.5cc",
    "codes": "270000",
    "use": "Bone regeneration/grafting where avoiding animal/human-derived material is preferred",
-   "display": "EthOss — EthOss Synthetic Bone Regeneration — 0.5cc"
+   "display": "EthOss - EthOss Synthetic Bone Regeneration - 0.5cc"
   },
   {
    "brand": "EthOss",
@@ -1480,31 +1547,31 @@ const DATA = {
    "product": "1cc",
    "codes": "270001",
    "use": "Bone regeneration/grafting where avoiding animal/human-derived material is preferred",
-   "display": "EthOss — EthOss Synthetic Bone Regeneration — 1cc"
+   "display": "EthOss - EthOss Synthetic Bone Regeneration - 1cc"
   },
   {
    "brand": "Generic / Chairside",
    "category": "Autologous concentrate",
    "product": "PRF / PRP (chairside centrifuge)",
-   "codes": "—",
+   "codes": "-",
    "use": "Soft/hard tissue healing adjunct",
-   "display": "Generic / Chairside — Autologous concentrate — PRF / PRP (chairside centrifuge)"
+   "display": "Generic / Chairside - Autologous concentrate - PRF / PRP (chairside centrifuge)"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
    "category": "Oravance FibrePutty",
    "product": "Oravance FibrePutty",
-   "codes": "Not shown in supplied product image — add code/size when available",
+   "codes": "Not shown in supplied product image - add code/size when available",
    "use": "Osteoinductive bone grafting",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance FibrePutty — Oravance FibrePutty"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance FibrePutty - Oravance FibrePutty"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
    "category": "Oravance Hybrid",
    "product": "Oravance Hybrid",
-   "codes": "Not shown in supplied product image — add code/size when available",
+   "codes": "Not shown in supplied product image - add code/size when available",
    "use": "Osteoinductive bone grafting",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Hybrid — Oravance Hybrid"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Hybrid - Oravance Hybrid"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1512,7 +1579,7 @@ const DATA = {
    "product": "Oravance Cortico-Cancellous Bone Granules 0.5cc",
    "codes": "AB-YF05",
    "use": "Ridge preservation, socket grafting, GBR",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortico-Cancellous Bone Granules — Oravance Cortico-Cancellous Bone Granules 0.5cc"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Cortico-Cancellous Bone Granules - Oravance Cortico-Cancellous Bone Granules 0.5cc"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1520,7 +1587,7 @@ const DATA = {
    "product": "Oravance Cortico-Cancellous Bone Granules 1.0cc",
    "codes": "AB-YF10",
    "use": "Ridge preservation, socket grafting, GBR",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortico-Cancellous Bone Granules — Oravance Cortico-Cancellous Bone Granules 1.0cc"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Cortico-Cancellous Bone Granules - Oravance Cortico-Cancellous Bone Granules 1.0cc"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1528,7 +1595,7 @@ const DATA = {
    "product": "Oravance Cortico-Cancellous Bone Granules 2.0cc",
    "codes": "AB-YF20",
    "use": "Ridge preservation, socket grafting, GBR",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortico-Cancellous Bone Granules — Oravance Cortico-Cancellous Bone Granules 2.0cc"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Cortico-Cancellous Bone Granules - Oravance Cortico-Cancellous Bone Granules 2.0cc"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1536,7 +1603,7 @@ const DATA = {
    "product": "Oravance Pure Cancellous Granules 0.5cc",
    "codes": "AB-YF409",
    "use": "Ridge preservation, socket grafting",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cancellous Granules (500-1000µm) — Oravance Pure Cancellous Granules 0.5cc"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Pure Cancellous Granules (500-1000µm) - Oravance Pure Cancellous Granules 0.5cc"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1544,7 +1611,7 @@ const DATA = {
    "product": "Oravance Pure Cancellous Granules 1.0cc",
    "codes": "AB-YF410",
    "use": "Ridge preservation, socket grafting",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cancellous Granules (500-1000µm) — Oravance Pure Cancellous Granules 1.0cc"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Pure Cancellous Granules (500-1000µm) - Oravance Pure Cancellous Granules 1.0cc"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1552,7 +1619,7 @@ const DATA = {
    "product": "Oravance Pure Cancellous Granules 2.0cc",
    "codes": "AB-YF411",
    "use": "Ridge preservation, socket grafting",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cancellous Granules (500-1000µm) — Oravance Pure Cancellous Granules 2.0cc"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Pure Cancellous Granules (500-1000µm) - Oravance Pure Cancellous Granules 2.0cc"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1560,7 +1627,7 @@ const DATA = {
    "product": "Oravance Pure Cortical Granules 0.5cc",
    "codes": "AB-YF412",
    "use": "Ridge preservation, space maintenance",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cortical Granules (500-1000µm) — Oravance Pure Cortical Granules 0.5cc"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Pure Cortical Granules (500-1000µm) - Oravance Pure Cortical Granules 0.5cc"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1568,7 +1635,7 @@ const DATA = {
    "product": "Oravance Pure Cortical Granules 1.0cc",
    "codes": "AB-YF413",
    "use": "Ridge preservation, space maintenance",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cortical Granules (500-1000µm) — Oravance Pure Cortical Granules 1.0cc"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Pure Cortical Granules (500-1000µm) - Oravance Pure Cortical Granules 1.0cc"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1576,7 +1643,7 @@ const DATA = {
    "product": "Oravance Cortical Plate 1mm x 11mm x 20mm",
    "codes": "AB-YF-408",
    "use": "GBR space maintenance / rigid barrier",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortical Plate — Oravance Cortical Plate 1mm x 11mm x 20mm"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Cortical Plate - Oravance Cortical Plate 1mm x 11mm x 20mm"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1584,7 +1651,7 @@ const DATA = {
    "product": "Oravance Cortical Sheet 25mm",
    "codes": "AB-YF406",
    "use": "GBR barrier / contouring",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortical Sheet — Oravance Cortical Sheet 25mm"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Cortical Sheet - Oravance Cortical Sheet 25mm"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1592,7 +1659,7 @@ const DATA = {
    "product": "Oravance Cortical Sheet 35mm",
    "codes": "AB-YF407",
    "use": "GBR barrier / contouring, larger defects",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortical Sheet — Oravance Cortical Sheet 35mm"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Cortical Sheet - Oravance Cortical Sheet 35mm"
   },
   {
    "brand": "AusBiotech (Australian Biotechnologies)",
@@ -1600,39 +1667,39 @@ const DATA = {
    "product": "Oravance Cortico-Cancellous Block 7mm x 11mm x 10mm",
    "codes": "AB-YF403",
    "use": "Block grafting for ridge augmentation",
-   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortico-Cancellous Block — Oravance Cortico-Cancellous Block 7mm x 11mm x 10mm"
+   "display": "AusBiotech (Australian Biotechnologies) - Oravance Cortico-Cancellous Block - Oravance Cortico-Cancellous Block 7mm x 11mm x 10mm"
   },
   {
    "brand": "META",
    "category": "Bone scraper",
    "product": "Safescraper Twist (Straight)",
-   "codes": "—",
+   "codes": "-",
    "use": "Autogenous bone collection during surgery (straight tip)",
-   "display": "META — Bone scraper — Safescraper Twist (Straight)"
+   "display": "META - Bone scraper - Safescraper Twist (Straight)"
   },
   {
    "brand": "META",
    "category": "Bone scraper",
    "product": "Safescraper Twist (Curve)",
-   "codes": "—",
+   "codes": "-",
    "use": "Autogenous bone collection during surgery (curved tip)",
-   "display": "META — Bone scraper — Safescraper Twist (Curve)"
+   "display": "META - Bone scraper - Safescraper Twist (Curve)"
   },
   {
    "brand": "META",
    "category": "Bone scraper",
    "product": "Micross (Straight)",
-   "codes": "—",
+   "codes": "-",
    "use": "Autogenous bone collection during surgery (straight)",
-   "display": "META — Bone scraper — Micross (Straight)"
+   "display": "META - Bone scraper - Micross (Straight)"
   },
   {
    "brand": "META",
    "category": "Bone scraper",
    "product": "Micross (Micros angled)",
-   "codes": "—",
+   "codes": "-",
    "use": "Autogenous bone collection during surgery (angled tip for restricted access)",
-   "display": "META — Bone scraper — Micross (Micros angled)"
+   "display": "META - Bone scraper - Micross (Micros angled)"
   }
  ]
 };
@@ -6371,7 +6438,7 @@ const STEPS = [
 ];
 
 // ---- DIR Patient Risk Estimator v0.1 (literature-informed placeholder weights) ----
-// Source: user-supplied "DIR Patient Risk Estimator — Literature Basis for Weights (v0.1)".
+// Source: user-supplied "DIR Patient Risk Estimator: Literature Basis for Weights (v0.1)".
 // Pooled ORs from published systematic reviews/meta-analyses, converted to a
 // Framingham-style points scale (log(OR) normalised to the smallest non-zero value).
 // NOT DIR-fitted coefficients. Not yet through Scientific Committee / Ethics review.
@@ -6391,13 +6458,13 @@ const RISK_MODEL = {
         { value: "former", label: "Former smoker", points: 1 },
         { value: "current", label: "Current smoker", points: 3 },
       ],
-      source: "Naseri et al., meta-analysis, Medicina 2022 — current vs never OR ≈2.4; former-smoker points are a directional estimate." },
+      source: "Naseri et al., meta-analysis, Medicina 2022 - current vs never OR ≈2.4; former-smoker points are a directional estimate." },
     { key: "riskDiabetes", label: "Diabetes control",
       options: [
         { value: "none_or_controlled", label: "None / well-controlled", points: 0 },
         { value: "poorly_controlled", label: "Poorly controlled", points: 4 },
       ],
-      source: "Naujokat 2016; de Molon 2019; Nature EBD summary — poorly controlled vs none/controlled OR ≈2.0–3.6 (mid ≈2.75 used)." },
+      source: "Naujokat 2016; de Molon 2019; Nature EBD summary - poorly controlled vs none/controlled OR ≈2.0–3.6 (mid ≈2.75 used)." },
     { key: "riskOralHygiene", label: "Oral hygiene / plaque control",
       options: [
         { value: "excellent", label: "Excellent", points: 0 },
@@ -6405,51 +6472,51 @@ const RISK_MODEL = {
         { value: "average", label: "Average", points: 2 },
         { value: "poor", label: "Poor", points: 4 },
       ],
-      source: "General periodontal/peri-implant plaque-control literature — poor vs excellent OR ≈3, conservative mid-estimate." },
+      source: "General periodontal/peri-implant plaque-control literature - poor vs excellent OR ≈3, conservative mid-estimate." },
     { key: "riskPerioHistory", label: "Periodontitis history",
       options: [
         { value: "no", label: "Periodontally healthy", points: 0 },
         { value: "yes", label: "History of periodontitis", points: 3 },
       ],
-      source: "Serroni et al. 2024 systematic review/meta-analysis/TSA, Clin Implant Dent Relat Res — OR ≈2.5 (peri-implantitis incidence)." },
+      source: "Serroni et al. 2024 systematic review/meta-analysis/TSA, Clin Implant Dent Relat Res - OR ≈2.5 (peri-implantitis incidence)." },
     { key: "riskBoneQuality", label: "Bone quality",
       options: [
         { value: "d1_d2", label: "D1–D2 (dense)", points: 0 },
         { value: "d3_d4", label: "D3–D4 (low density)", points: 2 },
       ],
-      source: "Multiple low-bone-density prognosis reviews — OR ≈1.7, evidence mixed/heterogeneous." },
+      source: "Multiple low-bone-density prognosis reviews - OR ≈1.7, evidence mixed/heterogeneous." },
     { key: "riskLoadingProtocol", label: "Loading protocol",
       options: [
         { value: "conventional", label: "Conventional / delayed", points: 0 },
         { value: "immediate", label: "Immediate loading", points: 1 },
       ],
-      source: "RCT meta-analyses, J Prosthet Dent 2019 — OR ≈1.4 in unselected/mixed case conditions; well-selected cases can be non-inferior." },
+      source: "RCT meta-analyses, J Prosthet Dent 2019 - OR ≈1.4 in unselected/mixed case conditions; well-selected cases can be non-inferior." },
     { key: "riskGrafting", label: "Bone grafting / GBR required",
       options: [
         { value: "no", label: "No", points: 0 },
         { value: "yes", label: "Yes", points: 1 },
       ],
-      source: "General augmented-site literature — estimated OR ≈1.4, added healing-related risk." },
+      source: "General augmented-site literature - estimated OR ≈1.4, added healing-related risk." },
     { key: "riskProsthesis", label: "Prosthesis complexity",
       options: [
         { value: "single_unit", label: "Single unit", points: 0 },
         { value: "cantilever_full_arch", label: "Cantilever / full-arch", points: 1 },
       ],
-      source: "Cantilever FPD systematic reviews — OR ≈1.3, implant-level effect modest." },
+      source: "Cantilever FPD systematic reviews - OR ≈1.3, implant-level effect modest." },
     { key: "riskImplantSite", label: "Implant site",
       options: [
         { value: "anterior", label: "Anterior", points: 0 },
         { value: "posterior_mandible", label: "Posterior mandible", points: 0 },
         { value: "posterior_maxilla", label: "Posterior maxilla", points: 2 },
       ],
-      source: "Bone-quality-by-site literature — posterior maxilla vs anterior OR ≈1.8 (lower bone density + higher historical failure)." },
+      source: "Bone-quality-by-site literature - posterior maxilla vs anterior OR ≈1.8 (lower bone density + higher historical failure)." },
   ],
   caveats: [
     "These are not DIR-fitted coefficients. They combine ORs from different populations, implant systems, and follow-up periods, and several used mid-range or estimated values where the literature reported ranges rather than one pooled figure.",
     "Several sources could not be fully verified against primary text during this pass; figures were cross-checked against multiple independent search results but should be spot-checked against the primary PDFs before this is used to inform patient decisions or fees are charged.",
-    "As soon as DIR has enough matured complication cases, re-fit with Cox/logistic regression on your own data and swap in those coefficients using the same normalisation method — this keeps the tool's structure stable while its numbers become genuinely yours.",
+    "As soon as DIR has enough matured complication cases, re-fit with Cox/logistic regression on your own data and swap in those coefficients using the same normalisation method - this keeps the tool's structure stable while its numbers become genuinely yours.",
     "ISQ/insertion torque are deliberately excluded to avoid data leakage (these values only exist after placement, not pre-operatively at the decision point this tool serves).",
-    "Route final wording, risk-band percentages, and fee structure through Scientific Committee / Ethics review before this is offered to patients for payment — a monetised, unvalidated risk score carries more scrutiny than a free chairside prototype.",
+    "Route final wording, risk-band percentages, and fee structure through Scientific Committee / Ethics review before this is offered to patients for payment - a monetised, unvalidated risk score carries more scrutiny than a free chairside prototype.",
   ],
 };
 
@@ -6492,6 +6559,172 @@ function resetState() {
   Object.assign(state, fresh);
 }
 
+// ---- Tiered access / licensing ----
+// License lives OUTSIDE `state` on purpose: starting a new case (resetState) must
+// never wipe out a paid plan. Persisted separately in its own localStorage key.
+const LICENSE_KEY = "dir_case_intake_license_v1";
+let license = { code: "", tier: 0, addons: { perioperative: false, riskIndicator: false }, email: "", status: "" };
+
+// Client-side test/"god mode" code for the PI and friends to trial full access without a
+// Stripe purchase. Lives only in this file (visible to anyone who views page source) --
+// fine for a small private pilot, but remove or rotate this before any public launch.
+const MASTER_TEST_CODE = "DIR-GODMODE-TEST";
+
+const PLAN_LINKS = {
+  tier1: "https://buy.stripe.com/fZubJ23pI5rY0DBcaLdMI00",
+  tier2: "https://buy.stripe.com/bJeaEYaSabQm71Z8YzdMI01",
+  tier3: "https://buy.stripe.com/cNi4gAgcucUq5XV2AbdMI03",
+  perioperative: "https://buy.stripe.com/3cI9AU9O6dYueureiTdMI07",
+  riskIndicator: "https://buy.stripe.com/fZueVe7FY2fM71Z2AbdMI08",
+};
+
+function loadLicense() {
+  try {
+    const raw = localStorage.getItem(LICENSE_KEY);
+    if (raw) Object.assign(license, JSON.parse(raw));
+  } catch (e) { /* ignore */ }
+}
+function saveLicense() {
+  try { localStorage.setItem(LICENSE_KEY, JSON.stringify(license)); } catch (e) { /* ignore */ }
+}
+function clearLicense() {
+  Object.assign(license, { code: "", tier: 0, addons: { perioperative: false, riskIndicator: false }, email: "", status: "" });
+  try { localStorage.removeItem(LICENSE_KEY); } catch (e) { /* ignore */ }
+}
+
+// Tab-access rules: tabs are STEPS indices 0-6; index 7 (Review) is always reachable
+// (it only ever shows the panels the current plan actually unlocked).
+function tabAccessAllowed(stepIdx) {
+  if (stepIdx <= 2) return license.tier >= 1;      // Patient&referral, History, Procedure&risks
+  if (stepIdx <= 4) return license.tier >= 2;      // Materials, Day surgery
+  if (stepIdx === 5) return license.tier >= 3 || license.addons.perioperative;  // Perioperative
+  if (stepIdx === 6) return license.tier >= 3 || license.addons.riskIndicator;  // Risk indicator
+  return true; // Review
+}
+
+function planLabel() {
+  if (license.tier === 3) return "Tier 3 (Advanced)";
+  if (license.tier === 2) return "Tier 2 (Intermediate)";
+  if (license.tier === 1) return "Tier 1 (Basic)";
+  return "No active plan";
+}
+
+function renderUpsell(stepIdx) {
+  const name = STEPS[stepIdx];
+  let link = PLAN_LINKS.tier2;
+  let verb = "Upgrade to";
+  let planName = "Tier 2";
+  let priceText = "$8.88/month";
+  if (stepIdx <= 2) { link = PLAN_LINKS.tier1; verb = "Upgrade to"; planName = "Tier 1"; priceText = "$1.99/month (3-month free trial)"; }
+  else if (stepIdx <= 4) { link = PLAN_LINKS.tier2; verb = "Upgrade to"; planName = "Tier 2"; priceText = "$8.88/month"; }
+  else if (stepIdx === 5) { link = PLAN_LINKS.perioperative; verb = "Add"; planName = "Perioperative Medications"; priceText = "$3.99/month (or included in Tier 3)"; }
+  else if (stepIdx === 6) { link = PLAN_LINKS.riskIndicator; verb = "Add"; planName = "Patient Risk Indicator"; priceText = "$3.99/month (or included in Tier 3)"; }
+  return `<div class="card">
+    <h2>🔒 ${esc(name)} is locked</h2>
+    <p class="hint">Your current plan (${esc(planLabel())}) doesn't include this section.</p>
+    <p><a href="${link}" target="_blank" rel="noopener"><button type="button">${esc(verb)} ${esc(planName)} - ${esc(priceText)}</button></a></p>
+    <p class="hint">Already paid? <a href="#" onclick="showLicenseEntry(); return false;">Enter your license code</a>.</p>
+  </div>`;
+}
+
+function renderLicenseBar() {
+  const el = document.getElementById("licenseBar");
+  if (!el) return;
+  if (license.tier === 0) {
+    el.innerHTML = `<div class="card" style="margin-bottom:12px;">
+      <h2>Unlock the Case Intake App</h2>
+      <p class="hint">Choose a plan to get started, or enter a license code below if you've already subscribed.</p>
+      <div class="plan-grid">
+        <a href="${PLAN_LINKS.tier1}" target="_blank" rel="noopener"><button type="button">Tier 1: $1.99/mo<span class="plan-sub">3-month free trial</span></button></a>
+        <a href="${PLAN_LINKS.tier2}" target="_blank" rel="noopener"><button type="button">Tier 2: $8.88/mo</button></a>
+        <a href="${PLAN_LINKS.tier3}" target="_blank" rel="noopener"><button type="button">Tier 3: $12.99/mo</button></a>
+      </div>
+      <p class="hint" style="margin-top:14px; margin-bottom:6px;">Only need one section? Buy it on its own instead:</p>
+      <div class="plan-grid">
+        <a href="${PLAN_LINKS.perioperative}" target="_blank" rel="noopener"><button type="button">Perioperative meds: $3.99/mo<span class="plan-sub">or included in Tier 3</span></button></a>
+        <a href="${PLAN_LINKS.riskIndicator}" target="_blank" rel="noopener"><button type="button">Risk indicator: $3.99/mo<span class="plan-sub">or included in Tier 3</span></button></a>
+      </div>
+      <div id="licenseEntryArea" style="margin-top:14px;"></div>
+    </div>`;
+    renderLicenseEntryForm();
+  } else {
+    const addonBits = [
+      license.addons.perioperative ? "Perioperative add-on" : "",
+      license.addons.riskIndicator ? "Risk Indicator add-on" : "",
+    ].filter(Boolean).join(", ");
+    el.innerHTML = `<div class="hint" style="margin-bottom:8px;">Plan: <strong>${esc(planLabel())}</strong>${addonBits ? " + " + esc(addonBits) : ""}
+      &nbsp;·&nbsp; <a href="#" onclick="clearLicenseAndShowEntry(); return false;">Change / enter a different code</a></div>`;
+  }
+}
+
+function renderLicenseEntryForm() {
+  const el = document.getElementById("licenseEntryArea");
+  if (!el) return;
+  el.innerHTML = `<label>Already subscribed? Enter your license code</label>
+    <div class="row" style="gap:8px; align-items:center;">
+      <div style="flex:1;"><input type="text" id="licenseCodeInput" placeholder="e.g. DIR-AB12CD34" /></div>
+      <div style="flex:0 0 auto;"><button type="button" onclick="activateLicense()">Activate</button></div>
+    </div>
+    <div id="licenseStatusMsg" class="hint"></div>`;
+}
+
+function showLicenseEntry() {
+  renderLicenseBar();
+  const input = document.getElementById("licenseCodeInput");
+  if (input) input.focus();
+}
+
+function clearLicenseAndShowEntry() {
+  clearLicense();
+  renderStep();
+}
+
+async function activateLicense() {
+  const input = document.getElementById("licenseCodeInput");
+  const statusEl = document.getElementById("licenseStatusMsg");
+  const code = ((input && input.value) || "").trim();
+  if (!code) { if (statusEl) statusEl.textContent = "Enter a code first."; return; }
+  if (code.toUpperCase() === MASTER_TEST_CODE) {
+    Object.assign(license, {
+      code,
+      tier: 3,
+      addons: { perioperative: true, riskIndicator: true },
+      email: "",
+      status: "valid (test access)",
+    });
+    saveLicense();
+    renderStep();
+    return;
+  }
+  if (statusEl) statusEl.textContent = "Checking...";
+  try {
+    const res = await fetch("/.netlify/functions/verify-license", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code }),
+    });
+    const data = await res.json();
+    if (data && data.valid) {
+      Object.assign(license, {
+        code,
+        tier: data.tier || 0,
+        addons: {
+          perioperative: !!(data.addons && data.addons.perioperative),
+          riskIndicator: !!(data.addons && data.addons.riskIndicator),
+        },
+        email: data.email || "",
+        status: "valid",
+      });
+      saveLicense();
+      renderStep();
+    } else {
+      if (statusEl) statusEl.textContent = "That code isn't valid or active. Check it and try again, or contact support.";
+    }
+  } catch (e) {
+    if (statusEl) statusEl.textContent = "Couldn't reach the license server. Check your connection and try again.";
+  }
+}
+
 const AI_FILLABLE_FIELDS = [
   ["patientName", "text", "Patient / case reference (de-identified)"],
   ["dob", "text", "Date of birth"],
@@ -6531,9 +6764,11 @@ function renderStepper() {
   const el = document.getElementById("stepper");
   el.innerHTML = STEPS.map((s, i) => {
     let cls = "step-dot";
+    const locked = !tabAccessAllowed(i);
+    if (locked) cls += " locked";
     if (i === currentStep) cls += " active";
     else if (i < currentStep) cls += " done";
-    return `<div class="${cls}" onclick="goToStep(${i})">${i + 1}. ${s}</div>`;
+    return `<div class="${cls}" onclick="goToStep(${i})">${i + 1}. ${s}${locked ? " 🔒" : ""}</div>`;
   }).join("");
 }
 
@@ -6643,8 +6878,14 @@ function checkboxRow(label, key, extraHtml) {
 }
 
 function renderStep() {
+  renderLicenseBar();
   renderStepper();
   const area = document.getElementById("stepArea");
+  if (currentStep !== 7 && !tabAccessAllowed(currentStep)) {
+    document.getElementById("reviewArea").style.display = "none";
+    area.innerHTML = renderUpsell(currentStep);
+    return;
+  }
   document.getElementById("reviewArea").style.display = currentStep === 7 ? "block" : "none";
   if (currentStep === 7) { buildReview(); area.innerHTML = ""; autosaveState(); return; }
 
@@ -6817,7 +7058,7 @@ function renderStep() {
 
       ${RISK_MODEL.factors.map(riskFactorField).join("")}
 
-      ${field("Antibiotic allergy considerations", "riskAntibioticAllergy", { textarea: true, hint: "planning flag only — not scored; changes prescribing, not complication probability" })}
+      ${field("Antibiotic allergy considerations", "riskAntibioticAllergy", { textarea: true, hint: "planning flag only - not scored; changes prescribing, not complication probability" })}
 
       <details style="margin-top:16px;">
         <summary style="cursor:pointer; font-size:12.5px; color:var(--muted);">Caveats (click to review)</summary>
@@ -6863,7 +7104,7 @@ function updateCodePreview() {
 function renderExtraCodes() {
   if (!state.extraCodes.length) return "";
   return `<div style="margin:6px 0 10px;">${state.extraCodes.map((c, i) =>
-    `<div class="code-row"><span class="code-pill">${c}</span>${fdiInputHtml(c)} <a href="#" onclick="removeExtraCode(${i}); return false;" style="color:#B3261E;">&times;</a></div>`
+    `<div class="code-row"><span class="code-pill">${c}</span>${fdiInputHtml(c)} <a href="#" onclick="removeExtraCode(${i}); return false;" class="link-remove">&times;</a></div>`
   ).join("")}</div>`;
 }
 function addExtraCode() {
@@ -6921,7 +7162,7 @@ function implantLengthSelect() {
 function addImplant() {
   const p = state.pendingImplant;
   if (!p.manufacturer || !p.line) return;
-  const label = `${p.manufacturer} — ${p.line}` + (p.diameter ? ` — Ø${p.diameter}mm` : "") + (p.length ? ` x ${p.length}mm` : "");
+  const label = `${p.manufacturer} - ${p.line}` + (p.diameter ? ` - Ø${p.diameter}mm` : "") + (p.length ? ` x ${p.length}mm` : "");
   state.selectedImplants.push(label);
   state.pendingImplant = { manufacturer: "", line: "", diameter: "", length: "" };
   renderStep();
@@ -6929,7 +7170,7 @@ function addImplant() {
 function removeImplant(i) { state.selectedImplants.splice(i, 1); renderStep(); }
 function renderSelectedImplants() {
   if (!state.selectedImplants.length) return `<p class="hint">No implants added yet.</p>`;
-  return `<ul>${state.selectedImplants.map((s, i) => `<li>${s} <a href="#" onclick="removeImplant(${i}); return false;" style="color:#B3261E;">remove</a></li>`).join("")}</ul>`;
+  return `<ul>${state.selectedImplants.map((s, i) => `<li>${s} <a href="#" onclick="removeImplant(${i}); return false;" class="link-remove">remove</a></li>`).join("")}</ul>`;
 }
 
 function addAnaesthetic() {
@@ -6942,7 +7183,7 @@ function addAnaesthetic() {
 function removeAnaesthetic(i) { state.selectedAnaesthetics.splice(i, 1); renderStep(); }
 function renderSelectedAnaesthetics() {
   if (!state.selectedAnaesthetics.length) return `<p class="hint">No anaesthetics added yet.</p>`;
-  return `<ul>${state.selectedAnaesthetics.map((s, i) => `<li>${s} <a href="#" onclick="removeAnaesthetic(${i}); return false;" style="color:#B3261E;">remove</a></li>`).join("")}</ul>`;
+  return `<ul>${state.selectedAnaesthetics.map((s, i) => `<li>${s} <a href="#" onclick="removeAnaesthetic(${i}); return false;" class="link-remove">remove</a></li>`).join("")}</ul>`;
 }
 
 function graftBrandSelect() {
@@ -6969,14 +7210,14 @@ function graftProductSelect() {
 function addGraft() {
   const p = state.pendingGraft;
   if (!p.brand || !p.category || !p.product) return;
-  state.selectedGrafts.push(`${p.brand} — ${p.category} — ${p.product}`);
+  state.selectedGrafts.push(`${p.brand} - ${p.category} - ${p.product}`);
   state.pendingGraft = { brand: "", category: "", product: "" };
   renderStep();
 }
 function removeGraft(i) { state.selectedGrafts.splice(i, 1); renderStep(); }
 function renderSelectedGrafts() {
   if (!state.selectedGrafts.length) return `<p class="hint">No grafts added yet.</p>`;
-  return `<ul>${state.selectedGrafts.map((s, i) => `<li>${s} <a href="#" onclick="removeGraft(${i}); return false;" style="color:#B3261E;">remove</a></li>`).join("")}</ul>`;
+  return `<ul>${state.selectedGrafts.map((s, i) => `<li>${s} <a href="#" onclick="removeGraft(${i}); return false;" class="link-remove">remove</a></li>`).join("")}</ul>`;
 }
 
 function goToStep(i) { currentStep = i; renderStep(); }
@@ -7052,7 +7293,7 @@ function renderMedList() {
       `<p class="med-not-found">Not found in ruleset &mdash; needs manual review. Confirm with the treating clinician/anaesthetist.</p>`;
     return `<div class="med-card">
       <h4>${esc(title)}<span class="med-badge ${esc(badge.cls)}">${esc(badge.label)}</span>
-        <a href="#" onclick="removeMedication(${i}); return false;" style="color:#B3261E; font-weight:normal; font-size:11.5px; margin-left:10px;">remove</a>
+        <a href="#" onclick="removeMedication(${i}); return false;" class="link-remove" style="font-weight:normal; font-size:11.5px; margin-left:10px;">remove</a>
       </h4>
       ${cards}
     </div>`;
@@ -7101,7 +7342,7 @@ function buildReview() {
     state.membranePins ? "Membrane fixation pins / tacks" : null,
     state.prfRedCount ? `Red PRF x${state.prfRedCount}` : null,
     state.prfGreenCount ? `Green PRF x${state.prfGreenCount}` : null,
-    state.suture ? `Suture material${state.sutureGauge ? " (" + state.sutureGauge + ")" : ""}${state.sutureNotes ? " — " + state.sutureNotes : ""}` : null,
+    state.suture ? `Suture material${state.sutureGauge ? " (" + state.sutureGauge + ")" : ""}${state.sutureNotes ? " - " + state.sutureNotes : ""}` : null,
     state.surgicalStent ? "Surgical stent / guide" : null,
   ].filter(Boolean);
 
@@ -7221,7 +7462,7 @@ function renderFlagGate() {
   setActionButtonsDisabled(!allAcked);
 }
 
-// ---- Plain-text builders (for pasting into EHR / emailing to nursing — no HTML) ----
+// ---- Plain-text builders (for pasting into EHR / emailing to nursing - no HTML) ----
 function textReport() {
   const codes = codesForPath();
   return [
@@ -7474,7 +7715,7 @@ function hasMeaningfulContent(s) {
 
 function autosaveState() {
   try {
-    // Only ever write when there's something worth saving. Never delete here —
+    // Only ever write when there's something worth saving. Never delete here -
     // deletion is explicit (resume/discard/save-as-draft/open-draft) so an empty
     // in-memory state at boot can't silently wipe out a resumable autosave.
     if (!hasMeaningfulContent(state)) return;
@@ -7502,9 +7743,9 @@ function saveDrafts(drafts) {
 }
 
 function saveCurrentAsDraft() {
-  if (!hasMeaningfulContent(state)) { alert("Nothing to save yet — this case is still empty."); return; }
+  if (!hasMeaningfulContent(state)) { alert("Nothing to save yet - this case is still empty."); return; }
   const drafts = loadDrafts();
-  const label = (state.patientName || "Untitled case") + " — " + new Date().toLocaleString();
+  const label = (state.patientName || "Untitled case") + " - " + new Date().toLocaleString();
   drafts.unshift({ id: Date.now(), label, savedAt: new Date().toISOString(), state: JSON.parse(JSON.stringify(state)) });
   saveDrafts(drafts);
   clearAutosave();
@@ -7535,7 +7776,7 @@ function renderDraftsCard() {
   const rows = drafts.map(d => `<li>${esc(d.label)}
       <a href="#" onclick="openDraft(${d.id}); return false;">open</a>
       &nbsp;|&nbsp;
-      <a href="#" onclick="deleteDraft(${d.id}); return false;" style="color:#B3261E;">delete</a>
+      <a href="#" onclick="deleteDraft(${d.id}); return false;" class="link-remove">delete</a>
     </li>`).join("");
   return `<div class="card">
     <h2>Saved drafts ${drafts.length ? "(" + drafts.length + ")" : ""}</h2>
@@ -7767,14 +8008,14 @@ function buildAiPrompt(transcript) {
     if (type === "enum:asa") return `  "${key}": "ASA I" | "ASA II" | "ASA III" | "ASA IV" | ""  // ${label}`;
     if (type === "enum:duration") return `  "${key}": ${DURATION_OPTIONS.map(d => `"${d}"`).join(" | ")} | ""  // ${label}. Round to the closest listed option.`;
     if (type === "enum:anaesthesia") return `  "${key}": ${ANAESTHESIA_REQUIRED_OPTIONS.map(d => `"${d}"`).join(" | ")} | ""  // ${label}`;
-    return `  "${key}": string  // ${label}. Use "" if not mentioned — never invent information.`;
+    return `  "${key}": string  // ${label}. Use "" if not mentioned - never invent information.`;
   }).join("\n");
 
-  return `You are helping a dental/periodontal clinician turn a spoken case dictation into structured fields for an internal case-intake tool. This is real clinical documentation that will inform patient care, an EHR entry, and a nursing materials order — accuracy matters more than completeness.
+  return `You are helping a dental/periodontal clinician turn a spoken case dictation into structured fields for an internal case-intake tool. This is real clinical documentation that will inform patient care, an EHR entry, and a nursing materials order - accuracy matters more than completeness.
 
-The transcript comes from a browser's free speech-to-text engine, which frequently mishears dental/medical terminology as similar-sounding everyday words or names (e.g. "periodly Harry operatively" for "periodontal therapy", "graphic materials ethos" for "graft materials, EthOss", "Paul clinical examination" for "on clinical examination"). Before extracting fields, silently correct these obvious mishearings using the domain vocabulary below, then extract ONLY what was actually said (as corrected). Do not invent or infer clinical facts that aren't present in the transcript even after correction — if something wasn't mentioned, use an empty string.
+The transcript comes from a browser's free speech-to-text engine, which frequently mishears dental/medical terminology as similar-sounding everyday words or names (e.g. "periodly Harry operatively" for "periodontal therapy", "graphic materials ethos" for "graft materials, EthOss", "Paul clinical examination" for "on clinical examination"). Before extracting fields, silently correct these obvious mishearings using the domain vocabulary below, then extract ONLY what was actually said (as corrected). Do not invent or infer clinical facts that aren't present in the transcript even after correction - if something wasn't mentioned, use an empty string.
 
-SAFETY-CRITICAL RULE — never guess: for any number, measurement, dose, drug name, tooth/FDI number, or item code, only fill it in if you are confident that is genuinely what was said (after correcting an obvious mishearing). If the audio is ambiguous, garbled, or could plausibly be more than one specific number/name, do NOT silently pick one — instead put your best-effort reading in the field AND add a clear entry to "_flags" naming the field and exactly what is uncertain (e.g. "sites: heard 'tooth two four or tooth two six, unclear which' — confirm against the recording"). It is always better to flag a doubt than to let a wrong number or drug name pass through unnoticed.
+SAFETY-CRITICAL RULE - never guess: for any number, measurement, dose, drug name, tooth/FDI number, or item code, only fill it in if you are confident that is genuinely what was said (after correcting an obvious mishearing). If the audio is ambiguous, garbled, or could plausibly be more than one specific number/name, do NOT silently pick one - instead put your best-effort reading in the field AND add a clear entry to "_flags" naming the field and exactly what is uncertain (e.g. "sites: heard 'tooth two four or tooth two six, unclear which' - confirm against the recording"). It is always better to flag a doubt than to let a wrong number or drug name pass through unnoticed.
 
 Known dental/clinical vocabulary that may have been mis-transcribed (procedure names, implant/graft product names, ADA item code descriptions):
 ${vocab.map(v => "- " + v).join("\n")}
@@ -7841,7 +8082,7 @@ async function fillFieldsWithAI() {
     try {
       parsed = JSON.parse(cleaned);
     } catch (e) {
-      setStatus("The AI's response wasn't valid JSON — nothing was changed. Try again, or shorten/simplify the dictation.", "error");
+      setStatus("The AI's response wasn't valid JSON - nothing was changed. Try again, or shorten/simplify the dictation.", "error");
       return;
     }
 
@@ -7867,13 +8108,37 @@ async function fillFieldsWithAI() {
 
     renderStep();
     renderAiReviewBox();
-    const flagNote = state.aiFlags.length ? ` ${state.aiFlags.length} item(s) need your double-check — see below.` : "";
-    setStatus(`Done — ${filledCount} field(s) filled.${flagNote} Go through each step and review/correct before finishing.`, "success");
+    const flagNote = state.aiFlags.length ? ` ${state.aiFlags.length} item(s) need your double-check - see below.` : "";
+    setStatus(`Done - ${filledCount} field(s) filled.${flagNote} Go through each step and review/correct before finishing.`, "success");
   } catch (err) {
     setStatus("Couldn't reach the AI service: " + err.message, "error");
   }
 }
 
+const THEME_KEY = "caseIntakeTheme_v1";
+
+function loadTheme() {
+  let theme = "light";
+  try { theme = localStorage.getItem(THEME_KEY) || "light"; } catch (e) { /* ignore */ }
+  applyTheme(theme);
+}
+
+function applyTheme(theme) {
+  const t = theme === "dark" ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", t);
+  const btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = t === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  const next = current === "dark" ? "light" : "dark";
+  try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* ignore */ }
+  applyTheme(next);
+}
+
+loadTheme();
+loadLicense();
 renderDictationArea();
 renderStep();
 setupTabs();
@@ -7943,6 +8208,21 @@ window.riskBandBadgeClass = riskBandBadgeClass;
 window.textRiskIndicator = textRiskIndicator;
 window.setRiskFactor = setRiskFactor;
 window.riskFactorField = riskFactorField;
+window.license = license;
+window.loadLicense = loadLicense;
+window.saveLicense = saveLicense;
+window.clearLicense = clearLicense;
+window.tabAccessAllowed = tabAccessAllowed;
+window.planLabel = planLabel;
+window.renderUpsell = renderUpsell;
+window.renderLicenseBar = renderLicenseBar;
+window.activateLicense = activateLicense;
+window.showLicenseEntry = showLicenseEntry;
+window.clearLicenseAndShowEntry = clearLicenseAndShowEntry;
+window.loadTheme = loadTheme;
+window.applyTheme = applyTheme;
+window.toggleTheme = toggleTheme;
+window.PLAN_LINKS = PLAN_LINKS;
 
 </script>
 </body>

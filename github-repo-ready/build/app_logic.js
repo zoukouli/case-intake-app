@@ -10,7 +10,7 @@ const STEPS = [
 ];
 
 // ---- DIR Patient Risk Estimator v0.1 (literature-informed placeholder weights) ----
-// Source: user-supplied "DIR Patient Risk Estimator — Literature Basis for Weights (v0.1)".
+// Source: user-supplied "DIR Patient Risk Estimator: Literature Basis for Weights (v0.1)".
 // Pooled ORs from published systematic reviews/meta-analyses, converted to a
 // Framingham-style points scale (log(OR) normalised to the smallest non-zero value).
 // NOT DIR-fitted coefficients. Not yet through Scientific Committee / Ethics review.
@@ -30,13 +30,13 @@ const RISK_MODEL = {
         { value: "former", label: "Former smoker", points: 1 },
         { value: "current", label: "Current smoker", points: 3 },
       ],
-      source: "Naseri et al., meta-analysis, Medicina 2022 — current vs never OR ≈2.4; former-smoker points are a directional estimate." },
+      source: "Naseri et al., meta-analysis, Medicina 2022 - current vs never OR ≈2.4; former-smoker points are a directional estimate." },
     { key: "riskDiabetes", label: "Diabetes control",
       options: [
         { value: "none_or_controlled", label: "None / well-controlled", points: 0 },
         { value: "poorly_controlled", label: "Poorly controlled", points: 4 },
       ],
-      source: "Naujokat 2016; de Molon 2019; Nature EBD summary — poorly controlled vs none/controlled OR ≈2.0–3.6 (mid ≈2.75 used)." },
+      source: "Naujokat 2016; de Molon 2019; Nature EBD summary - poorly controlled vs none/controlled OR ≈2.0–3.6 (mid ≈2.75 used)." },
     { key: "riskOralHygiene", label: "Oral hygiene / plaque control",
       options: [
         { value: "excellent", label: "Excellent", points: 0 },
@@ -44,51 +44,51 @@ const RISK_MODEL = {
         { value: "average", label: "Average", points: 2 },
         { value: "poor", label: "Poor", points: 4 },
       ],
-      source: "General periodontal/peri-implant plaque-control literature — poor vs excellent OR ≈3, conservative mid-estimate." },
+      source: "General periodontal/peri-implant plaque-control literature - poor vs excellent OR ≈3, conservative mid-estimate." },
     { key: "riskPerioHistory", label: "Periodontitis history",
       options: [
         { value: "no", label: "Periodontally healthy", points: 0 },
         { value: "yes", label: "History of periodontitis", points: 3 },
       ],
-      source: "Serroni et al. 2024 systematic review/meta-analysis/TSA, Clin Implant Dent Relat Res — OR ≈2.5 (peri-implantitis incidence)." },
+      source: "Serroni et al. 2024 systematic review/meta-analysis/TSA, Clin Implant Dent Relat Res - OR ≈2.5 (peri-implantitis incidence)." },
     { key: "riskBoneQuality", label: "Bone quality",
       options: [
         { value: "d1_d2", label: "D1–D2 (dense)", points: 0 },
         { value: "d3_d4", label: "D3–D4 (low density)", points: 2 },
       ],
-      source: "Multiple low-bone-density prognosis reviews — OR ≈1.7, evidence mixed/heterogeneous." },
+      source: "Multiple low-bone-density prognosis reviews - OR ≈1.7, evidence mixed/heterogeneous." },
     { key: "riskLoadingProtocol", label: "Loading protocol",
       options: [
         { value: "conventional", label: "Conventional / delayed", points: 0 },
         { value: "immediate", label: "Immediate loading", points: 1 },
       ],
-      source: "RCT meta-analyses, J Prosthet Dent 2019 — OR ≈1.4 in unselected/mixed case conditions; well-selected cases can be non-inferior." },
+      source: "RCT meta-analyses, J Prosthet Dent 2019 - OR ≈1.4 in unselected/mixed case conditions; well-selected cases can be non-inferior." },
     { key: "riskGrafting", label: "Bone grafting / GBR required",
       options: [
         { value: "no", label: "No", points: 0 },
         { value: "yes", label: "Yes", points: 1 },
       ],
-      source: "General augmented-site literature — estimated OR ≈1.4, added healing-related risk." },
+      source: "General augmented-site literature - estimated OR ≈1.4, added healing-related risk." },
     { key: "riskProsthesis", label: "Prosthesis complexity",
       options: [
         { value: "single_unit", label: "Single unit", points: 0 },
         { value: "cantilever_full_arch", label: "Cantilever / full-arch", points: 1 },
       ],
-      source: "Cantilever FPD systematic reviews — OR ≈1.3, implant-level effect modest." },
+      source: "Cantilever FPD systematic reviews - OR ≈1.3, implant-level effect modest." },
     { key: "riskImplantSite", label: "Implant site",
       options: [
         { value: "anterior", label: "Anterior", points: 0 },
         { value: "posterior_mandible", label: "Posterior mandible", points: 0 },
         { value: "posterior_maxilla", label: "Posterior maxilla", points: 2 },
       ],
-      source: "Bone-quality-by-site literature — posterior maxilla vs anterior OR ≈1.8 (lower bone density + higher historical failure)." },
+      source: "Bone-quality-by-site literature - posterior maxilla vs anterior OR ≈1.8 (lower bone density + higher historical failure)." },
   ],
   caveats: [
     "These are not DIR-fitted coefficients. They combine ORs from different populations, implant systems, and follow-up periods, and several used mid-range or estimated values where the literature reported ranges rather than one pooled figure.",
     "Several sources could not be fully verified against primary text during this pass; figures were cross-checked against multiple independent search results but should be spot-checked against the primary PDFs before this is used to inform patient decisions or fees are charged.",
-    "As soon as DIR has enough matured complication cases, re-fit with Cox/logistic regression on your own data and swap in those coefficients using the same normalisation method — this keeps the tool's structure stable while its numbers become genuinely yours.",
+    "As soon as DIR has enough matured complication cases, re-fit with Cox/logistic regression on your own data and swap in those coefficients using the same normalisation method - this keeps the tool's structure stable while its numbers become genuinely yours.",
     "ISQ/insertion torque are deliberately excluded to avoid data leakage (these values only exist after placement, not pre-operatively at the decision point this tool serves).",
-    "Route final wording, risk-band percentages, and fee structure through Scientific Committee / Ethics review before this is offered to patients for payment — a monetised, unvalidated risk score carries more scrutiny than a free chairside prototype.",
+    "Route final wording, risk-band percentages, and fee structure through Scientific Committee / Ethics review before this is offered to patients for payment - a monetised, unvalidated risk score carries more scrutiny than a free chairside prototype.",
   ],
 };
 
@@ -131,6 +131,172 @@ function resetState() {
   Object.assign(state, fresh);
 }
 
+// ---- Tiered access / licensing ----
+// License lives OUTSIDE `state` on purpose: starting a new case (resetState) must
+// never wipe out a paid plan. Persisted separately in its own localStorage key.
+const LICENSE_KEY = "dir_case_intake_license_v1";
+let license = { code: "", tier: 0, addons: { perioperative: false, riskIndicator: false }, email: "", status: "" };
+
+// Client-side test/"god mode" code for the PI and friends to trial full access without a
+// Stripe purchase. Lives only in this file (visible to anyone who views page source) --
+// fine for a small private pilot, but remove or rotate this before any public launch.
+const MASTER_TEST_CODE = "DIR-GODMODE-TEST";
+
+const PLAN_LINKS = {
+  tier1: "https://buy.stripe.com/fZubJ23pI5rY0DBcaLdMI00",
+  tier2: "https://buy.stripe.com/bJeaEYaSabQm71Z8YzdMI01",
+  tier3: "https://buy.stripe.com/cNi4gAgcucUq5XV2AbdMI03",
+  perioperative: "https://buy.stripe.com/3cI9AU9O6dYueureiTdMI07",
+  riskIndicator: "https://buy.stripe.com/fZueVe7FY2fM71Z2AbdMI08",
+};
+
+function loadLicense() {
+  try {
+    const raw = localStorage.getItem(LICENSE_KEY);
+    if (raw) Object.assign(license, JSON.parse(raw));
+  } catch (e) { /* ignore */ }
+}
+function saveLicense() {
+  try { localStorage.setItem(LICENSE_KEY, JSON.stringify(license)); } catch (e) { /* ignore */ }
+}
+function clearLicense() {
+  Object.assign(license, { code: "", tier: 0, addons: { perioperative: false, riskIndicator: false }, email: "", status: "" });
+  try { localStorage.removeItem(LICENSE_KEY); } catch (e) { /* ignore */ }
+}
+
+// Tab-access rules: tabs are STEPS indices 0-6; index 7 (Review) is always reachable
+// (it only ever shows the panels the current plan actually unlocked).
+function tabAccessAllowed(stepIdx) {
+  if (stepIdx <= 2) return license.tier >= 1;      // Patient&referral, History, Procedure&risks
+  if (stepIdx <= 4) return license.tier >= 2;      // Materials, Day surgery
+  if (stepIdx === 5) return license.tier >= 3 || license.addons.perioperative;  // Perioperative
+  if (stepIdx === 6) return license.tier >= 3 || license.addons.riskIndicator;  // Risk indicator
+  return true; // Review
+}
+
+function planLabel() {
+  if (license.tier === 3) return "Tier 3 (Advanced)";
+  if (license.tier === 2) return "Tier 2 (Intermediate)";
+  if (license.tier === 1) return "Tier 1 (Basic)";
+  return "No active plan";
+}
+
+function renderUpsell(stepIdx) {
+  const name = STEPS[stepIdx];
+  let link = PLAN_LINKS.tier2;
+  let verb = "Upgrade to";
+  let planName = "Tier 2";
+  let priceText = "$8.88/month";
+  if (stepIdx <= 2) { link = PLAN_LINKS.tier1; verb = "Upgrade to"; planName = "Tier 1"; priceText = "$1.99/month (3-month free trial)"; }
+  else if (stepIdx <= 4) { link = PLAN_LINKS.tier2; verb = "Upgrade to"; planName = "Tier 2"; priceText = "$8.88/month"; }
+  else if (stepIdx === 5) { link = PLAN_LINKS.perioperative; verb = "Add"; planName = "Perioperative Medications"; priceText = "$3.99/month (or included in Tier 3)"; }
+  else if (stepIdx === 6) { link = PLAN_LINKS.riskIndicator; verb = "Add"; planName = "Patient Risk Indicator"; priceText = "$3.99/month (or included in Tier 3)"; }
+  return `<div class="card">
+    <h2>🔒 ${esc(name)} is locked</h2>
+    <p class="hint">Your current plan (${esc(planLabel())}) doesn't include this section.</p>
+    <p><a href="${link}" target="_blank" rel="noopener"><button type="button">${esc(verb)} ${esc(planName)} - ${esc(priceText)}</button></a></p>
+    <p class="hint">Already paid? <a href="#" onclick="showLicenseEntry(); return false;">Enter your license code</a>.</p>
+  </div>`;
+}
+
+function renderLicenseBar() {
+  const el = document.getElementById("licenseBar");
+  if (!el) return;
+  if (license.tier === 0) {
+    el.innerHTML = `<div class="card" style="margin-bottom:12px;">
+      <h2>Unlock the Case Intake App</h2>
+      <p class="hint">Choose a plan to get started, or enter a license code below if you've already subscribed.</p>
+      <div class="plan-grid">
+        <a href="${PLAN_LINKS.tier1}" target="_blank" rel="noopener"><button type="button">Tier 1: $1.99/mo<span class="plan-sub">3-month free trial</span></button></a>
+        <a href="${PLAN_LINKS.tier2}" target="_blank" rel="noopener"><button type="button">Tier 2: $8.88/mo</button></a>
+        <a href="${PLAN_LINKS.tier3}" target="_blank" rel="noopener"><button type="button">Tier 3: $12.99/mo</button></a>
+      </div>
+      <p class="hint" style="margin-top:14px; margin-bottom:6px;">Only need one section? Buy it on its own instead:</p>
+      <div class="plan-grid">
+        <a href="${PLAN_LINKS.perioperative}" target="_blank" rel="noopener"><button type="button">Perioperative meds: $3.99/mo<span class="plan-sub">or included in Tier 3</span></button></a>
+        <a href="${PLAN_LINKS.riskIndicator}" target="_blank" rel="noopener"><button type="button">Risk indicator: $3.99/mo<span class="plan-sub">or included in Tier 3</span></button></a>
+      </div>
+      <div id="licenseEntryArea" style="margin-top:14px;"></div>
+    </div>`;
+    renderLicenseEntryForm();
+  } else {
+    const addonBits = [
+      license.addons.perioperative ? "Perioperative add-on" : "",
+      license.addons.riskIndicator ? "Risk Indicator add-on" : "",
+    ].filter(Boolean).join(", ");
+    el.innerHTML = `<div class="hint" style="margin-bottom:8px;">Plan: <strong>${esc(planLabel())}</strong>${addonBits ? " + " + esc(addonBits) : ""}
+      &nbsp;·&nbsp; <a href="#" onclick="clearLicenseAndShowEntry(); return false;">Change / enter a different code</a></div>`;
+  }
+}
+
+function renderLicenseEntryForm() {
+  const el = document.getElementById("licenseEntryArea");
+  if (!el) return;
+  el.innerHTML = `<label>Already subscribed? Enter your license code</label>
+    <div class="row" style="gap:8px; align-items:center;">
+      <div style="flex:1;"><input type="text" id="licenseCodeInput" placeholder="e.g. DIR-AB12CD34" /></div>
+      <div style="flex:0 0 auto;"><button type="button" onclick="activateLicense()">Activate</button></div>
+    </div>
+    <div id="licenseStatusMsg" class="hint"></div>`;
+}
+
+function showLicenseEntry() {
+  renderLicenseBar();
+  const input = document.getElementById("licenseCodeInput");
+  if (input) input.focus();
+}
+
+function clearLicenseAndShowEntry() {
+  clearLicense();
+  renderStep();
+}
+
+async function activateLicense() {
+  const input = document.getElementById("licenseCodeInput");
+  const statusEl = document.getElementById("licenseStatusMsg");
+  const code = ((input && input.value) || "").trim();
+  if (!code) { if (statusEl) statusEl.textContent = "Enter a code first."; return; }
+  if (code.toUpperCase() === MASTER_TEST_CODE) {
+    Object.assign(license, {
+      code,
+      tier: 3,
+      addons: { perioperative: true, riskIndicator: true },
+      email: "",
+      status: "valid (test access)",
+    });
+    saveLicense();
+    renderStep();
+    return;
+  }
+  if (statusEl) statusEl.textContent = "Checking...";
+  try {
+    const res = await fetch("/.netlify/functions/verify-license", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ code }),
+    });
+    const data = await res.json();
+    if (data && data.valid) {
+      Object.assign(license, {
+        code,
+        tier: data.tier || 0,
+        addons: {
+          perioperative: !!(data.addons && data.addons.perioperative),
+          riskIndicator: !!(data.addons && data.addons.riskIndicator),
+        },
+        email: data.email || "",
+        status: "valid",
+      });
+      saveLicense();
+      renderStep();
+    } else {
+      if (statusEl) statusEl.textContent = "That code isn't valid or active. Check it and try again, or contact support.";
+    }
+  } catch (e) {
+    if (statusEl) statusEl.textContent = "Couldn't reach the license server. Check your connection and try again.";
+  }
+}
+
 const AI_FILLABLE_FIELDS = [
   ["patientName", "text", "Patient / case reference (de-identified)"],
   ["dob", "text", "Date of birth"],
@@ -170,9 +336,11 @@ function renderStepper() {
   const el = document.getElementById("stepper");
   el.innerHTML = STEPS.map((s, i) => {
     let cls = "step-dot";
+    const locked = !tabAccessAllowed(i);
+    if (locked) cls += " locked";
     if (i === currentStep) cls += " active";
     else if (i < currentStep) cls += " done";
-    return `<div class="${cls}" onclick="goToStep(${i})">${i + 1}. ${s}</div>`;
+    return `<div class="${cls}" onclick="goToStep(${i})">${i + 1}. ${s}${locked ? " 🔒" : ""}</div>`;
   }).join("");
 }
 
@@ -282,8 +450,14 @@ function checkboxRow(label, key, extraHtml) {
 }
 
 function renderStep() {
+  renderLicenseBar();
   renderStepper();
   const area = document.getElementById("stepArea");
+  if (currentStep !== 7 && !tabAccessAllowed(currentStep)) {
+    document.getElementById("reviewArea").style.display = "none";
+    area.innerHTML = renderUpsell(currentStep);
+    return;
+  }
   document.getElementById("reviewArea").style.display = currentStep === 7 ? "block" : "none";
   if (currentStep === 7) { buildReview(); area.innerHTML = ""; autosaveState(); return; }
 
@@ -456,7 +630,7 @@ function renderStep() {
 
       ${RISK_MODEL.factors.map(riskFactorField).join("")}
 
-      ${field("Antibiotic allergy considerations", "riskAntibioticAllergy", { textarea: true, hint: "planning flag only — not scored; changes prescribing, not complication probability" })}
+      ${field("Antibiotic allergy considerations", "riskAntibioticAllergy", { textarea: true, hint: "planning flag only - not scored; changes prescribing, not complication probability" })}
 
       <details style="margin-top:16px;">
         <summary style="cursor:pointer; font-size:12.5px; color:var(--muted);">Caveats (click to review)</summary>
@@ -502,7 +676,7 @@ function updateCodePreview() {
 function renderExtraCodes() {
   if (!state.extraCodes.length) return "";
   return `<div style="margin:6px 0 10px;">${state.extraCodes.map((c, i) =>
-    `<div class="code-row"><span class="code-pill">${c}</span>${fdiInputHtml(c)} <a href="#" onclick="removeExtraCode(${i}); return false;" style="color:#B3261E;">&times;</a></div>`
+    `<div class="code-row"><span class="code-pill">${c}</span>${fdiInputHtml(c)} <a href="#" onclick="removeExtraCode(${i}); return false;" class="link-remove">&times;</a></div>`
   ).join("")}</div>`;
 }
 function addExtraCode() {
@@ -560,7 +734,7 @@ function implantLengthSelect() {
 function addImplant() {
   const p = state.pendingImplant;
   if (!p.manufacturer || !p.line) return;
-  const label = `${p.manufacturer} — ${p.line}` + (p.diameter ? ` — Ø${p.diameter}mm` : "") + (p.length ? ` x ${p.length}mm` : "");
+  const label = `${p.manufacturer} - ${p.line}` + (p.diameter ? ` - Ø${p.diameter}mm` : "") + (p.length ? ` x ${p.length}mm` : "");
   state.selectedImplants.push(label);
   state.pendingImplant = { manufacturer: "", line: "", diameter: "", length: "" };
   renderStep();
@@ -568,7 +742,7 @@ function addImplant() {
 function removeImplant(i) { state.selectedImplants.splice(i, 1); renderStep(); }
 function renderSelectedImplants() {
   if (!state.selectedImplants.length) return `<p class="hint">No implants added yet.</p>`;
-  return `<ul>${state.selectedImplants.map((s, i) => `<li>${s} <a href="#" onclick="removeImplant(${i}); return false;" style="color:#B3261E;">remove</a></li>`).join("")}</ul>`;
+  return `<ul>${state.selectedImplants.map((s, i) => `<li>${s} <a href="#" onclick="removeImplant(${i}); return false;" class="link-remove">remove</a></li>`).join("")}</ul>`;
 }
 
 function addAnaesthetic() {
@@ -581,7 +755,7 @@ function addAnaesthetic() {
 function removeAnaesthetic(i) { state.selectedAnaesthetics.splice(i, 1); renderStep(); }
 function renderSelectedAnaesthetics() {
   if (!state.selectedAnaesthetics.length) return `<p class="hint">No anaesthetics added yet.</p>`;
-  return `<ul>${state.selectedAnaesthetics.map((s, i) => `<li>${s} <a href="#" onclick="removeAnaesthetic(${i}); return false;" style="color:#B3261E;">remove</a></li>`).join("")}</ul>`;
+  return `<ul>${state.selectedAnaesthetics.map((s, i) => `<li>${s} <a href="#" onclick="removeAnaesthetic(${i}); return false;" class="link-remove">remove</a></li>`).join("")}</ul>`;
 }
 
 function graftBrandSelect() {
@@ -608,14 +782,14 @@ function graftProductSelect() {
 function addGraft() {
   const p = state.pendingGraft;
   if (!p.brand || !p.category || !p.product) return;
-  state.selectedGrafts.push(`${p.brand} — ${p.category} — ${p.product}`);
+  state.selectedGrafts.push(`${p.brand} - ${p.category} - ${p.product}`);
   state.pendingGraft = { brand: "", category: "", product: "" };
   renderStep();
 }
 function removeGraft(i) { state.selectedGrafts.splice(i, 1); renderStep(); }
 function renderSelectedGrafts() {
   if (!state.selectedGrafts.length) return `<p class="hint">No grafts added yet.</p>`;
-  return `<ul>${state.selectedGrafts.map((s, i) => `<li>${s} <a href="#" onclick="removeGraft(${i}); return false;" style="color:#B3261E;">remove</a></li>`).join("")}</ul>`;
+  return `<ul>${state.selectedGrafts.map((s, i) => `<li>${s} <a href="#" onclick="removeGraft(${i}); return false;" class="link-remove">remove</a></li>`).join("")}</ul>`;
 }
 
 function goToStep(i) { currentStep = i; renderStep(); }
@@ -691,7 +865,7 @@ function renderMedList() {
       `<p class="med-not-found">Not found in ruleset &mdash; needs manual review. Confirm with the treating clinician/anaesthetist.</p>`;
     return `<div class="med-card">
       <h4>${esc(title)}<span class="med-badge ${esc(badge.cls)}">${esc(badge.label)}</span>
-        <a href="#" onclick="removeMedication(${i}); return false;" style="color:#B3261E; font-weight:normal; font-size:11.5px; margin-left:10px;">remove</a>
+        <a href="#" onclick="removeMedication(${i}); return false;" class="link-remove" style="font-weight:normal; font-size:11.5px; margin-left:10px;">remove</a>
       </h4>
       ${cards}
     </div>`;
@@ -740,7 +914,7 @@ function buildReview() {
     state.membranePins ? "Membrane fixation pins / tacks" : null,
     state.prfRedCount ? `Red PRF x${state.prfRedCount}` : null,
     state.prfGreenCount ? `Green PRF x${state.prfGreenCount}` : null,
-    state.suture ? `Suture material${state.sutureGauge ? " (" + state.sutureGauge + ")" : ""}${state.sutureNotes ? " — " + state.sutureNotes : ""}` : null,
+    state.suture ? `Suture material${state.sutureGauge ? " (" + state.sutureGauge + ")" : ""}${state.sutureNotes ? " - " + state.sutureNotes : ""}` : null,
     state.surgicalStent ? "Surgical stent / guide" : null,
   ].filter(Boolean);
 
@@ -860,7 +1034,7 @@ function renderFlagGate() {
   setActionButtonsDisabled(!allAcked);
 }
 
-// ---- Plain-text builders (for pasting into EHR / emailing to nursing — no HTML) ----
+// ---- Plain-text builders (for pasting into EHR / emailing to nursing - no HTML) ----
 function textReport() {
   const codes = codesForPath();
   return [
@@ -1113,7 +1287,7 @@ function hasMeaningfulContent(s) {
 
 function autosaveState() {
   try {
-    // Only ever write when there's something worth saving. Never delete here —
+    // Only ever write when there's something worth saving. Never delete here -
     // deletion is explicit (resume/discard/save-as-draft/open-draft) so an empty
     // in-memory state at boot can't silently wipe out a resumable autosave.
     if (!hasMeaningfulContent(state)) return;
@@ -1141,9 +1315,9 @@ function saveDrafts(drafts) {
 }
 
 function saveCurrentAsDraft() {
-  if (!hasMeaningfulContent(state)) { alert("Nothing to save yet — this case is still empty."); return; }
+  if (!hasMeaningfulContent(state)) { alert("Nothing to save yet - this case is still empty."); return; }
   const drafts = loadDrafts();
-  const label = (state.patientName || "Untitled case") + " — " + new Date().toLocaleString();
+  const label = (state.patientName || "Untitled case") + " - " + new Date().toLocaleString();
   drafts.unshift({ id: Date.now(), label, savedAt: new Date().toISOString(), state: JSON.parse(JSON.stringify(state)) });
   saveDrafts(drafts);
   clearAutosave();
@@ -1174,7 +1348,7 @@ function renderDraftsCard() {
   const rows = drafts.map(d => `<li>${esc(d.label)}
       <a href="#" onclick="openDraft(${d.id}); return false;">open</a>
       &nbsp;|&nbsp;
-      <a href="#" onclick="deleteDraft(${d.id}); return false;" style="color:#B3261E;">delete</a>
+      <a href="#" onclick="deleteDraft(${d.id}); return false;" class="link-remove">delete</a>
     </li>`).join("");
   return `<div class="card">
     <h2>Saved drafts ${drafts.length ? "(" + drafts.length + ")" : ""}</h2>
@@ -1406,14 +1580,14 @@ function buildAiPrompt(transcript) {
     if (type === "enum:asa") return `  "${key}": "ASA I" | "ASA II" | "ASA III" | "ASA IV" | ""  // ${label}`;
     if (type === "enum:duration") return `  "${key}": ${DURATION_OPTIONS.map(d => `"${d}"`).join(" | ")} | ""  // ${label}. Round to the closest listed option.`;
     if (type === "enum:anaesthesia") return `  "${key}": ${ANAESTHESIA_REQUIRED_OPTIONS.map(d => `"${d}"`).join(" | ")} | ""  // ${label}`;
-    return `  "${key}": string  // ${label}. Use "" if not mentioned — never invent information.`;
+    return `  "${key}": string  // ${label}. Use "" if not mentioned - never invent information.`;
   }).join("\n");
 
-  return `You are helping a dental/periodontal clinician turn a spoken case dictation into structured fields for an internal case-intake tool. This is real clinical documentation that will inform patient care, an EHR entry, and a nursing materials order — accuracy matters more than completeness.
+  return `You are helping a dental/periodontal clinician turn a spoken case dictation into structured fields for an internal case-intake tool. This is real clinical documentation that will inform patient care, an EHR entry, and a nursing materials order - accuracy matters more than completeness.
 
-The transcript comes from a browser's free speech-to-text engine, which frequently mishears dental/medical terminology as similar-sounding everyday words or names (e.g. "periodly Harry operatively" for "periodontal therapy", "graphic materials ethos" for "graft materials, EthOss", "Paul clinical examination" for "on clinical examination"). Before extracting fields, silently correct these obvious mishearings using the domain vocabulary below, then extract ONLY what was actually said (as corrected). Do not invent or infer clinical facts that aren't present in the transcript even after correction — if something wasn't mentioned, use an empty string.
+The transcript comes from a browser's free speech-to-text engine, which frequently mishears dental/medical terminology as similar-sounding everyday words or names (e.g. "periodly Harry operatively" for "periodontal therapy", "graphic materials ethos" for "graft materials, EthOss", "Paul clinical examination" for "on clinical examination"). Before extracting fields, silently correct these obvious mishearings using the domain vocabulary below, then extract ONLY what was actually said (as corrected). Do not invent or infer clinical facts that aren't present in the transcript even after correction - if something wasn't mentioned, use an empty string.
 
-SAFETY-CRITICAL RULE — never guess: for any number, measurement, dose, drug name, tooth/FDI number, or item code, only fill it in if you are confident that is genuinely what was said (after correcting an obvious mishearing). If the audio is ambiguous, garbled, or could plausibly be more than one specific number/name, do NOT silently pick one — instead put your best-effort reading in the field AND add a clear entry to "_flags" naming the field and exactly what is uncertain (e.g. "sites: heard 'tooth two four or tooth two six, unclear which' — confirm against the recording"). It is always better to flag a doubt than to let a wrong number or drug name pass through unnoticed.
+SAFETY-CRITICAL RULE - never guess: for any number, measurement, dose, drug name, tooth/FDI number, or item code, only fill it in if you are confident that is genuinely what was said (after correcting an obvious mishearing). If the audio is ambiguous, garbled, or could plausibly be more than one specific number/name, do NOT silently pick one - instead put your best-effort reading in the field AND add a clear entry to "_flags" naming the field and exactly what is uncertain (e.g. "sites: heard 'tooth two four or tooth two six, unclear which' - confirm against the recording"). It is always better to flag a doubt than to let a wrong number or drug name pass through unnoticed.
 
 Known dental/clinical vocabulary that may have been mis-transcribed (procedure names, implant/graft product names, ADA item code descriptions):
 ${vocab.map(v => "- " + v).join("\n")}
@@ -1480,7 +1654,7 @@ async function fillFieldsWithAI() {
     try {
       parsed = JSON.parse(cleaned);
     } catch (e) {
-      setStatus("The AI's response wasn't valid JSON — nothing was changed. Try again, or shorten/simplify the dictation.", "error");
+      setStatus("The AI's response wasn't valid JSON - nothing was changed. Try again, or shorten/simplify the dictation.", "error");
       return;
     }
 
@@ -1506,13 +1680,37 @@ async function fillFieldsWithAI() {
 
     renderStep();
     renderAiReviewBox();
-    const flagNote = state.aiFlags.length ? ` ${state.aiFlags.length} item(s) need your double-check — see below.` : "";
-    setStatus(`Done — ${filledCount} field(s) filled.${flagNote} Go through each step and review/correct before finishing.`, "success");
+    const flagNote = state.aiFlags.length ? ` ${state.aiFlags.length} item(s) need your double-check - see below.` : "";
+    setStatus(`Done - ${filledCount} field(s) filled.${flagNote} Go through each step and review/correct before finishing.`, "success");
   } catch (err) {
     setStatus("Couldn't reach the AI service: " + err.message, "error");
   }
 }
 
+const THEME_KEY = "caseIntakeTheme_v1";
+
+function loadTheme() {
+  let theme = "light";
+  try { theme = localStorage.getItem(THEME_KEY) || "light"; } catch (e) { /* ignore */ }
+  applyTheme(theme);
+}
+
+function applyTheme(theme) {
+  const t = theme === "dark" ? "dark" : "light";
+  document.documentElement.setAttribute("data-theme", t);
+  const btn = document.getElementById("themeToggleBtn");
+  if (btn) btn.textContent = t === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light";
+  const next = current === "dark" ? "light" : "dark";
+  try { localStorage.setItem(THEME_KEY, next); } catch (e) { /* ignore */ }
+  applyTheme(next);
+}
+
+loadTheme();
+loadLicense();
 renderDictationArea();
 renderStep();
 setupTabs();
@@ -1582,3 +1780,18 @@ window.riskBandBadgeClass = riskBandBadgeClass;
 window.textRiskIndicator = textRiskIndicator;
 window.setRiskFactor = setRiskFactor;
 window.riskFactorField = riskFactorField;
+window.license = license;
+window.loadLicense = loadLicense;
+window.saveLicense = saveLicense;
+window.clearLicense = clearLicense;
+window.tabAccessAllowed = tabAccessAllowed;
+window.planLabel = planLabel;
+window.renderUpsell = renderUpsell;
+window.renderLicenseBar = renderLicenseBar;
+window.activateLicense = activateLicense;
+window.showLicenseEntry = showLicenseEntry;
+window.clearLicenseAndShowEntry = clearLicenseAndShowEntry;
+window.loadTheme = loadTheme;
+window.applyTheme = applyTheme;
+window.toggleTheme = toggleTheme;
+window.PLAN_LINKS = PLAN_LINKS;

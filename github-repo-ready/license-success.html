@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>You're all set — Case Intake App</title>
+<style>
+  body { font-family: Arial, Helvetica, sans-serif; background: #F4F6F9; color: #1C2536; margin: 0; padding: 40px 20px; }
+  .card { max-width: 480px; margin: 0 auto; background: #fff; border: 1px solid #D8DEE8; border-radius: 10px; padding: 32px; text-align: center; }
+  h1 { color: #1F3864; font-size: 20px; margin: 0 0 12px; }
+  .code { font-size: 22px; font-weight: bold; letter-spacing: 1px; background: #EDF1F8; border: 1px solid #D8DEE8; border-radius: 6px; padding: 12px; margin: 16px 0; }
+  p { font-size: 14px; color: #333; }
+  .muted { color: #6B7280; font-size: 12.5px; }
+  a.btn { display: inline-block; margin-top: 16px; background: #1F3864; color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 6px; font-size: 14px; }
+</style>
+</head>
+<body>
+  <div class="card" id="card">
+    <h1>Setting up your access&hellip;</h1>
+    <p class="muted">This only takes a moment.</p>
+  </div>
+
+<script>
+async function run() {
+  const params = new URLSearchParams(window.location.search);
+  const sessionId = params.get("session_id");
+  const card = document.getElementById("card");
+  if (!sessionId) {
+    card.innerHTML = "<h1>Something's missing</h1><p>We couldn't find your checkout session. Please contact support with your payment receipt.</p>";
+    return;
+  }
+  try {
+    const res = await fetch("/.netlify/functions/issue-license?session_id=" + encodeURIComponent(sessionId));
+    const data = await res.json();
+    if (!res.ok || !data.code) {
+      card.innerHTML = "<h1>Almost there</h1><p>Your payment went through, but we couldn't generate your code automatically. Please contact support with your payment receipt and we'll sort it out.</p>";
+      return;
+    }
+    card.innerHTML =
+      "<h1>Thanks! Here's your license code</h1>" +
+      "<div class=\"code\">" + data.code + "</div>" +
+      "<p>Copy this code, open the Case Intake App, and paste it into &ldquo;Enter your license code&rdquo; to unlock your plan.</p>" +
+      "<p class=\"muted\">We've also noted it against your account (" + (data.email || "your email") + ") in case you lose it.</p>" +
+      "<a class=\"btn\" href=\"/Case_Intake_App.html\">Open the app</a>";
+  } catch (e) {
+    card.innerHTML = "<h1>Almost there</h1><p>Your payment went through, but we hit a network error generating your code. Please refresh this page, or contact support with your payment receipt.</p>";
+  }
+}
+run();
+</script>
+</body>
+</html>
