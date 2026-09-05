@@ -1,0 +1,4721 @@
+{
+ "meta": {
+  "version": "0.1-draft",
+  "compiled_date": "2026-08-30",
+  "validation_status": "UNVERIFIED - placeholder-grade draft compiled from cited public guidelines, pending clinical governance review",
+  "primary_sources": [
+   "Sahai SK, Bhatt H, Weinberg I, et al. Preoperative Management of Cardiovascular Medications. Mayo Clin Proc. 2022 (SPAQI consensus statement)",
+   "Douketis JD, Spyropoulos AC, Murad MH, et al. Perioperative Management of Antithrombotic Therapy: CHEST Guideline. Chest. 2022;162(5):e207-e243",
+   "Polania Gutierrez JJ, Rocuts KR. Perioperative Anticoagulation Management. StatPearls [Internet]. Treasure Island (FL): StatPearls Publishing; 2026",
+   "Australian Diabetes Society / ANZCA / ADEA / NZSSD. Perioperative Diabetes and Hyperglycaemia Guidelines (Adults). November 2022, v2",
+   "Pfeifer KJ, et al. Preoperative Management of Endocrine, Hormonal, and Urologic Medications. Mayo Clin Proc. 2021 (SPAQI consensus)",
+   "ANZCA PG07: Guideline on Pre-Anaesthesia Consultation and Patient Preparation. 2024",
+   "ANZCA Perioperative Medicine Training Program, Unit 2 Module 2 (libguides.anzca.edu.au/pomtrain/U2M2)"
+  ]
+ },
+ "classes": {
+  "ace_inhibitor": {
+   "id": "ace_inhibitor",
+   "name": "ACE inhibitor",
+   "category": "antihypertensive",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Withhold the morning dose on the day of surgery",
+    "details": "Continue on all days up to and including the day before surgery. Associated with a higher risk of intraoperative hypotension under general/neuraxial anaesthesia. Exception: if the primary indication is heart failure, discuss continuing with the treating team rather than withholding by default.\n"
+   },
+   "intra_op": "Anticipate and treat vasodilatory hypotension; may need vasopressor support more readily than usual.",
+   "post_op": "Resume once haemodynamically stable and tolerating oral intake; monitor renal function and potassium, especially if combined with diuretics or NSAIDs.",
+   "notes": "Class includes ramipril, perindopril, enalapril, lisinopril, captopril.",
+   "guideline_source": "Mayo Clin Proc 2022 (SPAQI consensus, Sahai et al.); ANZCA POM Unit 2 Module 2",
+   "last_reviewed": "2026-08-30"
+  },
+  "arb": {
+   "id": "arb",
+   "name": "Angiotensin II receptor blocker (ARB)",
+   "category": "antihypertensive",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Withhold the morning dose on the day of surgery",
+    "details": "Same rationale and exception (heart failure indication) as ACE inhibitors."
+   },
+   "intra_op": "Anticipate and treat vasodilatory hypotension.",
+   "post_op": "Resume once haemodynamically stable and tolerating oral intake; monitor renal function and potassium.",
+   "notes": "Class includes irbesartan, candesartan, telmisartan, losartan, valsartan.",
+   "guideline_source": "Mayo Clin Proc 2022 (SPAQI consensus, Sahai et al.); ANZCA POM Unit 2 Module 2",
+   "last_reviewed": "2026-08-30"
+  },
+  "beta_blocker": {
+   "id": "beta_blocker",
+   "name": "Beta-adrenoceptor blocker",
+   "category": "antihypertensive",
+   "pre_op": {
+    "action": "continue",
+    "timing": "Continue at the usual dose and time, including the morning of surgery",
+    "details": "Chronic beta-blocker therapy is associated with better perioperative outcomes than acute perioperative initiation (one cited study found a relative risk of 2.67 for cardiac complications when started acutely vs. chronic use). Do not start beta-blockade acutely pre-operatively as a stand-alone risk-reduction measure.\n"
+   },
+   "intra_op": "Continue; abrupt withdrawal risks rebound tachycardia, hypertension, and myocardial ischaemia.",
+   "post_op": "Resume as soon as able to take oral medication; do not omit doses without a specific reason (haemodynamic instability, bradycardia).",
+   "notes": "Class includes metoprolol, atenolol, bisoprolol, carvedilol, propranolol, sotalol.",
+   "guideline_source": "Mayo Clin Proc 2022 (SPAQI consensus); ANZCA POM Unit 2 Module 2",
+   "last_reviewed": "2026-08-30"
+  },
+  "calcium_channel_blocker": {
+   "id": "calcium_channel_blocker",
+   "name": "Calcium-channel blocker",
+   "category": "antihypertensive",
+   "pre_op": {
+    "action": "continue",
+    "timing": "Continue at the usual dose, including the morning of surgery",
+    "details": "No routine indication to withhold; monitor for additive hypotensive effect with anaesthetic agents."
+   },
+   "intra_op": "Watch for additive vasodilatory/negative inotropic effect with volatile agents (particularly non-dihydropyridines e.g. verapamil, diltiazem).",
+   "post_op": "Resume usual regimen once tolerating oral intake.",
+   "notes": "Class includes amlodipine, felodipine, nifedipine (dihydropyridines); diltiazem, verapamil (non-dihydropyridines).",
+   "guideline_source": "Mayo Clin Proc 2022 (SPAQI consensus); ANZCA POM Unit 2 Module 2",
+   "last_reviewed": "2026-08-30"
+  },
+  "alpha_blocker": {
+   "id": "alpha_blocker",
+   "name": "Alpha-1 adrenergic receptor antagonist",
+   "category": "antihypertensive",
+   "pre_op": {
+    "action": "continue",
+    "timing": "Continue at the usual dose",
+    "details": "Abrupt cessation is not routinely required; discuss with the surgical/anaesthesia team if intraoperative floppy iris syndrome risk is relevant (e.g. tamsulosin and cataract surgery)."
+   },
+   "intra_op": "May contribute to intraoperative hypotension; anaesthetist should be aware of use.",
+   "post_op": "Resume usual regimen.",
+   "notes": "Class includes prazosin, doxazosin, tamsulosin (also used for BPH).",
+   "guideline_source": "Mayo Clin Proc 2022 (SPAQI consensus, cardiovascular medication classes); ANZCA POM Unit 2 Module 2",
+   "last_reviewed": "2026-08-30"
+  },
+  "central_sympatholytic": {
+   "id": "central_sympatholytic",
+   "name": "Centrally acting sympatholytic",
+   "category": "antihypertensive",
+   "pre_op": {
+    "action": "continue",
+    "timing": "Continue at the usual dose and time, including the morning of surgery",
+    "details": "Abrupt discontinuation of clonidine in particular risks a rebound hypertensive crisis; do not stop without a specific plan and taper."
+   },
+   "intra_op": "Continue; be alert for rebound hypertension if a dose is inadvertently missed.",
+   "post_op": "Resume as soon as possible; use a transdermal or alternative route if the patient cannot yet take oral medication.",
+   "notes": "Class includes clonidine, methyldopa.",
+   "guideline_source": "Mayo Clin Proc 2022 (SPAQI consensus, cardiovascular medication classes); ANZCA POM Unit 2 Module 2",
+   "last_reviewed": "2026-08-30"
+  },
+  "direct_vasodilator": {
+   "id": "direct_vasodilator",
+   "name": "Direct-acting vasodilator",
+   "category": "antihypertensive",
+   "pre_op": {
+    "action": "continue",
+    "timing": "Continue at the usual dose",
+    "details": "No routine indication to withhold."
+   },
+   "intra_op": "Monitor for additive hypotensive effect.",
+   "post_op": "Resume usual regimen once tolerating oral intake.",
+   "notes": "Class includes hydralazine, minoxidil.",
+   "guideline_source": "Mayo Clin Proc 2022 (SPAQI consensus, cardiovascular medication classes)",
+   "last_reviewed": "2026-08-30"
+  },
+  "thiazide_loop_diuretic": {
+   "id": "thiazide_loop_diuretic",
+   "name": "Thiazide / loop diuretic",
+   "category": "antihypertensive",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Consider withholding the morning dose on the day of surgery",
+    "details": "Particularly for patients at risk of volume depletion or intraoperative hypotension (prolonged fasting, bowel preparation, major surgery). Not an absolute rule - low-dose thiazide for mild hypertension with no volume-depletion risk factors may reasonably be continued.\n"
+   },
+   "intra_op": "Monitor volume status and electrolytes.",
+   "post_op": "Resume once volume status and renal function are satisfactory; recheck electrolytes.",
+   "notes": "Class includes hydrochlorothiazide, chlorthalidone, indapamide, furosemide (frusemide), spironolactone.",
+   "guideline_source": "ANZCA POM Unit 2 Module 2 (general principle - hold agents with hypovolaemia/hypotension risk)",
+   "last_reviewed": "2026-08-30"
+  },
+  "warfarin_vka": {
+   "id": "warfarin_vka",
+   "name": "Warfarin (vitamin K antagonist)",
+   "category": "anticoagulant",
+   "pre_op": {
+    "action": "stop",
+    "timing": "Discontinue 5 days before surgery",
+    "details": "Check INR 1-2 days before surgery; target INR < 1.5 for most surgery (< 1.4 before neuraxial anaesthesia). If INR remains elevated 1-2 days pre-op, low-dose oral vitamin K (1-2 mg) can be given. Bridging with therapeutic-dose LMWH/UFH is NOT routinely recommended for atrial fibrillation (CHEST 2022 recommends against heparin bridging in AF) - it is reserved for high thrombotic-risk patients (mechanical mitral valve, recent VTE, high CHA2DS2-VASc plus additional risk factors). See bridging_rules.yaml (not yet wired into this tool's automated output - clinician judgement required).\n"
+   },
+   "intra_op": "Confirm INR is within acceptable range before proceeding; have reversal agents available for emergency surgery.",
+   "post_op": "If no bridging was used, restart warfarin 12-24 hours after surgery once haemostasis is adequate. If bridging was used, resume LMWH/UFH 24 hours after surgery for minor procedures or 48-72 hours after major surgery, alongside restarting warfarin, and continue until INR is therapeutic.\n",
+   "notes": "Also known by brand names Coumadin, Marevan. Half-life 36-42 hours.",
+   "guideline_source": "CHEST 2022 (Douketis et al.); StatPearls: Perioperative Anticoagulation Management (Polania Gutierrez & Rocuts)",
+   "last_reviewed": "2026-08-30",
+   "procedure_variants": {
+    "low_bleed_risk": {
+     "action": "continue",
+     "timing": "Continue warfarin - do not stop for routine low-bleeding-risk dental work (extractions, minor oral surgery)",
+     "details": "Check INR within 24-72 hours before the appointment (proceed if within/near the patient's usual therapeutic range, typically up to INR 4). Use local haemostatic measures (e.g. tranexamic acid 4.8% mouthwash, sutures, haemostatic dressings/packing).\n"
+    },
+    "mod_high_bleed_risk": {
+     "action": "stop",
+     "timing": "Discontinue 5 days before more extensive dental surgery (e.g. multiple extractions, surgical implant placement with grafting) - as per standard timing above",
+     "details": "Standard interruption applies; consider bridging only for high thrombotic-risk patients per clinician judgement - see bridging_rules.yaml."
+    }
+   }
+  },
+  "doac_factor_xa": {
+   "id": "doac_factor_xa",
+   "name": "Direct oral anticoagulant - factor Xa inhibitor",
+   "category": "anticoagulant",
+   "pre_op": {
+    "action": "stop",
+    "timing": "24-48 hours before surgery if renal function is normal (CrCl > 50 mL/min); 2-4 days before if renal function is impaired (CrCl < 50 mL/min)",
+    "details": "Common rule of thumb: hold for 3 half-lives before a low-bleeding-risk procedure and 5 half-lives before a high-bleeding-risk procedure. The PAUSE study protocol: high-bleeding-risk surgery - stop 48h before (CrCl>50) or 4 days before (CrCl<50); low-bleeding-risk surgery - stop 24h before (CrCl>50) or 2 days before (CrCl<50). Bridging is NOT indicated for DOACs - their rapid onset/offset makes bridging unnecessary and only adds bleeding risk.\n"
+   },
+   "intra_op": "No routine coagulation monitoring required (unlike warfarin).",
+   "post_op": "Resume 24 hours after surgery for low-bleeding-risk procedures, 48-72 hours for high-bleeding-risk procedures, once haemostasis is secure.",
+   "notes": "Class includes apixaban (Eliquis), rivaroxaban (Xarelto), edoxaban (Lixiana). eGFR/CrCl materially changes timing - check renal function before finalising the plan.",
+   "guideline_source": "StatPearls: Perioperative Anticoagulation Management; PAUSE study (2019); ACC 2017 / EHRA 2018 / ASRA 2018 consensus",
+   "last_reviewed": "2026-08-30",
+   "procedure_variants": {
+    "low_bleed_risk": {
+     "action": "hold",
+     "timing": "Skip (omit) the morning dose on the day of the procedure for routine low-bleeding-risk dental work (extractions, minor oral surgery), then resume that evening/next dose as normal",
+     "details": "A short, single-dose omission is generally sufficient with local haemostatic measures (tranexamic acid mouthwash, sutures) - a full 24-48h pre-op interruption per the PAUSE-study timing described above is usually unnecessary for routine dental work.\n"
+    },
+    "mod_high_bleed_risk": {
+     "action": "stop",
+     "timing": "48 hours before (CrCl > 50 mL/min) or 4 days before (CrCl < 50 mL/min), for more extensive dental surgery",
+     "details": "This is the high-bleeding-risk PAUSE-study timing already described above - use for multiple extractions, surgical implant placement with grafting, or other extensive procedures."
+    }
+   }
+  },
+  "dabigatran": {
+   "id": "dabigatran",
+   "name": "Dabigatran (direct thrombin inhibitor)",
+   "category": "anticoagulant",
+   "pre_op": {
+    "action": "stop",
+    "timing": "24-48 hours before surgery if CrCl > 50 mL/min; up to 4-5 days before if CrCl < 50 mL/min",
+    "details": "Renal excretion is ~80%, so timing is more renal-function-dependent than the factor Xa DOACs. Avoid use altogether when CrCl < 30 mL/min due to accumulation risk. Bridging is not indicated.\n"
+   },
+   "intra_op": "No routine coagulation monitoring required.",
+   "post_op": "Resume 24 hours after low-bleeding-risk surgery, 48-72 hours after high-bleeding-risk surgery, once haemostasis is secure.",
+   "notes": "Brand name Pradaxa. Idarucizumab is available for emergency reversal.",
+   "guideline_source": "StatPearls: Perioperative Anticoagulation Management",
+   "last_reviewed": "2026-08-30",
+   "procedure_variants": {
+    "low_bleed_risk": {
+     "action": "hold",
+     "timing": "Skip the morning dose on the day of the procedure for routine low-bleeding-risk dental work (extractions, minor oral surgery), then resume as normal",
+     "details": "As for the other DOACs, a single-dose omission is usually sufficient with local haemostatic measures - the full renal-adjusted interruption below is usually unnecessary for routine dental work."
+    },
+    "mod_high_bleed_risk": {
+     "action": "stop",
+     "timing": "24-48 hours before if CrCl > 50 mL/min, or up to 4-5 days before if CrCl < 50 mL/min (avoid altogether if CrCl < 30 mL/min), for more extensive dental surgery",
+     "details": "The full renal-adjusted timing described in the base guidance above - use for multiple extractions, surgical implant placement with grafting, or other extensive procedures."
+    }
+   }
+  },
+  "lmwh_therapeutic": {
+   "id": "lmwh_therapeutic",
+   "name": "Low molecular weight heparin - therapeutic dose",
+   "category": "anticoagulant",
+   "pre_op": {
+    "action": "stop",
+    "timing": "Last therapeutic dose 24 hours before surgery",
+    "details": "Commonly used as the bridging agent itself when warfarin is interrupted in high thrombotic-risk patients (e.g. enoxaparin 1 mg/kg twice daily, or dalteparin 100 units/kg twice daily), typically started ~3 days before surgery once warfarin is stopped. Reduce dose or avoid in renal impairment (CrCl < 30 mL/min) - consider unfractionated heparin instead in that setting.\n"
+   },
+   "intra_op": "Confirm timing of last dose relative to any neuraxial technique (see notes).",
+   "post_op": "If used for bridging: resume 24 hours after minor surgery or 48-72 hours after major surgery, once haemostasis is adequate.\n",
+   "notes": "Neuraxial anaesthesia: interrupt therapeutic-dose LMWH for 24 hours before puncture/catheter removal; may resume 4 hours after puncture/catheter removal/manipulation (ASRA/ESA consensus).\n",
+   "guideline_source": "StatPearls: Perioperative Anticoagulation Management",
+   "last_reviewed": "2026-08-30"
+  },
+  "lmwh_prophylactic": {
+   "id": "lmwh_prophylactic",
+   "name": "Low molecular weight heparin - prophylactic (VTE-prevention) dose",
+   "category": "anticoagulant",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Interrupt 12 hours before a neuraxial technique; otherwise generally continued through minor procedures per local VTE-prophylaxis protocol",
+    "details": "Prophylactic dosing carries a lower bleeding risk than therapeutic dosing; the main timing constraint is around neuraxial anaesthesia."
+   },
+   "intra_op": "Confirm timing relative to any neuraxial technique.",
+   "post_op": "May resume 4 hours after puncture/catheter removal/manipulation if a neuraxial technique was used; otherwise resume per standard VTE-prophylaxis timing once haemostasis is adequate.",
+   "notes": "Class includes enoxaparin (Clexane), dalteparin (Fragmin), tinzaparin (Innohep) at prophylactic doses.",
+   "guideline_source": "StatPearls: Perioperative Anticoagulation Management (ASRA/ESA neuraxial consensus)",
+   "last_reviewed": "2026-08-30"
+  },
+  "ufh": {
+   "id": "ufh",
+   "name": "Unfractionated heparin (UFH)",
+   "category": "anticoagulant",
+   "pre_op": {
+    "action": "hold",
+    "timing": "IV infusion: stop 4-6 hours before surgery/neuraxial puncture. Subcutaneous: stop 8-12 hours before.",
+    "details": "Preferred over LMWH in significant renal impairment (CrCl < 30 mL/min) because of its short half-life and reversibility."
+   },
+   "intra_op": "Check aPTT if recent infusion; protamine available for reversal if needed.",
+   "post_op": "May resume 1 hour after puncture/catheter removal/manipulation if a neuraxial technique was used, subject to haemostasis.",
+   "notes": "Risk of heparin-induced thrombocytopenia (HIT), though infrequent.",
+   "guideline_source": "StatPearls: Perioperative Anticoagulation Management (ASRA/ESA neuraxial consensus)",
+   "last_reviewed": "2026-08-30"
+  },
+  "fondaparinux": {
+   "id": "fondaparinux",
+   "name": "Fondaparinux",
+   "category": "anticoagulant",
+   "pre_op": {
+    "action": "stop",
+    "timing": "36-42 hours before a neuraxial technique at prophylactic dose (2.5 mg/day); allow longer for therapeutic dosing",
+    "details": "Anticoagulant activity can persist 2-4 days after the last dose even with normal renal function - plan timing conservatively."
+   },
+   "intra_op": "No routine reversal agent available - plan interruption timing carefully.",
+   "post_op": "May resume 6-12 hours after a neuraxial puncture/catheter removal, subject to haemostasis.",
+   "notes": "Brand name Arixtra. Indirect factor Xa inhibitor.",
+   "guideline_source": "StatPearls: Perioperative Anticoagulation Management (ASRA/ESA neuraxial consensus)",
+   "last_reviewed": "2026-08-30"
+  },
+  "aspirin": {
+   "id": "aspirin",
+   "name": "Aspirin (acetylsalicylic acid)",
+   "category": "antiplatelet",
+   "pre_op": {
+    "action": "continue",
+    "timing": "Continue through the perioperative period for most procedures",
+    "details": "Large clinical experience supports continuing aspirin, including for regional/neuraxial anaesthesia (no interruption required for neuraxial techniques). Consider stopping only for surgery with very high consequence of bleeding (e.g. intracranial, some spinal, some posterior-chamber eye surgery) - discuss with the surgical team.\n"
+   },
+   "intra_op": "No specific action required for most procedures.",
+   "post_op": "Continue/resume as per pre-operative regimen.",
+   "notes": "Irreversible antiplatelet effect lasts the lifetime of the platelet (~8-9 days); platelet function recovers at ~10%/day after stopping.",
+   "guideline_source": "StatPearls: Perioperative Anticoagulation Management; ANZCA POM Unit 2 Module 2",
+   "last_reviewed": "2026-08-30",
+   "procedure_variants": {
+    "low_bleed_risk": {
+     "action": "continue",
+     "timing": "Continue aspirin for low-bleeding-risk dental work, including extractions",
+     "details": "Use local haemostatic measures if needed. Consistent with the base guidance above - dental procedures are not a reason to stop."
+    },
+    "mod_high_bleed_risk": {
+     "action": "continue",
+     "timing": "Still generally continued even for higher-bleeding-risk procedures",
+     "details": "Only stop for surgery with a very high consequence of bleeding (e.g. intracranial, some spinal, posterior-chamber eye surgery) - a specific, uncommon exception, not the default for 'moderate-high' bleeding risk generally. Discuss with the surgical team if in doubt."
+    }
+   }
+  },
+  "p2y12_thienopyridine": {
+   "id": "p2y12_thienopyridine",
+   "name": "P2Y12 inhibitor - thienopyridine (clopidogrel, prasugrel)",
+   "category": "antiplatelet",
+   "pre_op": {
+    "action": "stop",
+    "timing": "5-7 days before surgery (5 days for higher cardiac-risk patients kept on aspirin monotherapy in between; 7-10 days if part of dual antiplatelet therapy being stopped entirely in a low cardiac-risk patient)",
+    "details": "DO NOT STOP without confirming timing with cardiology if the patient has a coronary stent: elective surgery should ideally be postponed for 6 weeks after a bare-metal stent and 6 months after a drug-eluting stent. If surgery cannot be postponed within these windows, continue dual antiplatelet therapy through surgery if at all possible and manage the bleeding risk instead of stopping the antiplatelet - this requires a joint cardiology/surgery/anaesthesia decision, not a default rule.\n"
+   },
+   "intra_op": "Increased bleeding risk if stopped late or not at all - communicate status clearly to the surgical/anaesthesia team.",
+   "post_op": "Resume 24 hours after surgery once haemostasis is adequate, unless cardiology has advised otherwise.",
+   "notes": "Prodrugs with irreversible, time- and dose-dependent antiplatelet effect.",
+   "guideline_source": "StatPearls: Perioperative Anticoagulation Management",
+   "last_reviewed": "2026-08-30",
+   "procedure_variants": {
+    "low_bleed_risk": {
+     "action": "continue",
+     "timing": "Continue for routine low-bleeding-risk dental work, including extractions and minor oral surgery",
+     "details": "Widely-mirrored dental anticoagulant/antiplatelet management consensus (e.g. SDCEP: Management of Dental Patients Taking Anticoagulants or Antiplatelet Drugs) recommends continuing antiplatelets for dental work and managing bleeding locally (haemostatic packing/sutures, tranexamic acid mouthwash) rather than stopping - stopping unnecessarily exposes the patient to stent thrombosis/cardiac risk for no real bleeding benefit at the gum.\n"
+    },
+    "mod_high_bleed_risk": {
+     "action": "stop",
+     "timing": "5-7 days before more extensive dental surgery (e.g. multiple extractions, surgical implant placement with grafting) - as per standard timing above",
+     "details": "Standard interruption applies, with the same coronary-stent caution described above - confirm with cardiology before stopping if there is a recent stent."
+    }
+   }
+  },
+  "ticagrelor": {
+   "id": "ticagrelor",
+   "name": "Ticagrelor",
+   "category": "antiplatelet",
+   "pre_op": {
+    "action": "stop",
+    "timing": "5 days before surgery",
+    "details": "Reversible P2Y12 inhibitor - shorter interruption than the thienopyridines is sometimes possible, but 5 days is the standard recommendation. Same coronary-stent caution as for clopidogrel/ prasugrel applies - confirm with cardiology if there is a recent stent.\n"
+   },
+   "intra_op": "Increased bleeding risk if stopped late.",
+   "post_op": "Resume 24 hours after surgery once haemostasis is adequate, unless cardiology has advised otherwise.",
+   "notes": "Onset of maximal antiplatelet effect within 2 hours of a loading dose; plasma half-life 8-12 hours.",
+   "guideline_source": "StatPearls: Perioperative Anticoagulation Management",
+   "last_reviewed": "2026-08-30",
+   "procedure_variants": {
+    "low_bleed_risk": {
+     "action": "continue",
+     "timing": "Continue for routine low-bleeding-risk dental work, including extractions and minor oral surgery",
+     "details": "Same dental anticoagulant/antiplatelet consensus as for clopidogrel/prasugrel above - manage bleeding locally rather than stopping."
+    },
+    "mod_high_bleed_risk": {
+     "action": "stop",
+     "timing": "5 days before more extensive dental surgery (as per standard timing above)",
+     "details": "Standard interruption applies, with the same coronary-stent caution described above."
+    }
+   }
+  },
+  "metformin": {
+   "id": "metformin",
+   "name": "Metformin",
+   "category": "antihyperglycaemic",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Continue up to and including the night before surgery; withhold on the day of surgery",
+    "details": "Standard rule for all non-insulin anti-hyperglycaemic agents per the ADS-ANZCA guideline."
+   },
+   "intra_op": "Not applicable (oral agent, held).",
+   "post_op": "Withhold postoperatively in patients with renal impairment (CKD stage 3B or worse / eGFR < 45 mL/min/1.73m2, per local protocol) or after iodinated contrast, until renal function has returned to baseline, due to lactic acidosis risk. If the patient can eat and drink normally immediately after the procedure and renal function is normal, metformin can be resumed at that point.\n",
+   "notes": "Very widely used first-line agent for type 2 diabetes. Also sold as part of combination products (Janumet/Janumet XR with sitagliptin, Galvumet/Eucreas with vildagliptin, Trajenta Duo/Trajentamet with linagliptin, Jardiamet with empagliflozin, Xigduo with dapagliflozin, Segluromet with ertugliflozin) - see drug_aliases.yaml, where these map to BOTH component classes so an SGLT2i or DPP-4i component's own guidance is never dropped.\n",
+   "guideline_source": "ADS-ANZCA-ADEA-NZSSD Perioperative Diabetes and Hyperglycaemia Guidelines (Adults), Nov 2022 v2",
+   "last_reviewed": "2026-08-30"
+  },
+  "sulfonylurea": {
+   "id": "sulfonylurea",
+   "name": "Sulfonylurea",
+   "category": "antihyperglycaemic",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Continue up to and including the night before surgery; withhold on the day of surgery",
+    "details": "Withheld on the day of surgery because of hypoglycaemia risk once the patient is fasting."
+   },
+   "intra_op": "Not applicable (oral agent, held). Monitor blood glucose.",
+   "post_op": "Resume once eating and drinking reliably.",
+   "notes": "Class includes gliclazide, glimepiride, glibenclamide (glyburide).",
+   "guideline_source": "ADS-ANZCA-ADEA-NZSSD Perioperative Diabetes and Hyperglycaemia Guidelines (Adults), Nov 2022 v2",
+   "last_reviewed": "2026-08-30"
+  },
+  "sglt2_inhibitor": {
+   "id": "sglt2_inhibitor",
+   "name": "SGLT2 inhibitor (gliflozin)",
+   "category": "antihyperglycaemic",
+   "pre_op": {
+    "action": "stop",
+    "timing": "Cease 2 days before surgery AND the day of surgery, for moderate/major surgery. For day-stay procedures (including gastroscopy), withholding on the day of the procedure alone may be sufficient. For colonoscopy, cease 2 days before plus the day of the procedure.",
+    "details": "Associated with a materially increased risk of euglycaemic diabetic ketoacidosis (DKA) in the acutely unwell or postsurgical patient - a normal or only mildly elevated blood glucose does NOT rule this out. Check fingerprick blood ketones on the day of surgery. If the patient has taken an SGLT2i within 72 hours and is unwell (nausea, vomiting, abdominal pain, malaise) or has limited oral intake, check blood gas and blood ketones.\n"
+   },
+   "intra_op": "Watch for unexplained metabolic acidosis even with normal glucose - consider euglycaemic DKA.",
+   "post_op": "Do not recommence for at least 2-3 days post-op and not until the patient is eating and drinking reliably; for minor surgery it may be recommended the day after surgery. Follow local hospital/area/state guidance on in-hospital SGLT2i prescribing.\n",
+   "notes": "Class includes empagliflozin (Jardiance), dapagliflozin (Forxiga), ertugliflozin (Steglatro), canagliflozin (Invokana).",
+   "guideline_source": "ADS-ANZCA-ADEA-NZSSD Perioperative Diabetes and Hyperglycaemia Guidelines (Adults), Nov 2022 v2; ADS 2022 Periprocedural DKA with SGLT2i Alert",
+   "last_reviewed": "2026-08-30"
+  },
+  "glp1_agonist": {
+   "id": "glp1_agonist",
+   "name": "GLP-1 receptor agonist",
+   "category": "antihyperglycaemic",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Continue up to and including the night before surgery; withhold on the day of surgery (including non-insulin injectable doses)",
+    "details": "Delays gastric emptying, which has separate implications for aspiration risk under anaesthesia that are still an evolving area of guidance (some societies recommend additional fasting precautions or holding a weekly dose for up to a week before surgery) - check current local/anaesthesia society guidance in addition to this rule.\n"
+   },
+   "intra_op": "Discuss aspiration-risk precautions with the anaesthetist if a recent dose was taken, given delayed gastric emptying.",
+   "post_op": "Resume once eating and drinking reliably.",
+   "notes": "Class includes semaglutide (Ozempic, Rybelsus, Wegovy), liraglutide (Victoza, Saxenda), dulaglutide (Trulicity), exenatide (Byetta). This is flagged as an evolving guidance area - verify against current local protocol.",
+   "guideline_source": "ADS-ANZCA-ADEA-NZSSD Perioperative Diabetes and Hyperglycaemia Guidelines (Adults), Nov 2022 v2",
+   "last_reviewed": "2026-08-30",
+   "anaesthesia_notes": {
+    "general_anaesthetic": "Aspiration-risk precautions matter most here: general anaesthesia abolishes protective airway reflexes. If delayed gastric emptying is a concern (recent dose, GI symptoms), discuss point-of-care gastric ultrasound, a rapid-sequence induction approach, or deferring elective surgery with the anaesthetist.\n",
+    "iv_sedation": "Airway reflexes are more preserved under procedural/IV sedation than under GA, but aspiration risk is not zero, especially with deeper sedation. Still flag recent dosing and any GI symptoms to the sedationist.\n"
+   }
+  },
+  "dpp4_inhibitor": {
+   "id": "dpp4_inhibitor",
+   "name": "DPP-4 inhibitor (gliptin)",
+   "category": "antihyperglycaemic",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Continue up to and including the night before surgery; withhold on the day of surgery",
+    "details": "Standard rule for non-insulin anti-hyperglycaemic agents; low intrinsic hypoglycaemia risk but still withheld on the day per the blanket rule."
+   },
+   "intra_op": "Not applicable (oral agent, held).",
+   "post_op": "Resume once eating and drinking reliably.",
+   "notes": "Class includes sitagliptin (Januvia), linagliptin (Trajenta), vildagliptin (Galvus), saxagliptin (Onglyza).",
+   "guideline_source": "ADS-ANZCA-ADEA-NZSSD Perioperative Diabetes and Hyperglycaemia Guidelines (Adults), Nov 2022 v2",
+   "last_reviewed": "2026-08-30"
+  },
+  "other_oral_antihyperglycaemic": {
+   "id": "other_oral_antihyperglycaemic",
+   "name": "Other oral antihyperglycaemic (thiazolidinedione, acarbose)",
+   "category": "antihyperglycaemic",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Continue up to and including the night before surgery; withhold on the day of surgery",
+    "details": "Standard rule for non-insulin anti-hyperglycaemic agents."
+   },
+   "intra_op": "Not applicable (oral agent, held).",
+   "post_op": "Resume once eating and drinking reliably.",
+   "notes": "Class includes pioglitazone (a thiazolidinedione) and acarbose.",
+   "guideline_source": "ADS-ANZCA-ADEA-NZSSD Perioperative Diabetes and Hyperglycaemia Guidelines (Adults), Nov 2022 v2",
+   "last_reviewed": "2026-08-30"
+  },
+  "basal_insulin": {
+   "id": "basal_insulin",
+   "name": "Basal (long/intermediate-acting) insulin",
+   "category": "antihyperglycaemic",
+   "pre_op": {
+    "action": "continue",
+    "timing": "Continue the usual insulin regimen up to and including the night before surgery. On the day of surgery, continue basal insulin at the usual dose and time.",
+    "details": "Exception: reduce the basal dose by 20% if the patient has had recent overnight hypoglycaemia. This class is often considered \"time-critical\" - avoid delaying a scheduled dose by more than the usual safe window (see ISMP time-critical medicines guidance). Patients on an insulin pump: continue the basal infusion through surgery; consider an IV insulin-glucose infusion instead if the patient will remain nil-by-mouth after surgery (see local insulin-pump perioperative protocol).\n"
+   },
+   "intra_op": "Target blood glucose 6-10 mmol/L (108-180 mg/dL). Treat if BGL > 10 mmol/L with correction-dose rapid-acting insulin; consider a variable rate insulin infusion if BGL is rapidly rising and/or > 12 mmol/L.",
+   "post_op": "Resume usual basal insulin regimen once eating and drinking; recommence variable rate infusion transition per local protocol if one was used intraoperatively.",
+   "notes": "Includes insulin glargine (Lantus, Optisulin, Toujeo), insulin detemir (Levemir), insulin degludec (Tresiba), isophane/NPH (Protaphane, Humulin NPH).",
+   "guideline_source": "ADS-ANZCA-ADEA-NZSSD Perioperative Diabetes and Hyperglycaemia Guidelines (Adults), Nov 2022 v2; ISMP Timing of Administration of Scheduled Medications",
+   "last_reviewed": "2026-08-30"
+  },
+  "premixed_insulin": {
+   "id": "premixed_insulin",
+   "name": "Premixed / co-formulated insulin",
+   "category": "antihyperglycaemic",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Continue the usual evening dose the night before surgery (reduce by 20% if recent overnight hypoglycaemia). On the day of surgery, reduce the morning dose by 50% and omit any lunchtime dose; resume the usual regimen from the evening after surgery if eating.\n",
+    "details": "Exact adjustment depends on morning vs afternoon procedure timing and whether the patient is eating post-op - see the full ADS-ANZCA guideline appendix for the decision table; this is a general starting point, not a substitute for individualised written instructions."
+   },
+   "intra_op": "Target blood glucose 6-10 mmol/L; treat/consider VRII per basal-insulin guidance above.",
+   "post_op": "Resume usual premixed regimen once eating reliably, per the timing notes above.",
+   "notes": "Includes products such as Humalog Mix25/50, NovoMix 30, Ryzodeg.",
+   "guideline_source": "ADS-ANZCA-ADEA-NZSSD Perioperative Diabetes and Hyperglycaemia Guidelines (Adults), Nov 2022 v2",
+   "last_reviewed": "2026-08-30"
+  },
+  "bolus_insulin": {
+   "id": "bolus_insulin",
+   "name": "Rapid/short-acting (bolus, mealtime) insulin",
+   "category": "antihyperglycaemic",
+   "pre_op": {
+    "action": "hold",
+    "timing": "Continue with meals up to the last meal before fasting; omit once the patient is fasting for surgery",
+    "details": "Give with the last meal tolerated before the fasting period begins; do not give a mealtime dose if no meal is being eaten."
+   },
+   "intra_op": "Use correction-dose rapid-acting insulin per sliding/correction scale if BGL > 10 mmol/L; do not repeat a correction dose within 3 hours (delayed peak effect).",
+   "post_op": "Resume with the first meal tolerated after surgery.",
+   "notes": "Includes insulin aspart (NovoRapid, FiAsp), insulin lispro (Humalog), insulin glulisine (Apidra).",
+   "guideline_source": "ADS-ANZCA-ADEA-NZSSD Perioperative Diabetes and Hyperglycaemia Guidelines (Adults), Nov 2022 v2",
+   "last_reviewed": "2026-08-30"
+  },
+  "statin": {
+   "id": "statin",
+   "name": "Statin (HMG-CoA reductase inhibitor)",
+   "category": "other",
+   "pre_op": {
+    "action": "continue",
+    "timing": "Continue through the perioperative period, including the day of surgery",
+    "details": "Do not stop for surgery. Statin withdrawal in the perioperative period is associated with a significantly increased risk of adverse cardiac events - cited hazard ratios of 4.6 for troponin release and 7.5 for myocardial infarction/cardiovascular death.\n"
+   },
+   "intra_op": "No specific action required.",
+   "post_op": "Resume/continue as soon as the patient can take oral medication; do not leave omitted for an extended period.",
+   "notes": "Class includes atorvastatin, rosuvastatin, simvastatin, pravastatin.",
+   "guideline_source": "ANZCA POM Unit 2 Module 2 (cardiovascular medications, statin withdrawal risk)",
+   "last_reviewed": "2026-08-30"
+  }
+ },
+ "aliases": [
+  {
+   "alias": "janumet",
+   "genericName": "sitagliptin / metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "janumet xr",
+   "genericName": "sitagliptin / metformin (extended release)",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "galvumet",
+   "genericName": "vildagliptin / metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "eucreas",
+   "genericName": "vildagliptin / metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "trajenta duo",
+   "genericName": "linagliptin / metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "trajentamet",
+   "genericName": "linagliptin / metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "jardiamet",
+   "genericName": "empagliflozin / metformin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "xigduo",
+   "genericName": "dapagliflozin / metformin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "segluromet",
+   "genericName": "ertugliflozin / metformin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "ramipril",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "tritace",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "perindopril",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "coversyl",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "enalapril",
+   "genericName": "enalapril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "renitec",
+   "genericName": "enalapril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "lisinopril",
+   "genericName": "lisinopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "zestril",
+   "genericName": "lisinopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "captopril",
+   "genericName": "captopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "irbesartan",
+   "genericName": "irbesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "avapro",
+   "genericName": "irbesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "candesartan",
+   "genericName": "candesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "atacand",
+   "genericName": "candesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "telmisartan",
+   "genericName": "telmisartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "micardis",
+   "genericName": "telmisartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "losartan",
+   "genericName": "losartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "cozaar",
+   "genericName": "losartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "valsartan",
+   "genericName": "valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "diovan",
+   "genericName": "valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "metoprolol",
+   "genericName": "metoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "betaloc",
+   "genericName": "metoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "lopresor",
+   "genericName": "metoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "atenolol",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "tenormin",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "bisoprolol",
+   "genericName": "bisoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "bicor",
+   "genericName": "bisoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "carvedilol",
+   "genericName": "carvedilol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "dilatrend",
+   "genericName": "carvedilol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "propranolol",
+   "genericName": "propranolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "inderal",
+   "genericName": "propranolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "sotalol",
+   "genericName": "sotalol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "amlodipine",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "norvasc",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "felodipine",
+   "genericName": "felodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "plendil",
+   "genericName": "felodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "nifedipine",
+   "genericName": "nifedipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "adalat",
+   "genericName": "nifedipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "diltiazem",
+   "genericName": "diltiazem",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "cardizem",
+   "genericName": "diltiazem",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "verapamil",
+   "genericName": "verapamil",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "isoptin",
+   "genericName": "verapamil",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "prazosin",
+   "genericName": "prazosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "minipress",
+   "genericName": "prazosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "doxazosin",
+   "genericName": "doxazosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "cardura",
+   "genericName": "doxazosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "tamsulosin",
+   "genericName": "tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "flomaxtra",
+   "genericName": "tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "clonidine",
+   "genericName": "clonidine",
+   "classIds": [
+    "central_sympatholytic"
+   ]
+  },
+  {
+   "alias": "catapres",
+   "genericName": "clonidine",
+   "classIds": [
+    "central_sympatholytic"
+   ]
+  },
+  {
+   "alias": "methyldopa",
+   "genericName": "methyldopa",
+   "classIds": [
+    "central_sympatholytic"
+   ]
+  },
+  {
+   "alias": "aldomet",
+   "genericName": "methyldopa",
+   "classIds": [
+    "central_sympatholytic"
+   ]
+  },
+  {
+   "alias": "hydralazine",
+   "genericName": "hydralazine",
+   "classIds": [
+    "direct_vasodilator"
+   ]
+  },
+  {
+   "alias": "apresoline",
+   "genericName": "hydralazine",
+   "classIds": [
+    "direct_vasodilator"
+   ]
+  },
+  {
+   "alias": "minoxidil",
+   "genericName": "minoxidil",
+   "classIds": [
+    "direct_vasodilator"
+   ]
+  },
+  {
+   "alias": "hydrochlorothiazide",
+   "genericName": "hydrochlorothiazide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "chlorthalidone",
+   "genericName": "chlorthalidone",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "hygroton",
+   "genericName": "chlorthalidone",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "indapamide",
+   "genericName": "indapamide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "natrilix",
+   "genericName": "indapamide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "frusemide",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "furosemide",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "lasix",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "spironolactone",
+   "genericName": "spironolactone",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "aldactone",
+   "genericName": "spironolactone",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "warfarin",
+   "genericName": "warfarin",
+   "classIds": [
+    "warfarin_vka"
+   ]
+  },
+  {
+   "alias": "coumadin",
+   "genericName": "warfarin",
+   "classIds": [
+    "warfarin_vka"
+   ]
+  },
+  {
+   "alias": "marevan",
+   "genericName": "warfarin",
+   "classIds": [
+    "warfarin_vka"
+   ]
+  },
+  {
+   "alias": "apixaban",
+   "genericName": "apixaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "eliquis",
+   "genericName": "apixaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "rivaroxaban",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "xarelto",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "edoxaban",
+   "genericName": "edoxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "lixiana",
+   "genericName": "edoxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "dabigatran",
+   "genericName": "dabigatran",
+   "classIds": [
+    "dabigatran"
+   ]
+  },
+  {
+   "alias": "pradaxa",
+   "genericName": "dabigatran",
+   "classIds": [
+    "dabigatran"
+   ]
+  },
+  {
+   "alias": "enoxaparin",
+   "genericName": "enoxaparin",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "clexane",
+   "genericName": "enoxaparin",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "dalteparin",
+   "genericName": "dalteparin",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "fragmin",
+   "genericName": "dalteparin",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "tinzaparin",
+   "genericName": "tinzaparin",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "innohep",
+   "genericName": "tinzaparin",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "enoxaparin therapeutic",
+   "genericName": "enoxaparin (therapeutic dose)",
+   "classIds": [
+    "lmwh_therapeutic"
+   ]
+  },
+  {
+   "alias": "clexane forte",
+   "genericName": "enoxaparin (therapeutic dose)",
+   "classIds": [
+    "lmwh_therapeutic"
+   ]
+  },
+  {
+   "alias": "heparin",
+   "genericName": "heparin (unfractionated)",
+   "classIds": [
+    "ufh"
+   ]
+  },
+  {
+   "alias": "unfractionated heparin",
+   "genericName": "heparin (unfractionated)",
+   "classIds": [
+    "ufh"
+   ]
+  },
+  {
+   "alias": "heparin sodium",
+   "genericName": "heparin (unfractionated)",
+   "classIds": [
+    "ufh"
+   ]
+  },
+  {
+   "alias": "fondaparinux",
+   "genericName": "fondaparinux",
+   "classIds": [
+    "fondaparinux"
+   ]
+  },
+  {
+   "alias": "arixtra",
+   "genericName": "fondaparinux",
+   "classIds": [
+    "fondaparinux"
+   ]
+  },
+  {
+   "alias": "aspirin",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "cartia",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "astrix",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "cardiprin",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "disprin",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "clopidogrel",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "plavix",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "iscover",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "prasugrel",
+   "genericName": "prasugrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "effient",
+   "genericName": "prasugrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "ticagrelor",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "brilinta",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "metformin",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "diabex",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "diaformin",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "glucophage",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "gliclazide",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "diamicron",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "glimepiride",
+   "genericName": "glimepiride",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "amaryl",
+   "genericName": "glimepiride",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "glibenclamide",
+   "genericName": "glibenclamide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "glyburide",
+   "genericName": "glibenclamide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "empagliflozin",
+   "genericName": "empagliflozin",
+   "classIds": [
+    "sglt2_inhibitor"
+   ]
+  },
+  {
+   "alias": "jardiance",
+   "genericName": "empagliflozin",
+   "classIds": [
+    "sglt2_inhibitor"
+   ]
+  },
+  {
+   "alias": "dapagliflozin",
+   "genericName": "dapagliflozin",
+   "classIds": [
+    "sglt2_inhibitor"
+   ]
+  },
+  {
+   "alias": "forxiga",
+   "genericName": "dapagliflozin",
+   "classIds": [
+    "sglt2_inhibitor"
+   ]
+  },
+  {
+   "alias": "ertugliflozin",
+   "genericName": "ertugliflozin",
+   "classIds": [
+    "sglt2_inhibitor"
+   ]
+  },
+  {
+   "alias": "steglatro",
+   "genericName": "ertugliflozin",
+   "classIds": [
+    "sglt2_inhibitor"
+   ]
+  },
+  {
+   "alias": "canagliflozin",
+   "genericName": "canagliflozin",
+   "classIds": [
+    "sglt2_inhibitor"
+   ]
+  },
+  {
+   "alias": "invokana",
+   "genericName": "canagliflozin",
+   "classIds": [
+    "sglt2_inhibitor"
+   ]
+  },
+  {
+   "alias": "semaglutide",
+   "genericName": "semaglutide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "ozempic",
+   "genericName": "semaglutide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "rybelsus",
+   "genericName": "semaglutide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "wegovy",
+   "genericName": "semaglutide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "liraglutide",
+   "genericName": "liraglutide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "victoza",
+   "genericName": "liraglutide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "saxenda",
+   "genericName": "liraglutide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "dulaglutide",
+   "genericName": "dulaglutide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "trulicity",
+   "genericName": "dulaglutide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "exenatide",
+   "genericName": "exenatide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "byetta",
+   "genericName": "exenatide",
+   "classIds": [
+    "glp1_agonist"
+   ]
+  },
+  {
+   "alias": "sitagliptin",
+   "genericName": "sitagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "januvia",
+   "genericName": "sitagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "linagliptin",
+   "genericName": "linagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "trajenta",
+   "genericName": "linagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "vildagliptin",
+   "genericName": "vildagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "galvus",
+   "genericName": "vildagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "saxagliptin",
+   "genericName": "saxagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "onglyza",
+   "genericName": "saxagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "pioglitazone",
+   "genericName": "pioglitazone",
+   "classIds": [
+    "other_oral_antihyperglycaemic"
+   ]
+  },
+  {
+   "alias": "actos",
+   "genericName": "pioglitazone",
+   "classIds": [
+    "other_oral_antihyperglycaemic"
+   ]
+  },
+  {
+   "alias": "acarbose",
+   "genericName": "acarbose",
+   "classIds": [
+    "other_oral_antihyperglycaemic"
+   ]
+  },
+  {
+   "alias": "glucobay",
+   "genericName": "acarbose",
+   "classIds": [
+    "other_oral_antihyperglycaemic"
+   ]
+  },
+  {
+   "alias": "insulin glargine",
+   "genericName": "insulin glargine",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "lantus",
+   "genericName": "insulin glargine",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "optisulin",
+   "genericName": "insulin glargine",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "toujeo",
+   "genericName": "insulin glargine",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "semglee",
+   "genericName": "insulin glargine",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "insulin detemir",
+   "genericName": "insulin detemir",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "levemir",
+   "genericName": "insulin detemir",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "insulin degludec",
+   "genericName": "insulin degludec",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "tresiba",
+   "genericName": "insulin degludec",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "isophane insulin",
+   "genericName": "isophane insulin (NPH)",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "protaphane",
+   "genericName": "isophane insulin (NPH)",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "humulin nph",
+   "genericName": "isophane insulin (NPH)",
+   "classIds": [
+    "basal_insulin"
+   ]
+  },
+  {
+   "alias": "humalog mix",
+   "genericName": "insulin lispro/protamine mix",
+   "classIds": [
+    "premixed_insulin"
+   ]
+  },
+  {
+   "alias": "novomix",
+   "genericName": "biphasic insulin aspart",
+   "classIds": [
+    "premixed_insulin"
+   ]
+  },
+  {
+   "alias": "ryzodeg",
+   "genericName": "insulin degludec/aspart",
+   "classIds": [
+    "premixed_insulin"
+   ]
+  },
+  {
+   "alias": "insulin aspart",
+   "genericName": "insulin aspart",
+   "classIds": [
+    "bolus_insulin"
+   ]
+  },
+  {
+   "alias": "novorapid",
+   "genericName": "insulin aspart",
+   "classIds": [
+    "bolus_insulin"
+   ]
+  },
+  {
+   "alias": "fiasp",
+   "genericName": "insulin aspart (ultra-rapid)",
+   "classIds": [
+    "bolus_insulin"
+   ]
+  },
+  {
+   "alias": "insulin lispro",
+   "genericName": "insulin lispro",
+   "classIds": [
+    "bolus_insulin"
+   ]
+  },
+  {
+   "alias": "humalog",
+   "genericName": "insulin lispro",
+   "classIds": [
+    "bolus_insulin"
+   ]
+  },
+  {
+   "alias": "insulin glulisine",
+   "genericName": "insulin glulisine",
+   "classIds": [
+    "bolus_insulin"
+   ]
+  },
+  {
+   "alias": "apidra",
+   "genericName": "insulin glulisine",
+   "classIds": [
+    "bolus_insulin"
+   ]
+  },
+  {
+   "alias": "actrapid",
+   "genericName": "regular (short-acting) insulin",
+   "classIds": [
+    "bolus_insulin"
+   ]
+  },
+  {
+   "alias": "humulin r",
+   "genericName": "regular (short-acting) insulin",
+   "classIds": [
+    "bolus_insulin"
+   ]
+  },
+  {
+   "alias": "atorvastatin",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "lipitor",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "rosuvastatin",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "crestor",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "simvastatin",
+   "genericName": "simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "zocor",
+   "genericName": "simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "pravastatin",
+   "genericName": "pravastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "pravachol",
+   "genericName": "pravastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "acarbose viatris",
+   "genericName": "acarbose",
+   "classIds": [
+    "other_oral_antihyperglycaemic"
+   ]
+  },
+  {
+   "alias": "glybosay",
+   "genericName": "acarbose",
+   "classIds": [
+    "other_oral_antihyperglycaemic"
+   ]
+  },
+  {
+   "alias": "nesina",
+   "genericName": "alogliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "nesina met",
+   "genericName": "alogliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "moduretic",
+   "genericName": "amiloride + hydrochlorothiazide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "amlodipine-wgr",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "apo-amlodipine",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "apx-amlodipine",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "amlo",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "amlodipine gh",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "amlodipine sandoz",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "blooms amlodipine",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "nordip",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "pharmacor amlodipine",
+   "genericName": "amlodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "cadivast",
+   "genericName": "amlodipine + atorvastatin",
+   "classIds": [
+    "calcium_channel_blocker",
+    "statin"
+   ]
+  },
+  {
+   "alias": "caduet",
+   "genericName": "amlodipine + atorvastatin",
+   "classIds": [
+    "calcium_channel_blocker",
+    "statin"
+   ]
+  },
+  {
+   "alias": "amlodipine/valsartan novartis",
+   "genericName": "amlodipine + valsartan",
+   "classIds": [
+    "calcium_channel_blocker",
+    "arb"
+   ]
+  },
+  {
+   "alias": "exforge",
+   "genericName": "amlodipine + valsartan",
+   "classIds": [
+    "calcium_channel_blocker",
+    "arb"
+   ]
+  },
+  {
+   "alias": "amlodipine/valsartan/hct novartis",
+   "genericName": "amlodipine + valsartan + hydrochlorothiazide",
+   "classIds": [
+    "calcium_channel_blocker",
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "exforge hct",
+   "genericName": "amlodipine + valsartan + hydrochlorothiazide",
+   "classIds": [
+    "calcium_channel_blocker",
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "apixaban-wgr",
+   "genericName": "apixaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "apo-apixaban",
+   "genericName": "apixaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "apexa",
+   "genericName": "apixaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "apixaban lupin",
+   "genericName": "apixaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "apixaban sandoz",
+   "genericName": "apixaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "apixaban-apx",
+   "genericName": "apixaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "cip apixaban",
+   "genericName": "apixaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "cardasa",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "pharmacy action low dose aspirin",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "spren",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "trust aspirin ec",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "null",
+   "genericName": "aspirin",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "aspalgin",
+   "genericName": "aspirin + codeine",
+   "classIds": [
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "apx-atenolol",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "atenolol-wgr",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "atenolol gh",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "atenolol sandoz",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "atenolol-aft",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "blooms the chemist atenolol",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "noten",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "tensig",
+   "genericName": "atenolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "apo-atorvastatin",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "atomed",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "atorvastatin-wgr",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "atorvachol",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "atorvastatin sz",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "btc atorvastatin",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "lorstat",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "pharmacor atorvastatin",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "trovas",
+   "genericName": "atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "apo-bisoprolol",
+   "genericName": "bisoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "bisoprolol-wgr",
+   "genericName": "bisoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "bicard",
+   "genericName": "bisoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "bisoprolol sandoz",
+   "genericName": "bisoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "bisoprolol generichealth",
+   "genericName": "bisoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "bispro",
+   "genericName": "bisoprolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "apo-candesartan",
+   "genericName": "candesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "adesan",
+   "genericName": "candesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "btc candesartan",
+   "genericName": "candesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "candesan",
+   "genericName": "candesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "candesartan-wgr",
+   "genericName": "candesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "candesartan sandoz",
+   "genericName": "candesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "apo-candesartan hctz",
+   "genericName": "candesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "adesan hct",
+   "genericName": "candesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "atacand plus",
+   "genericName": "candesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "btc candesartan hct",
+   "genericName": "candesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "candesan combi",
+   "genericName": "candesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "candesartan hctz-wgr",
+   "genericName": "candesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "candesartan/hct sandoz",
+   "genericName": "candesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "capoten",
+   "genericName": "captopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "apo-carvedilol",
+   "genericName": "carvedilol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "carvedilol-wgr",
+   "genericName": "carvedilol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "carvedilol sandoz",
+   "genericName": "carvedilol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "carvidol",
+   "genericName": "carvedilol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "dicarz",
+   "genericName": "carvedilol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "vedilol",
+   "genericName": "carvedilol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "volirop",
+   "genericName": "carvedilol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "apo-clonidine",
+   "genericName": "clonidine",
+   "classIds": [
+    "central_sympatholytic"
+   ]
+  },
+  {
+   "alias": "clonidine lupin",
+   "genericName": "clonidine",
+   "classIds": [
+    "central_sympatholytic"
+   ]
+  },
+  {
+   "alias": "blooms clopidogrel",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "clopidogrel-wgr",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "clopidogrel lupin",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "clopidogrel sandoz pharma",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "clopidogrel winthrop",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "clovix",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "piax",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "plavicor",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "plidogrel",
+   "genericName": "clopidogrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "apx-clopidogrel/aspirin",
+   "genericName": "clopidogrel + aspirin",
+   "classIds": [
+    "p2y12_thienopyridine",
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "duocover",
+   "genericName": "clopidogrel + aspirin",
+   "classIds": [
+    "p2y12_thienopyridine",
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "duoplidogrel",
+   "genericName": "clopidogrel + aspirin",
+   "classIds": [
+    "p2y12_thienopyridine",
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "piax plus aspirin",
+   "genericName": "clopidogrel + aspirin",
+   "classIds": [
+    "p2y12_thienopyridine",
+    "aspirin"
+   ]
+  },
+  {
+   "alias": "arx-dabigatran",
+   "genericName": "dabigatran",
+   "classIds": [
+    "dabigatran"
+   ]
+  },
+  {
+   "alias": "dabigatran sandoz",
+   "genericName": "dabigatran",
+   "classIds": [
+    "dabigatran"
+   ]
+  },
+  {
+   "alias": "dabigatran viatris",
+   "genericName": "dabigatran",
+   "classIds": [
+    "dabigatran"
+   ]
+  },
+  {
+   "alias": "pharmacor dabigatran",
+   "genericName": "dabigatran",
+   "classIds": [
+    "dabigatran"
+   ]
+  },
+  {
+   "alias": "xigduo xr",
+   "genericName": "dapagliflozin + metformin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sidapvia",
+   "genericName": "dapagliflozin + sitagliptin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "cardizem cd",
+   "genericName": "diltiazem",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "diltiazem sandoz cd",
+   "genericName": "diltiazem",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "vasocardol",
+   "genericName": "diltiazem",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "vasocardol cd",
+   "genericName": "diltiazem",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "dutasteride/tamsulosin-wgr",
+   "genericName": "dutasteride + tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "dutatam",
+   "genericName": "dutasteride + tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "doubluts",
+   "genericName": "dutasteride + tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "duodart 500ug/400ug",
+   "genericName": "dutasteride + tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "dutasteride/tamsulosin lupin",
+   "genericName": "dutasteride + tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "dutasteride/tamsulosin sandoz",
+   "genericName": "dutasteride + tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "dutasteride/tamsulosin viatris",
+   "genericName": "dutasteride + tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "glyxambi",
+   "genericName": "empagliflozin + linagliptin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "jardiamet 12.5 mg/1000 mg",
+   "genericName": "empagliflozin + metformin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "jardiamet 12.5 mg/500 mg",
+   "genericName": "empagliflozin + metformin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "jardiamet 5 mg/1000 mg",
+   "genericName": "empagliflozin + metformin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "jardiamet 5 mg/500 mg",
+   "genericName": "empagliflozin + metformin",
+   "classIds": [
+    "sglt2_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "apo-enalapril",
+   "genericName": "enalapril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "acetec",
+   "genericName": "enalapril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "enalapril-wgr",
+   "genericName": "enalapril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "enalapril sandoz",
+   "genericName": "enalapril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "malean",
+   "genericName": "enalapril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "enalapril/hct sandoz",
+   "genericName": "enalapril + hydrochlorothiazide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "renitec plus",
+   "genericName": "enalapril + hydrochlorothiazide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "clexane forte safety-lock",
+   "genericName": "enoxaparin sodium",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "clexane safety-lock",
+   "genericName": "enoxaparin sodium",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "enoxaject safety-lock",
+   "genericName": "enoxaparin sodium",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "exarane",
+   "genericName": "enoxaparin sodium",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "exarane forte",
+   "genericName": "enoxaparin sodium",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "exarane forte safety-lock",
+   "genericName": "enoxaparin sodium",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "exarane safety-lock",
+   "genericName": "enoxaparin sodium",
+   "classIds": [
+    "lmwh_prophylactic"
+   ]
+  },
+  {
+   "alias": "teveten",
+   "genericName": "eprosartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "teveten plus",
+   "genericName": "eprosartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "atozet",
+   "genericName": "ezetimibe + atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "ezetast",
+   "genericName": "ezetimibe + atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "ezetimibe/atorvastatin gh",
+   "genericName": "ezetimibe + atorvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "apo-ezetimibe/simvastatin",
+   "genericName": "ezetimibe + simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "ezetimibe/simvastatin sandoz",
+   "genericName": "ezetimibe + simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "ezetimibe/simvastatin-wgr",
+   "genericName": "ezetimibe + simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "ezetorin",
+   "genericName": "ezetimibe + simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "pharmacor ezetimibe simvastatin",
+   "genericName": "ezetimibe + simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "vytorin",
+   "genericName": "ezetimibe + simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "zimybe",
+   "genericName": "ezetimibe + simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "felodil xr",
+   "genericName": "felodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "felodur er",
+   "genericName": "felodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "plendil er",
+   "genericName": "felodipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "apo-frusemide",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "furosemide-wgr",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "frusax",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "frusemix",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "frusemix-m",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "uremide",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "urex-forte",
+   "genericName": "furosemide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "daonil",
+   "genericName": "glibenclamide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "apo-gliclazide mr",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "apx-gliclazide",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "ardix gliclazide 60mg mr",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "diamicron 60mg mr",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "gliclazide lupin mr",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "gliclazide mr viatris",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "gliclazide sandoz mr",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "nidem",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "pharmacor gliclazide mr",
+   "genericName": "gliclazide",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "arx-glimepiride",
+   "genericName": "glimepiride",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "glimepiride-wgr",
+   "genericName": "glimepiride",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "glimepiride sandoz",
+   "genericName": "glimepiride",
+   "classIds": [
+    "sulfonylurea"
+   ]
+  },
+  {
+   "alias": "dbl heparin sodium",
+   "genericName": "heparin",
+   "classIds": [
+    "ufh"
+   ]
+  },
+  {
+   "alias": "dithiazide",
+   "genericName": "hydrochlorothiazide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "apo-indapamide sr",
+   "genericName": "indapamide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "dapa-tabs",
+   "genericName": "indapamide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "insig",
+   "genericName": "indapamide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "natrilix sr",
+   "genericName": "indapamide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "odaplix sr",
+   "genericName": "indapamide",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "apo-irbesartan",
+   "genericName": "irbesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "avsartan",
+   "genericName": "irbesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "abisart",
+   "genericName": "irbesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "blooms irbesartan",
+   "genericName": "irbesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "irbesartan-wgr",
+   "genericName": "irbesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "irbesartan sandoz",
+   "genericName": "irbesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "karvea",
+   "genericName": "irbesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "apo-irbesartan hctz",
+   "genericName": "irbesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "avsartan hct",
+   "genericName": "irbesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "abisart hctz",
+   "genericName": "irbesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "avapro hct",
+   "genericName": "irbesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "irbesartan hctz-wgr",
+   "genericName": "irbesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "irbesartan/hct sandoz",
+   "genericName": "irbesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "karvezide",
+   "genericName": "irbesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "zan-extra",
+   "genericName": "lercanidipine + enalapril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "apo-lisinopril",
+   "genericName": "lisinopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "fibsol",
+   "genericName": "lisinopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "lisinopril-wgr",
+   "genericName": "lisinopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "lisinopril sandoz",
+   "genericName": "lisinopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "zinopril",
+   "genericName": "lisinopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "apo-metformin xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "apx-metformin",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "blooms metformin xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "blooms the chemist metformin",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "diabex xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "diaformin alphapharm xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "diaformin viatris",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "diaformin xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "formet",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "glucobete",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "metex xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "metformin-wgr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "metformin-wgr xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "metformin gh",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "metformin lupin xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "metformin sandoz",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "metformin sandoz xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "pharmacor metformin xr",
+   "genericName": "metformin",
+   "classIds": [
+    "metformin"
+   ]
+  },
+  {
+   "alias": "hydopa",
+   "genericName": "methyldopa",
+   "classIds": [
+    "central_sympatholytic"
+   ]
+  },
+  {
+   "alias": "metrol-xl",
+   "genericName": "metoprolol succinate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "minax xl",
+   "genericName": "metoprolol succinate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "topreloc-xl",
+   "genericName": "metoprolol succinate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "toprol-xl",
+   "genericName": "metoprolol succinate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "apo-metoprolol",
+   "genericName": "metoprolol tartrate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "metoprolol-wgr",
+   "genericName": "metoprolol tartrate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "metoprolol sandoz",
+   "genericName": "metoprolol tartrate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "metrol",
+   "genericName": "metoprolol tartrate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "minax",
+   "genericName": "metoprolol tartrate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "mistrom",
+   "genericName": "metoprolol tartrate",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "loniten",
+   "genericName": "minoxidil",
+   "classIds": [
+    "direct_vasodilator"
+   ]
+  },
+  {
+   "alias": "apo-nifedipine xr",
+   "genericName": "nifedipine",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "apo-olmesartan",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "apx-olmesartan",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "blooms the chemist olmesartan",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "olmertan",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "olmesartan-wgr",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "olmesartan - myl",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "olmesartan sandoz",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "olmetec",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "olsetan",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "pharmacor olmesartan",
+   "genericName": "olmesartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "apo-olmesartan/amlodipine",
+   "genericName": "olmesartan + amlodipine",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "olmekar",
+   "genericName": "olmesartan + amlodipine",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "olmesartan amlodipine-wgr",
+   "genericName": "olmesartan + amlodipine",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "olmesartan/amlodipine - myl",
+   "genericName": "olmesartan + amlodipine",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "olmesartan/amlodipine sandoz",
+   "genericName": "olmesartan + amlodipine",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "pharmacor olmesartan amlodipine",
+   "genericName": "olmesartan + amlodipine",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "sevikar",
+   "genericName": "olmesartan + amlodipine",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "apo-olmesartan/amlodipine/hctz",
+   "genericName": "olmesartan + amlodipine + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "apo-olmesartan/amlodipine/hctz 40/5/12.5 tablet",
+   "genericName": "olmesartan + amlodipine + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "apo-olmesartan/amlodipine/hctz 40/5/25 tablet",
+   "genericName": "olmesartan + amlodipine + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "olamlo hct",
+   "genericName": "olmesartan + amlodipine + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "sevikar hct",
+   "genericName": "olmesartan + amlodipine + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "apo-olmesartan/hctz",
+   "genericName": "olmesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "apx-olmesartan/hctz",
+   "genericName": "olmesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "olmertan combi",
+   "genericName": "olmesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "olmesartan hctz-wgr",
+   "genericName": "olmesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "olmesartan hct - myl",
+   "genericName": "olmesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "olmesartan/hct sandoz",
+   "genericName": "olmesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "olmetec plus",
+   "genericName": "olmesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "pharmacor olmesartan hctz",
+   "genericName": "olmesartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "apo-perindopril",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "apo-perindopril arginine",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "apx-perindopril arginine",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "perindopril-wgr",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "perisyl",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "prexum",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "perindopril arginine sandoz",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "perindopril arginine-wgr",
+   "genericName": "perindopril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "apo-perindopril arginine/amlodipine",
+   "genericName": "perindopril + amlodipine",
+   "classIds": [
+    "ace_inhibitor",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "apx-perindopril arginine/amlodipine",
+   "genericName": "perindopril + amlodipine",
+   "classIds": [
+    "ace_inhibitor",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "coveram",
+   "genericName": "perindopril + amlodipine",
+   "classIds": [
+    "ace_inhibitor",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "perindopril arginine/amlodipine-wgr",
+   "genericName": "perindopril + amlodipine",
+   "classIds": [
+    "ace_inhibitor",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "reaptan",
+   "genericName": "perindopril + amlodipine",
+   "classIds": [
+    "ace_inhibitor",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "apo-perindopril/indapamide",
+   "genericName": "perindopril + indapamide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "coversyl plus 5mg/1.25mg",
+   "genericName": "perindopril + indapamide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "coversyl plus ld 2.5mg/0.625mg",
+   "genericName": "perindopril + indapamide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "genrx perindopril/ indapamide",
+   "genericName": "perindopril + indapamide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "perindopril/indapamide-wgr",
+   "genericName": "perindopril + indapamide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "perisyl combi",
+   "genericName": "perindopril + indapamide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "prexum combi ld",
+   "genericName": "perindopril + indapamide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "prexum combi",
+   "genericName": "perindopril + indapamide",
+   "classIds": [
+    "ace_inhibitor",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "arx-pioglitazone",
+   "genericName": "pioglitazone",
+   "classIds": [
+    "other_oral_antihyperglycaemic"
+   ]
+  },
+  {
+   "alias": "vexazone",
+   "genericName": "pioglitazone",
+   "classIds": [
+    "other_oral_antihyperglycaemic"
+   ]
+  },
+  {
+   "alias": "prasugrel lupin",
+   "genericName": "prasugrel",
+   "classIds": [
+    "p2y12_thienopyridine"
+   ]
+  },
+  {
+   "alias": "apx-pravastatin",
+   "genericName": "pravastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "cholstat",
+   "genericName": "pravastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "lipostat",
+   "genericName": "pravastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "pravastatin-wgr",
+   "genericName": "pravastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "pravastatin sandoz",
+   "genericName": "pravastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "apo-prazosin",
+   "genericName": "prazosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "prazosin hydrochloride capsules, usp 1 mg (novitium pharma, usa)",
+   "genericName": "prazosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "apo-propranolol",
+   "genericName": "propranolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "deralin",
+   "genericName": "propranolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "propranolol-wgr",
+   "genericName": "propranolol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "apo-ramipril",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "apx-ramipril",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "prilace",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "ramipril tabs-wgr",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "ramipril-wgr",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "ramipril sandoz",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "ramipril viatris",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "ramipril winthrop",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "tryzan caps",
+   "genericName": "ramipril",
+   "classIds": [
+    "ace_inhibitor"
+   ]
+  },
+  {
+   "alias": "triasyn",
+   "genericName": "ramipril + felodipine",
+   "classIds": [
+    "ace_inhibitor",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "apo-rivaroxaban",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "arx-rivaroxaban",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "rivaxib",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "relaban",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "rivarelto",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "rivaroxaban dr.reddy''s",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "rivaroxaban lupin",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "rivaroxaban sandoz",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "rivaroxaban-teva",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "rivoxa",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "troxa",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "xaremed",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "ixarola",
+   "genericName": "rivaroxaban",
+   "classIds": [
+    "doac_factor_xa"
+   ]
+  },
+  {
+   "alias": "apo-rosuvastatin",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "apx-rosuvastatin",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "blooms rosuvastatin",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "cavstat",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "crosuva",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "pharmacor rosuvastatin",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "rosuvastatin-wgr",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "rosuvastatin lupin",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "rosuvastatin rbx",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "rosuvastatin sandoz",
+   "genericName": "rosuvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "entresto",
+   "genericName": "sacubitril + valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "omtralo",
+   "genericName": "sacubitril + valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "pharmacor sacubitril/valsartan",
+   "genericName": "sacubitril + valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "sacubitril/valsartan-wgr",
+   "genericName": "sacubitril + valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "sacubitril/valsartan alphapharm",
+   "genericName": "sacubitril + valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "sacubitril/valsartan lupin",
+   "genericName": "sacubitril + valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "valtresto",
+   "genericName": "sacubitril + valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "kombiglyze xr",
+   "genericName": "saxagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "apo-simvastatin",
+   "genericName": "simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "lipex",
+   "genericName": "simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "simvastatin-wgr",
+   "genericName": "simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "simvar",
+   "genericName": "simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "simvastatin sandoz",
+   "genericName": "simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "zimstat",
+   "genericName": "simvastatin",
+   "classIds": [
+    "statin"
+   ]
+  },
+  {
+   "alias": "sitagliptin lupin",
+   "genericName": "sitagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "sitagliptin mylan",
+   "genericName": "sitagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "sitagliptin sun",
+   "genericName": "sitagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "sitagliptin sandoz pharma",
+   "genericName": "sitagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "sitaglo",
+   "genericName": "sitagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "xelevia",
+   "genericName": "sitagliptin",
+   "classIds": [
+    "dpp4_inhibitor"
+   ]
+  },
+  {
+   "alias": "blooms the chemist sitagliptin/metformin",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sitagliptin/metformin 50/1000 sun",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sitagliptin/metformin 50/500 sun",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sitagliptin/metformin 50/850 sun",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sitaglo-met",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sitagliptin/metformin mylan",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sitagliptin/metformin sandoz",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sitagliptin/metformin sandoz xr",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sitagliptin/metformin xr knd",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "sitagliptin/metformin xr mylan",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "velmetia",
+   "genericName": "sitagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  },
+  {
+   "alias": "apx-sotalol",
+   "genericName": "sotalol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "cardol",
+   "genericName": "sotalol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "sotalol-wgr",
+   "genericName": "sotalol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "solavert",
+   "genericName": "sotalol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "sotacor",
+   "genericName": "sotalol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "sotalol sandoz",
+   "genericName": "sotalol",
+   "classIds": [
+    "beta_blocker"
+   ]
+  },
+  {
+   "alias": "spiractin",
+   "genericName": "spironolactone",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "spironolactone viatris",
+   "genericName": "spironolactone",
+   "classIds": [
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "apo-tamsulosin sr",
+   "genericName": "tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "btc tamsulosin sr",
+   "genericName": "tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "flosix",
+   "genericName": "tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "tamsulosin-wgr sr",
+   "genericName": "tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "tamsulosin lupin sr",
+   "genericName": "tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "tamsulosin sandoz sr",
+   "genericName": "tamsulosin",
+   "classIds": [
+    "alpha_blocker"
+   ]
+  },
+  {
+   "alias": "apo-telmisartan",
+   "genericName": "telmisartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "mizart",
+   "genericName": "telmisartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "pharmacor telmisartan",
+   "genericName": "telmisartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "telmisartan-wgr",
+   "genericName": "telmisartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "telmisartan sandoz",
+   "genericName": "telmisartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "teltartan",
+   "genericName": "telmisartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "arx-telmisartan/amlodipine",
+   "genericName": "telmisartan + amlodipine",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "telmisartan/amlodipine viatris",
+   "genericName": "telmisartan + amlodipine",
+   "classIds": [
+    "arb",
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "apo-telmisartan hctz",
+   "genericName": "telmisartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "micardis plus",
+   "genericName": "telmisartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "mizart hct",
+   "genericName": "telmisartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "telmisartan hctz-wgr",
+   "genericName": "telmisartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "telmisartan/hct sandoz",
+   "genericName": "telmisartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "teltartan hct",
+   "genericName": "telmisartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "arx-ticagrelor",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "pharmacor ticagrelor",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "ticalor",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "ticagrelor dr.reddy''s",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "ticagrelor lupin",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "ticagrelor sun",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "ticagrelor sandoz",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "ticagrelor viatris",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "tirela",
+   "genericName": "ticagrelor",
+   "classIds": [
+    "ticagrelor"
+   ]
+  },
+  {
+   "alias": "tarka",
+   "genericName": "trandolapril + verapamil",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "dilart",
+   "genericName": "valsartan",
+   "classIds": [
+    "arb"
+   ]
+  },
+  {
+   "alias": "co-diovan",
+   "genericName": "valsartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "dilart hct",
+   "genericName": "valsartan + hydrochlorothiazide",
+   "classIds": [
+    "arb",
+    "thiazide_loop_diuretic"
+   ]
+  },
+  {
+   "alias": "anpec",
+   "genericName": "verapamil",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "cordilox 180 sr",
+   "genericName": "verapamil",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "cordilox sr",
+   "genericName": "verapamil",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "isoptin 180 sr",
+   "genericName": "verapamil",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "isoptin sr",
+   "genericName": "verapamil",
+   "classIds": [
+    "calcium_channel_blocker"
+   ]
+  },
+  {
+   "alias": "arx-vildagliptin/metformin",
+   "genericName": "vildagliptin + metformin",
+   "classIds": [
+    "dpp4_inhibitor",
+    "metformin"
+   ]
+  }
+ ],
+ "unclassifiedPlaceholder": {
+  "id": "unclassified",
+  "name": "Unclassified - needs manual review",
+  "category": "other",
+  "notes": "Used automatically when an entered drug name does not match any alias in drug_aliases.yaml. Never silently guessed - always surfaced to the clinician for manual classification or flagged for the ruleset maintainer.\n"
+ },
+ "bridging": {
+  "status": "NOT INTEGRATED - reference only, pending clinical review before automation",
+  "last_reviewed": "2026-08-30",
+  "source": "StatPearls: Perioperative Anticoagulation Management (Polania Gutierrez & Rocuts); CHEST 2022 (Douketis et al.)",
+  "thrombotic_risk_tiers": {
+   "high": {
+    "description": "Mechanical mitral valve; any mechanical valve plus additional risk factors (stroke/TIA, cardioembolic event, intracardiac thrombus, >2 mechanical valves); AF with CHA2DS2-VASc > 6, or > 5 plus rheumatic valve disease/recent stroke/systemic embolism; VTE within the last 3 months."
+   },
+   "moderate": {
+    "description": "AF with CHA2DS2-VASc 5-6 without the additional high-risk features above; VTE within the last 3-12 months."
+   },
+   "low": {
+    "description": "AF with CHA2DS2-VASc < 5 and no mechanical valve; VTE more than 12 months ago with no ongoing risk factors."
+   }
+  },
+  "procedural_bleed_risk_tiers": {
+   "high": {
+    "description": "Major surgery with high consequence of bleeding, e.g. major cancer surgery, cardiac/neurosurgery, major orthopaedic surgery."
+   },
+   "moderate": {
+    "description": "Most general/orthopaedic/urological surgery."
+   },
+   "low": {
+    "description": "Minor procedures, most endoscopy, cataract surgery, minor dermatological procedures."
+   }
+  },
+  "decision_matrix": {
+   "high_thrombotic": {
+    "high_bleed": "Consider bridging - discuss with cardiology/haematology; the bleeding risk of bridging must be weighed against thrombotic risk case by case.",
+    "moderate_bleed": "Consider bridging with therapeutic-dose LMWH/UFH.",
+    "low_bleed": "Bridging often not required for low-bleed-risk procedures even at high thrombotic risk - clinician judgement."
+   },
+   "moderate_thrombotic": {
+    "high_bleed": "Bridging generally not recommended - bleeding risk of bridging likely exceeds thrombotic benefit.",
+    "moderate_bleed": "Bridging generally not recommended for most patients (CHEST 2022 recommends against routine heparin bridging in AF).",
+    "low_bleed": "Bridging not recommended."
+   },
+   "low_thrombotic": {
+    "high_bleed": "Bridging not recommended.",
+    "moderate_bleed": "Bridging not recommended.",
+    "low_bleed": "Bridging not recommended."
+   }
+  },
+  "notes": "Evidence (BRIDGE trial and others) shows bridging therapy in AF increases major bleeding without a clear reduction in thromboembolic events for most patients. Bridging is NOT indicated for DOACs under any tier, given their rapid onset/offset. This matrix is a draft synthesis for review - it must be checked against current CHEST/ACC/EHRA guidance and local protocol before being enabled in the app.\n"
+ }
+}

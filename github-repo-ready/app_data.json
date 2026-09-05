@@ -1,0 +1,1477 @@
+{
+ "leaves": [
+  {
+   "path": "A. Non-Surgical Periodontal Therapy > Full mouth under LA",
+   "codes": "222, 115"
+  },
+  {
+   "path": "A. Non-Surgical Periodontal Therapy > LA Half mouth under LA",
+   "codes": "222, 115"
+  },
+  {
+   "path": "A. Non-Surgical Periodontal Therapy > LA Quadrant x 4 under LA",
+   "codes": "222, 115"
+  },
+  {
+   "path": "A. Non-Surgical Periodontal Therapy > LA FMSC + PRF IV sedation > SIMPLE",
+   "codes": "222, 115, 057"
+  },
+  {
+   "path": "A. Non-Surgical Periodontal Therapy > LA FMSC + PRF IV sedation > COMPLEX",
+   "codes": "222, 115, 057"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Open Flap Debridement",
+   "codes": "232"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Guided Tissue Regeneration",
+   "codes": "236"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Recession Surgery > Coronally repositioned flap alone",
+   "codes": "232"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Recession Surgery > Coronally repositioned flap with biologics (Emdogain, Gem 21 etc)",
+   "codes": "232, 236"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Recession Surgery > Laterally repositioned flap alone",
+   "codes": "232"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Recession Surgery > Laterally repositioned flap with biologics (Emdogain, Gem 21 etc)",
+   "codes": "232, 236"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Recession Surgery > Coronally repositioned flap with CTG",
+   "codes": "232, 235"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Recession Surgery > Laterally repositioned flap with CTG",
+   "codes": "232, 235"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Frenectomy",
+   "codes": "391"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Gingivectomy",
+   "codes": "231"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Root Resection",
+   "codes": "241"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Surgical Exposure of an Unerupted tooth > No attachment of bracket",
+   "codes": "381"
+  },
+  {
+   "path": "B. Surgical Periodontal Therapy > Surgical Exposure of an Unerupted tooth > Attachment of bracket",
+   "codes": "382"
+  },
+  {
+   "path": "C. Dental Implant treatment > a. Dental implant alone > Single Dental Implant - Non-Submerged",
+   "codes": "688, 013, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > a. Dental implant alone > Multiple Implants - Non-Submerged",
+   "codes": "688, 013, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > a. Dental implant alone > Single Dental Implant - Submerged",
+   "codes": "684, 691, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > a. Dental implant alone > Multiple Implants - Submerged",
+   "codes": "684, 691, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > b. Dental implant with bone grafting > Single Dental Implant with bone graft - Non-Submerged",
+   "codes": "243, 688, 013, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > b. Dental implant with bone grafting > Multiple Implants with Bone Graft - Non-Submerged",
+   "codes": "243, 688, 013, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > b. Dental implant with bone grafting > Single Dental Implant with bone graft - Submerged",
+   "codes": "243, 684, 691, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > b. Dental implant with bone grafting > Multiple Implants with Bone Graft - Submerged",
+   "codes": "243, 684, 691, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > c. Dental implant and bone grafting following extraction > Single Dental Implant with bone graft after extraction",
+   "codes": "324, 243, 688, 013, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > c. Dental implant and bone grafting following extraction > Multiple Implants with Bone Graft after extraction",
+   "codes": "324, 243, 688, 013, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Maxillary arch – implants, no extractions > 5–6 implants, no bone grafting",
+   "codes": "688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Maxillary arch – implants, no extractions > 5–6 implants, with bone grafting",
+   "codes": "243, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Maxillary arch – implants, no extractions > 5–6 implants, with sinus grafting",
+   "codes": "243, 393, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Maxillary arch – implants, no extractions > 5–6 implants, with sinus grafting and bone grafting",
+   "codes": "243, 393, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Maxillary arch – implants and extractions > 5–6 implants, no bone grafting, with extractions",
+   "codes": "324, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Maxillary arch – implants and extractions > 5–6 implants, with bone grafting and extractions",
+   "codes": "324, 243, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Maxillary arch – implants and extractions > 5–6 implants, with sinus grafting and extractions",
+   "codes": "324, 243, 393, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Maxillary arch – implants and extractions > 5–6 implants, with sinus + bone grafting and extractions",
+   "codes": "324, 243, 393, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Mandibular arch – implants, no extractions > 5–6 implants, no bone grafting",
+   "codes": "688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Mandibular arch – implants, no extractions > 5–6 implants, with bone grafting",
+   "codes": "243, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Mandibular arch – implants and extractions > 5–6 implants, no bone grafting, with extractions",
+   "codes": "324, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Mandibular arch – implants and extractions > 5–6 implants, with bone grafting and extractions",
+   "codes": "324, 243, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Both arches, no extractions > 10–12 implants, no bone grafting",
+   "codes": "688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Both arches, no extractions > 10–12 implants, with bone grafting",
+   "codes": "243, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Both arches, with extractions > 10–12 implants, no bone grafting, with extractions",
+   "codes": "324, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > d. Full arch treatment > Both arches, with extractions > 10–12 implants, with bone grafting and extractions",
+   "codes": "324, 243, 688, 013, 026"
+  },
+  {
+   "path": "C. Dental Implant treatment > e. Sinus bone grafting with implant treatment > Crestal approach, single implant",
+   "codes": "393, 688"
+  },
+  {
+   "path": "C. Dental Implant treatment > e. Sinus bone grafting with implant treatment > Crestal approach, multiple implants",
+   "codes": "393, 688"
+  },
+  {
+   "path": "C. Dental Implant treatment > e. Sinus bone grafting with implant treatment > Lateral approach, no implant placement",
+   "codes": "393, 243, 684, 691, 022"
+  },
+  {
+   "path": "C. Dental Implant treatment > e. Sinus bone grafting with implant treatment > Lateral approach, with implant placement",
+   "codes": "393, 243, 684, 691, 022"
+  },
+  {
+   "path": "D. Extraction > Simple",
+   "codes": "311"
+  },
+  {
+   "path": "D. Extraction > Surgical (bone removal / tooth division)",
+   "codes": "324"
+  },
+  {
+   "path": "D. Extraction > Extraction and bone grafting > Simple extraction with bone graft",
+   "codes": "311, 243"
+  },
+  {
+   "path": "D. Extraction > Extraction and bone grafting > Surgical extraction with bone graft",
+   "codes": "324, 243"
+  }
+ ],
+ "codes": [
+  {
+   "code": "013",
+   "desc": "Oral examination – limited"
+  },
+  {
+   "code": "022",
+   "desc": "Intraoral radiograph – per exposure"
+  },
+  {
+   "code": "026",
+   "desc": "Cone Beam Computed Tomography – scan acquisition – per appointment"
+  },
+  {
+   "code": "057",
+   "desc": "Procedures to derive biologically active components from a collection of blood (e.g. PRF/PRP)"
+  },
+  {
+   "code": "114",
+   "desc": "Removal of calculus – first appointment"
+  },
+  {
+   "code": "115",
+   "desc": "Removal of calculus – subsequent appointment"
+  },
+  {
+   "code": "222",
+   "desc": "Periodontal debridement – per tooth"
+  },
+  {
+   "code": "231",
+   "desc": "Gingivectomy – per tooth"
+  },
+  {
+   "code": "232",
+   "desc": "Periodontal flap surgery – per tooth"
+  },
+  {
+   "code": "235",
+   "desc": "Gingival graft – per tooth, implant or extraction socket"
+  },
+  {
+   "code": "236",
+   "desc": "Guided tissue regeneration – per tooth or implant"
+  },
+  {
+   "code": "241",
+   "desc": "Root resection – per root"
+  },
+  {
+   "code": "243",
+   "desc": "Osseous graft – per tooth or implant"
+  },
+  {
+   "code": "311",
+   "desc": "Removal of a tooth or part(s) thereof"
+  },
+  {
+   "code": "324",
+   "desc": "Surgical removal of a tooth or tooth fragment requiring bone removal and/or tooth division"
+  },
+  {
+   "code": "381",
+   "desc": "Surgical exposure of an unerupted tooth – per tooth"
+  },
+  {
+   "code": "382",
+   "desc": "Surgical exposure and attachment of device for orthodontic traction"
+  },
+  {
+   "code": "391",
+   "desc": "Surgical intervention of a frenum"
+  },
+  {
+   "code": "393",
+   "desc": "Surgery involving the maxillary antrum"
+  },
+  {
+   "code": "684",
+   "desc": "Insertion of the first stage of two-stage endosseous implant – per implant"
+  },
+  {
+   "code": "688",
+   "desc": "Insertion of a one-stage endosseous implant – per implant"
+  },
+  {
+   "code": "691",
+   "desc": "Second-stage surgery of two-stage endosseous implant – per implant"
+  },
+  {
+   "code": "981",
+   "desc": "Splinting and stabilisation – direct – per tooth"
+  }
+ ],
+ "implants": [
+  {
+   "manufacturer": "Southern Implants",
+   "line": "Single Platform (SP1)",
+   "connection": "Internal, single platform (unified prosthetic platform across all diameters)",
+   "diameters": "3.5 / 3.75 / 4.0 / 4.5 / 5.0 / 6.0",
+   "lengths": "varies by diameter, 8-24mm",
+   "diameterList": [
+    "3.5",
+    "3.75",
+    "4.0",
+    "4.5",
+    "5.0",
+    "6.0"
+   ],
+   "display": "Southern Implants — Single Platform (SP1)",
+   "lengthByDiameter": {
+    "3.5": [
+     "8",
+     "10",
+     "11.5",
+     "13",
+     "16",
+     "18",
+     "20"
+    ],
+    "3.75": [
+     "8",
+     "10",
+     "11.5",
+     "13",
+     "16",
+     "18",
+     "20",
+     "22",
+     "24"
+    ],
+    "4.0": [
+     "8",
+     "10",
+     "11.5",
+     "13",
+     "16",
+     "18",
+     "20",
+     "22",
+     "24"
+    ],
+    "4.5": [
+     "8",
+     "10",
+     "11.5",
+     "13",
+     "16",
+     "18"
+    ],
+    "5.0": [
+     "8",
+     "10",
+     "11.5",
+     "13",
+     "16",
+     "18"
+    ],
+    "6.0": [
+     "8",
+     "10",
+     "11.5",
+     "13",
+     "16"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "Internal Hex Tapered",
+   "connection": "Internal hex, tapered",
+   "diameters": "3.75 / 4.2 / 5.0",
+   "lengths": "8 / 10 / 11.5 / 13 / 15 (18 for Ø4.2)",
+   "diameterList": [
+    "3.75",
+    "4.2",
+    "5.0"
+   ],
+   "lengthList": [
+    "8",
+    "10",
+    "11.5",
+    "13",
+    "15"
+   ],
+   "display": "Southern Implants — Internal Hex Tapered"
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "PROVATA (Straight)",
+   "connection": "External hex body with internal hex connection, 0° (no angulation)",
+   "diameters": "3.3 / 4.0 / 5.0 / 6.0",
+   "lengths": "varies by diameter",
+   "diameterList": [
+    "3.3",
+    "4.0",
+    "5.0",
+    "6.0"
+   ],
+   "display": "Southern Implants — PROVATA (Straight)",
+   "lengthByDiameter": {
+    "3.3": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "4.0": [
+     "6.4",
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15"
+    ],
+    "5.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "6.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "Deep Conical PTERYGOID",
+   "connection": "Deep Conical (DC4 interface)",
+   "diameters": "4.0",
+   "lengths": "10 / 11.5 / 13 / 15 / 18 / 20 / 22 / 24",
+   "diameterList": [
+    "4.0"
+   ],
+   "lengthList": [
+    "10",
+    "11.5",
+    "13",
+    "15",
+    "18",
+    "20",
+    "22",
+    "24"
+   ],
+   "display": "Southern Implants — Deep Conical PTERYGOID"
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "External Hex INVERTA (Regular)",
+   "connection": "External hex, Body-Shift design",
+   "diameters": "3.0–3.7",
+   "lengths": "10 / 11.5 / 13 / 15",
+   "diameterList": [
+    "4.0",
+    "5.0"
+   ],
+   "display": "Southern Implants — External Hex INVERTA (Regular)",
+   "lengthByDiameter": {
+    "4.0": [
+     "10",
+     "11.5",
+     "13",
+     "15"
+    ],
+    "5.0": [
+     "10",
+     "11.5",
+     "13",
+     "15"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "External Hex INVERTA (Co-Axis, 12°)",
+   "connection": "External hex, angulated (subcrestal angle correction)",
+   "diameters": "3.0–3.7",
+   "lengths": "11.5 / 13 / 15",
+   "diameterList": [
+    "4.0",
+    "5.0"
+   ],
+   "display": "Southern Implants — External Hex INVERTA (Co-Axis, 12°)",
+   "lengthByDiameter": {
+    "4.0": [
+     "11.5",
+     "13",
+     "15"
+    ],
+    "5.0": [
+     "11.5",
+     "13",
+     "15"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Straumann",
+   "line": "BLC (Bone Level, cylindrical)",
+   "connection": "Bone level",
+   "diameters": "3.3 / 3.75 / 4.0",
+   "lengths": "6–18",
+   "diameterList": [
+    "3.3",
+    "3.75",
+    "4.0",
+    "4.5",
+    "5.0",
+    "5.5",
+    "6.5"
+   ],
+   "display": "Straumann — BLC (Bone Level, cylindrical)",
+   "lengthByDiameter": {
+    "3.3": [
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "3.75": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "4.0": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "4.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "5.0": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "5.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16"
+    ],
+    "6.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Straumann",
+   "line": "BLX",
+   "connection": "Bone level, tapered, self-cutting",
+   "diameters": "3.5 / 3.75 / 4.0 (+ larger diameters available)",
+   "lengths": "6–18",
+   "diameterList": [
+    "3.5",
+    "3.75",
+    "4.0",
+    "4.5",
+    "5.0",
+    "5.5",
+    "6.5"
+   ],
+   "display": "Straumann — BLX",
+   "lengthByDiameter": {
+    "3.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "3.75": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "4.0": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "4.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "5.0": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "5.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16"
+    ],
+    "6.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Straumann",
+   "line": "TLC (Tissue Level, cylindrical)",
+   "connection": "Tissue level, Standard or Standard Plus neck",
+   "diameters": "3.3–4.5",
+   "lengths": "6–18",
+   "diameterList": [
+    "3.3",
+    "3.75",
+    "4.5",
+    "5.5",
+    "6.5"
+   ],
+   "display": "Straumann — TLC (Tissue Level, cylindrical)",
+   "lengthByDiameter": {
+    "3.3": [
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "3.75": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "4.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "5.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16"
+    ],
+    "6.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Straumann",
+   "line": "TLX",
+   "connection": "Tissue level, tapered, Standard or Standard Plus neck",
+   "diameters": "3.75–4.5 (+ larger diameters available)",
+   "lengths": "4–18",
+   "diameterList": [
+    "3.75",
+    "4.5",
+    "5.5",
+    "6.5"
+   ],
+   "display": "Straumann — TLX",
+   "lengthByDiameter": {
+    "3.75": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "4.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16",
+     "18"
+    ],
+    "5.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16"
+    ],
+    "6.5": [
+     "6",
+     "8",
+     "10",
+     "12",
+     "14",
+     "16"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "Single Platform (SP1) — Pterygoid",
+   "connection": "Internal, single platform, tapered pterygoid design",
+   "diameters": "4.0",
+   "lengths": "10 / 11.5 / 13 / 15 / 18 / 20 / 22 / 24",
+   "diameterList": [
+    "4.0"
+   ],
+   "lengthList": [
+    "10",
+    "11.5",
+    "13",
+    "15",
+    "18",
+    "20",
+    "22",
+    "24"
+   ],
+   "display": "Southern Implants — Single Platform (SP1) — Pterygoid"
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "External Hex (Straight)",
+   "connection": "External hex, 0° (no angulation)",
+   "diameters": "3.0 / 3.25 / 3.75 / 4.0 / 5.0 / 6.0",
+   "lengths": "varies by diameter",
+   "diameterList": [
+    "3.0",
+    "3.25",
+    "3.75",
+    "4.0",
+    "5.0",
+    "6.0"
+   ],
+   "display": "Southern Implants — External Hex (Straight)",
+   "lengthByDiameter": {
+    "3.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15"
+    ],
+    "3.25": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "3.75": [
+     "7",
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18",
+     "20"
+    ],
+    "4.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "5.0": [
+     "6",
+     "7",
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "6.0": [
+     "6",
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "External Hex (Co-Axis, 12°)",
+   "connection": "External hex, Co-Axis 12° subcrestal angle correction",
+   "diameters": "3.25 / 4.0 / 5.0 / 6.0",
+   "lengths": "varies by diameter",
+   "diameterList": [
+    "3.25",
+    "4.0",
+    "5.0",
+    "6.0"
+   ],
+   "display": "Southern Implants — External Hex (Co-Axis, 12°)",
+   "lengthByDiameter": {
+    "3.25": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15"
+    ],
+    "4.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "5.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "6.0": [
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "External Hex (Co-Axis, 24°)",
+   "connection": "External hex, Co-Axis 24° subcrestal angle correction, reduced platform",
+   "diameters": "4.0 / 5.0 / 6.0",
+   "lengths": "varies by diameter",
+   "diameterList": [
+    "4.0",
+    "5.0",
+    "6.0"
+   ],
+   "display": "Southern Implants — External Hex (Co-Axis, 24°)",
+   "lengthByDiameter": {
+    "4.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18",
+     "20",
+     "22",
+     "24"
+    ],
+    "5.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "6.0": [
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "External Hex (Co-Axis, 36°)",
+   "connection": "External hex, Co-Axis 36° subcrestal angle correction, reduced platform",
+   "diameters": "4.0 / 5.0",
+   "lengths": "varies by diameter",
+   "diameterList": [
+    "4.0",
+    "5.0"
+   ],
+   "display": "Southern Implants — External Hex (Co-Axis, 36°)",
+   "lengthByDiameter": {
+    "4.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18",
+     "20",
+     "22",
+     "24"
+    ],
+    "5.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18",
+     "20",
+     "22",
+     "24"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "PROVATA (Co-Axis, 12°)",
+   "connection": "External hex body with internal hex connection, Co-Axis 12° subcrestal angle correction",
+   "diameters": "3.3 / 4.0 / 5.0",
+   "lengths": "varies by diameter",
+   "diameterList": [
+    "3.3",
+    "4.0",
+    "5.0"
+   ],
+   "display": "Southern Implants — PROVATA (Co-Axis, 12°)",
+   "lengthByDiameter": {
+    "3.3": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "4.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ],
+    "5.0": [
+     "8.5",
+     "10",
+     "11.5",
+     "13",
+     "15",
+     "18"
+    ]
+   }
+  },
+  {
+   "manufacturer": "Southern Implants",
+   "line": "PROMAX",
+   "connection": "External hex body, wide-diameter (immediate molar replacement)",
+   "diameters": "6.0 / 7.0 / 8.0 / 9.0",
+   "lengths": "7 / 9 / 11",
+   "diameterList": [
+    "6.0",
+    "7.0",
+    "8.0",
+    "9.0"
+   ],
+   "display": "Southern Implants — PROMAX",
+   "lengthByDiameter": {
+    "6.0": [
+     "7",
+     "9",
+     "11"
+    ],
+    "7.0": [
+     "7",
+     "9",
+     "11"
+    ],
+    "8.0": [
+     "7",
+     "9",
+     "11"
+    ],
+    "9.0": [
+     "7",
+     "9",
+     "11"
+    ]
+   }
+  }
+ ],
+ "grafts": [
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss (Small granules)",
+   "product": "Bio-Oss 0.25-1mm, 0.25g",
+   "codes": "500609",
+   "use": "Sinus lift, ridge preservation, GBR",
+   "display": "Geistlich — Bio-Oss (Small granules) — Bio-Oss 0.25-1mm, 0.25g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss (Small granules)",
+   "product": "Bio-Oss 0.25-1mm, 0.5g",
+   "codes": "500610",
+   "use": "Sinus lift, ridge preservation, GBR",
+   "display": "Geistlich — Bio-Oss (Small granules) — Bio-Oss 0.25-1mm, 0.5g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss (Small granules)",
+   "product": "Bio-Oss 0.25-1mm, 1g",
+   "codes": "500611",
+   "use": "Sinus lift, ridge preservation, GBR",
+   "display": "Geistlich — Bio-Oss (Small granules) — Bio-Oss 0.25-1mm, 1g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss (Small granules)",
+   "product": "Bio-Oss 0.25-1mm, 2g",
+   "codes": "500612",
+   "use": "Sinus lift, ridge preservation, GBR",
+   "display": "Geistlich — Bio-Oss (Small granules) — Bio-Oss 0.25-1mm, 2g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss (Large granules)",
+   "product": "Bio-Oss 1-2mm, 0.5g",
+   "codes": "500613",
+   "use": "Sinus lift, ridge preservation, GBR",
+   "display": "Geistlich — Bio-Oss (Large granules) — Bio-Oss 1-2mm, 0.5g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss (Large granules)",
+   "product": "Bio-Oss 1-2mm, 1g",
+   "codes": "500614",
+   "use": "Sinus lift, ridge preservation, GBR",
+   "display": "Geistlich — Bio-Oss (Large granules) — Bio-Oss 1-2mm, 1g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss (Large granules)",
+   "product": "Bio-Oss 1-2mm, 2g",
+   "codes": "500615",
+   "use": "Sinus lift, ridge preservation, GBR",
+   "display": "Geistlich — Bio-Oss (Large granules) — Bio-Oss 1-2mm, 2g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss Pen (Small granules)",
+   "product": "Bio-Oss Pen 0.25-1mm, 0.25g",
+   "codes": "500606",
+   "use": "Faster, more precise application to surgical site",
+   "display": "Geistlich — Bio-Oss Pen (Small granules) — Bio-Oss Pen 0.25-1mm, 0.25g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss Pen (Small granules)",
+   "product": "Bio-Oss Pen 0.25-1mm, 0.5g",
+   "codes": "500607",
+   "use": "Faster, more precise application to surgical site",
+   "display": "Geistlich — Bio-Oss Pen (Small granules) — Bio-Oss Pen 0.25-1mm, 0.5g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss Pen (Large granules)",
+   "product": "Bio-Oss Pen 1-2mm, 0.5g",
+   "codes": "500608",
+   "use": "Faster, more precise application to surgical site",
+   "display": "Geistlich — Bio-Oss Pen (Large granules) — Bio-Oss Pen 1-2mm, 0.5g"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss Collagen",
+   "product": "Bio-Oss Collagen 100mg",
+   "codes": "500602",
+   "use": "Extraction sockets, periodontal defects",
+   "display": "Geistlich — Bio-Oss Collagen — Bio-Oss Collagen 100mg"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss Collagen",
+   "product": "Bio-Oss Collagen 250mg",
+   "codes": "500603",
+   "use": "Extraction sockets, periodontal defects",
+   "display": "Geistlich — Bio-Oss Collagen — Bio-Oss Collagen 250mg"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Oss Collagen",
+   "product": "Bio-Oss Collagen 500mg",
+   "codes": "500604",
+   "use": "Extraction sockets, periodontal defects",
+   "display": "Geistlich — Bio-Oss Collagen — Bio-Oss Collagen 500mg"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Gide",
+   "product": "Bio-Gide 13 x 25mm",
+   "codes": "500616",
+   "use": "GBR barrier",
+   "display": "Geistlich — Bio-Gide — Bio-Gide 13 x 25mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Gide",
+   "product": "Bio-Gide 25 x 25mm",
+   "codes": "500617",
+   "use": "GBR barrier",
+   "display": "Geistlich — Bio-Gide — Bio-Gide 25 x 25mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Gide",
+   "product": "Bio-Gide 30 x 40mm",
+   "codes": "500618",
+   "use": "GBR barrier",
+   "display": "Geistlich — Bio-Gide — Bio-Gide 30 x 40mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Gide Compressed",
+   "product": "Bio-Gide Compressed 13 x 25mm",
+   "codes": "500619",
+   "use": "GBR barrier, alternative handling to standard Bio-Gide",
+   "display": "Geistlich — Bio-Gide Compressed — Bio-Gide Compressed 13 x 25mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Gide Compressed",
+   "product": "Bio-Gide Compressed 20 x 30mm",
+   "codes": "500620",
+   "use": "GBR barrier, alternative handling to standard Bio-Gide",
+   "display": "Geistlich — Bio-Gide Compressed — Bio-Gide Compressed 20 x 30mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Bio-Gide Shape",
+   "product": "Bio-Gide Shape 14 x 24mm",
+   "codes": "500621",
+   "use": "Extraction socket treatment",
+   "display": "Geistlich — Bio-Gide Shape — Bio-Gide Shape 14 x 24mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Mucograft",
+   "product": "Mucograft 15 x 20mm",
+   "codes": "500625",
+   "use": "Keratinised tissue augmentation, recession coverage",
+   "display": "Geistlich — Mucograft — Mucograft 15 x 20mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Mucograft",
+   "product": "Mucograft 20 x 30mm",
+   "codes": "500626",
+   "use": "Keratinised tissue augmentation, recession coverage",
+   "display": "Geistlich — Mucograft — Mucograft 20 x 30mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Mucograft Seal",
+   "product": "Mucograft Seal 8mm diameter",
+   "codes": "500628",
+   "use": "Sealing extraction sockets, used with Bio-Oss Collagen",
+   "display": "Geistlich — Mucograft Seal — Mucograft Seal 8mm diameter"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Mucograft Seal",
+   "product": "Mucograft Seal 12mm diameter",
+   "codes": "500725",
+   "use": "Sealing extraction sockets, used with Bio-Oss Collagen",
+   "display": "Geistlich — Mucograft Seal — Mucograft Seal 12mm diameter"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Combi-Kit",
+   "product": "Bio-Gide 16x22mm + Bio-Oss Collagen 100mg",
+   "codes": "500624",
+   "use": "Ridge preservation, minor augmentation",
+   "display": "Geistlich — Combi-Kit — Bio-Gide 16x22mm + Bio-Oss Collagen 100mg"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Perio-System Combi-Pack",
+   "product": "Bio-Gide Perio 16x22mm + Bio-Oss Collagen 100mg",
+   "codes": "500623",
+   "use": "Periodontal regeneration",
+   "display": "Geistlich — Perio-System Combi-Pack — Bio-Gide Perio 16x22mm + Bio-Oss Collagen 100mg"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Soft tissue graft biomaterials",
+   "product": "Fibro-Gide 15 x 20 x 3mm",
+   "codes": "500840",
+   "use": "Soft tissue thickening — alternative to CTG",
+   "display": "Geistlich — Soft tissue graft biomaterials — Fibro-Gide 15 x 20 x 3mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Soft tissue graft biomaterials",
+   "product": "Fibro-Gide 15 x 20 x 6mm",
+   "codes": "500630",
+   "use": "Soft tissue thickening — alternative to CTG",
+   "display": "Geistlich — Soft tissue graft biomaterials — Fibro-Gide 15 x 20 x 6mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Soft tissue graft biomaterials",
+   "product": "Fibro-Gide 20 x 40 x 3mm",
+   "codes": "code not confirmed for AU/NZ — supplier's AU/NZ brochure only lists 15x20 sizes; confirm availability before ordering",
+   "use": "Soft tissue thickening — alternative to CTG",
+   "display": "Geistlich — Soft tissue graft biomaterials — Fibro-Gide 20 x 40 x 3mm"
+  },
+  {
+   "brand": "Geistlich",
+   "category": "Soft tissue graft biomaterials",
+   "product": "Fibro-Gide 20 x 40 x 6mm",
+   "codes": "code not confirmed for AU/NZ — supplier's AU/NZ brochure only lists 15x20 sizes; confirm availability before ordering",
+   "use": "Soft tissue thickening — alternative to CTG",
+   "display": "Geistlich — Soft tissue graft biomaterials — Fibro-Gide 20 x 40 x 6mm"
+  },
+  {
+   "brand": "EthOss",
+   "category": "EthOss Synthetic Bone Regeneration",
+   "product": "0.5cc",
+   "codes": "270000",
+   "use": "Bone regeneration/grafting where avoiding animal/human-derived material is preferred",
+   "display": "EthOss — EthOss Synthetic Bone Regeneration — 0.5cc"
+  },
+  {
+   "brand": "EthOss",
+   "category": "EthOss Synthetic Bone Regeneration",
+   "product": "1cc",
+   "codes": "270001",
+   "use": "Bone regeneration/grafting where avoiding animal/human-derived material is preferred",
+   "display": "EthOss — EthOss Synthetic Bone Regeneration — 1cc"
+  },
+  {
+   "brand": "Generic / Chairside",
+   "category": "Autologous concentrate",
+   "product": "PRF / PRP (chairside centrifuge)",
+   "codes": "—",
+   "use": "Soft/hard tissue healing adjunct",
+   "display": "Generic / Chairside — Autologous concentrate — PRF / PRP (chairside centrifuge)"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance FibrePutty",
+   "product": "Oravance FibrePutty",
+   "codes": "Not shown in supplied product image — add code/size when available",
+   "use": "Osteoinductive bone grafting",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance FibrePutty — Oravance FibrePutty"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Hybrid",
+   "product": "Oravance Hybrid",
+   "codes": "Not shown in supplied product image — add code/size when available",
+   "use": "Osteoinductive bone grafting",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Hybrid — Oravance Hybrid"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Cortico-Cancellous Bone Granules",
+   "product": "Oravance Cortico-Cancellous Bone Granules 0.5cc",
+   "codes": "AB-YF05",
+   "use": "Ridge preservation, socket grafting, GBR",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortico-Cancellous Bone Granules — Oravance Cortico-Cancellous Bone Granules 0.5cc"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Cortico-Cancellous Bone Granules",
+   "product": "Oravance Cortico-Cancellous Bone Granules 1.0cc",
+   "codes": "AB-YF10",
+   "use": "Ridge preservation, socket grafting, GBR",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortico-Cancellous Bone Granules — Oravance Cortico-Cancellous Bone Granules 1.0cc"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Cortico-Cancellous Bone Granules",
+   "product": "Oravance Cortico-Cancellous Bone Granules 2.0cc",
+   "codes": "AB-YF20",
+   "use": "Ridge preservation, socket grafting, GBR",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortico-Cancellous Bone Granules — Oravance Cortico-Cancellous Bone Granules 2.0cc"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Pure Cancellous Granules (500-1000µm)",
+   "product": "Oravance Pure Cancellous Granules 0.5cc",
+   "codes": "AB-YF409",
+   "use": "Ridge preservation, socket grafting",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cancellous Granules (500-1000µm) — Oravance Pure Cancellous Granules 0.5cc"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Pure Cancellous Granules (500-1000µm)",
+   "product": "Oravance Pure Cancellous Granules 1.0cc",
+   "codes": "AB-YF410",
+   "use": "Ridge preservation, socket grafting",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cancellous Granules (500-1000µm) — Oravance Pure Cancellous Granules 1.0cc"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Pure Cancellous Granules (500-1000µm)",
+   "product": "Oravance Pure Cancellous Granules 2.0cc",
+   "codes": "AB-YF411",
+   "use": "Ridge preservation, socket grafting",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cancellous Granules (500-1000µm) — Oravance Pure Cancellous Granules 2.0cc"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Pure Cortical Granules (500-1000µm)",
+   "product": "Oravance Pure Cortical Granules 0.5cc",
+   "codes": "AB-YF412",
+   "use": "Ridge preservation, space maintenance",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cortical Granules (500-1000µm) — Oravance Pure Cortical Granules 0.5cc"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Pure Cortical Granules (500-1000µm)",
+   "product": "Oravance Pure Cortical Granules 1.0cc",
+   "codes": "AB-YF413",
+   "use": "Ridge preservation, space maintenance",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Pure Cortical Granules (500-1000µm) — Oravance Pure Cortical Granules 1.0cc"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Cortical Plate",
+   "product": "Oravance Cortical Plate 1mm x 11mm x 20mm",
+   "codes": "AB-YF-408",
+   "use": "GBR space maintenance / rigid barrier",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortical Plate — Oravance Cortical Plate 1mm x 11mm x 20mm"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Cortical Sheet",
+   "product": "Oravance Cortical Sheet 25mm",
+   "codes": "AB-YF406",
+   "use": "GBR barrier / contouring",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortical Sheet — Oravance Cortical Sheet 25mm"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Cortical Sheet",
+   "product": "Oravance Cortical Sheet 35mm",
+   "codes": "AB-YF407",
+   "use": "GBR barrier / contouring, larger defects",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortical Sheet — Oravance Cortical Sheet 35mm"
+  },
+  {
+   "brand": "AusBiotech (Australian Biotechnologies)",
+   "category": "Oravance Cortico-Cancellous Block",
+   "product": "Oravance Cortico-Cancellous Block 7mm x 11mm x 10mm",
+   "codes": "AB-YF403",
+   "use": "Block grafting for ridge augmentation",
+   "display": "AusBiotech (Australian Biotechnologies) — Oravance Cortico-Cancellous Block — Oravance Cortico-Cancellous Block 7mm x 11mm x 10mm"
+  },
+  {
+   "brand": "META",
+   "category": "Bone scraper",
+   "product": "Safescraper Twist (Straight)",
+   "codes": "—",
+   "use": "Autogenous bone collection during surgery (straight tip)",
+   "display": "META — Bone scraper — Safescraper Twist (Straight)"
+  },
+  {
+   "brand": "META",
+   "category": "Bone scraper",
+   "product": "Safescraper Twist (Curve)",
+   "codes": "—",
+   "use": "Autogenous bone collection during surgery (curved tip)",
+   "display": "META — Bone scraper — Safescraper Twist (Curve)"
+  },
+  {
+   "brand": "META",
+   "category": "Bone scraper",
+   "product": "Micross (Straight)",
+   "codes": "—",
+   "use": "Autogenous bone collection during surgery (straight)",
+   "display": "META — Bone scraper — Micross (Straight)"
+  },
+  {
+   "brand": "META",
+   "category": "Bone scraper",
+   "product": "Micross (Micros angled)",
+   "codes": "—",
+   "use": "Autogenous bone collection during surgery (angled tip for restricted access)",
+   "display": "META — Bone scraper — Micross (Micros angled)"
+  }
+ ]
+}

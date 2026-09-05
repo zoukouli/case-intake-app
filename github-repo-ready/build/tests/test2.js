@@ -1,0 +1,21 @@
+const { JSDOM } = require("jsdom");
+const fs = require("fs");
+const html = fs.readFileSync("/sessions/wizardly-loving-rubin/mnt/outputs/Case_Intake_App.html", "utf8");
+const dom = new JSDOM(html, { runScripts: "dangerously", resources: "usable" });
+const win = dom.window;
+setTimeout(() => {
+  win.goToStep(4);
+  win.state.daySurgeryNeeded = "yes";
+  win.renderStep();
+  win.state.asa = "ASA II";
+  win.state.dsMedicationInstructions = "Cease anticoagulant 3 days prior";
+  win.state.dsAllergies = "Penicillin";
+  win.goToStep(5);
+  win.buildReview();
+  const ds = win.document.getElementById("panel-daysurgery").textContent;
+  console.log("DS panel has ASA II:", ds.includes("ASA II"));
+  console.log("DS panel has medication instr:", ds.includes("anticoagulant"));
+  console.log("DS panel has allergy:", ds.includes("Penicillin"));
+  console.log("Label text:", win.document.querySelector("label").textContent);
+  console.log("OK");
+}, 500);

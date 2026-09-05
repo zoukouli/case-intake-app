@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Case Intake &amp; Documentation Assistant</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+  :root {
+    --navy: #1F3864;
+    --navy-light: #2E4E8C;
+    --bg: #F4F6F9;
+    --card: #FFFFFF;
+    --border: #D8DEE8;
+    --text: #1C2536;
+    --muted: #6B7280;
+    --yellow: #FFF6D8;
+    --danger: #B3261E;
+  }
+  * { box-sizing: border-box; }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 24px;
+  }
+  .wrap { max-width: 900px; margin: 0 auto; }
+  h1 { color: var(--navy); font-size: 22px; margin: 0 0 4px; }
+  .subtitle { color: var(--muted); margin: 0 0 20px; font-size: 14px; }
+  .stepper { display: flex; gap: 4px; margin-bottom: 20px; flex-wrap: wrap; }
+  .step-dot {
+    flex: 1; min-width: 70px; text-align: center; padding: 8px 4px; font-size: 11px;
+    border-radius: 6px; background: #E7EAF0; color: var(--muted); cursor: pointer;
+    border: 1px solid transparent;
+  }
+  .step-dot.active { background: var(--navy); color: #fff; }
+  .step-dot.done { background: #DCE9E1; color: #1F5C3A; }
+  .card {
+    background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+    padding: 24px; margin-bottom: 16px;
+  }
+  .card h2 { font-size: 17px; color: var(--navy); margin: 0 0 4px; }
+  .card .hint { color: var(--muted); font-size: 12.5px; margin: 0 0 16px; }
+  label { display: block; font-weight: bold; font-size: 13px; margin: 14px 0 4px; }
+  label .opt { font-weight: normal; color: var(--muted); }
+  input[type=text], input[type=date], select, textarea {
+    width: 100%; padding: 9px 10px; border: 1px solid var(--border); border-radius: 6px;
+    font-family: inherit; font-size: 14px; background: #fff; color: var(--text);
+  }
+  textarea { min-height: 70px; resize: vertical; }
+  .row { display: flex; gap: 12px; }
+  .row > div { flex: 1; }
+  .btns { display: flex; justify-content: space-between; margin-top: 20px; }
+  button {
+    font-family: inherit; font-size: 14px; padding: 10px 18px; border-radius: 6px;
+    border: 1px solid var(--navy); background: var(--navy); color: #fff; cursor: pointer;
+  }
+  button.secondary { background: #fff; color: var(--navy); }
+  button.ghost { background: transparent; border-color: var(--border); color: var(--text); }
+  button:disabled { opacity: 0.4; cursor: not-allowed; }
+  .flag { background: var(--yellow); border: 1px solid #E3D08A; padding: 10px 12px; border-radius: 6px; font-size: 13px; margin-top: 10px; }
+  .code-pill { display: inline-block; background: #EDF1F8; border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 12.5px; margin: 2px 4px 2px 0; }
+  .out-tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+  .out-tab { padding: 8px 14px; border-radius: 6px 6px 0 0; background: #E7EAF0; cursor: pointer; font-size: 13px; }
+  .out-tab.active { background: var(--card); border: 1px solid var(--border); border-bottom: none; font-weight: bold; color: var(--navy); }
+  .out-panel { display: none; border: 1px solid var(--border); border-radius: 0 6px 6px 6px; padding: 20px; background: #fff; }
+  .out-panel.active { display: block; }
+  .out-panel h3 { color: var(--navy); margin-top: 0; }
+  .out-panel table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .out-panel td, .out-panel th { border-bottom: 1px solid var(--border); padding: 6px 4px; text-align: left; }
+  .fee-input { width: 90px; text-align: right; padding: 4px 6px; }
+  .total-row td { font-weight: bold; border-top: 2px solid var(--navy); }
+  .toolbar { display: flex; gap: 8px; margin-bottom: 12px; }
+  .checklist label { font-weight: normal; display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+  .checklist input[type=checkbox] { width: auto; }
+  .print-only { display: none; }
+  .mic-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 26px; height: 26px; padding: 0; border-radius: 50%;
+    background: #fff; border: 1px solid var(--border); color: var(--navy);
+    font-size: 13px; vertical-align: middle; line-height: 1; cursor: pointer;
+  }
+  .mic-btn.listening { background: var(--danger); border-color: var(--danger); color: #fff; animation: pulse 1s infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(179,38,30,0.5); } 70% { box-shadow: 0 0 0 8px rgba(179,38,30,0); } 100% { box-shadow: 0 0 0 0 rgba(179,38,30,0); } }
+  .guided-btn { background: var(--navy-light); margin-bottom: 14px; }
+  #guidedBanner { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  #guidedBanner button { padding: 6px 12px; font-size: 12.5px; }
+  .dictation-note { font-size: 11.5px; color: var(--muted); margin: 10px 0 0; }
+  .code-row { display: flex; align-items: center; gap: 8px; margin: 6px 0; }
+  .fdi-input { width: 110px !important; padding: 4px 8px !important; font-size: 12.5px !important; }
+  .ai-status { font-size: 13px; margin: 8px 0 0; min-height: 18px; }
+  .ai-status.loading { color: var(--navy); }
+  .ai-status.success { color: #1F5C3A; }
+  .ai-status.error { color: var(--danger); }
+  .med-disclaimer { background: #FDECEA; border: 1px solid #E39A94; color: #7A1F17; padding: 12px 14px; border-radius: 6px; font-size: 12.5px; margin-bottom: 16px; font-weight: bold; }
+  .med-badge { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 11.5px; font-weight: bold; color: #fff; margin-left: 8px; vertical-align: middle; }
+  .med-badge.continue { background: #1F5C3A; }
+  .med-badge.hold { background: #B8860B; }
+  .med-badge.stop { background: var(--danger); }
+  .med-badge.unknown { background: var(--muted); }
+  .med-card { border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin: 10px 0; background: #fff; }
+  .med-card h4 { margin: 0 0 6px; font-size: 14px; color: var(--navy); }
+  .med-card p { margin: 4px 0; font-size: 12.5px; }
+  .med-card .src { color: var(--muted); font-size: 11px; margin-top: 8px; }
+  .med-not-found { color: var(--danger); font-weight: bold; }
+  .panel-copy-row { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
+  .pill-group { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 4px; }
+  .pill-btn {
+    padding: 8px 14px; border-radius: 999px; border: 1px solid var(--border);
+    background: #fff; color: var(--text); font-size: 13px; cursor: pointer; font-family: inherit;
+  }
+  .pill-btn.selected { background: var(--navy); border-color: var(--navy); color: #fff; }
+  .pill-pts { font-size: 11px; opacity: 0.7; margin-left: 4px; }
+  @media print {
+    body * { visibility: hidden; }
+    #printArea, #printArea * { visibility: visible; }
+    #printArea { position: absolute; left: 0; top: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Case Intake &amp; Documentation Assistant</h1>
+  <p class="subtitle">Dictate once, generate the clinician report, material list, and quotation from the same case &mdash; v1 pilot tool</p>
+
+  <div id="resumeBanner"></div>
+  <div id="dictationArea"></div>
+  <div class="stepper" id="stepper"></div>
+  <div id="stepArea"></div>
+
+  <div id="reviewArea" style="display:none;">
+    <div class="card">
+      <h2>Review &amp; generate</h2>
+      <p class="hint">Three documents generated from what you entered. Nothing here was invented &mdash; blank fields mean you didn't dictate that part.</p>
+      <div id="flagGate"></div>
+      <div class="out-tabs">
+        <div class="out-tab active" data-tab="report">Clinician report</div>
+        <div class="out-tab" data-tab="materials">Material list</div>
+        <div class="out-tab" data-tab="quote">Quotation</div>
+        <div class="out-tab" data-tab="daysurgery">Day surgery summary</div>
+        <div class="out-tab" data-tab="perioperative">Perioperative meds</div>
+        <div class="out-tab" data-tab="riskindicator">Risk indicator</div>
+      </div>
+      <div class="out-panel active" id="panel-report"></div>
+      <div class="out-panel" id="panel-materials"></div>
+      <div class="out-panel" id="panel-quote"></div>
+      <div class="out-panel" id="panel-daysurgery"></div>
+      <div class="out-panel" id="panel-perioperative"></div>
+      <div class="out-panel" id="panel-riskindicator"></div>
+      <div class="toolbar">
+        <button id="printAllBtn" onclick="printPanel()">Print all documents</button>
+        <button id="exportPdfBtn" class="secondary" onclick="exportPdf()">📄 Export PDF</button>
+        <button class="ghost" onclick="goToStep(0)">Start a new case</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="printArea"></div>
+</div>
+
+<script>
+const DATA = __APP_DATA__;
+const MED_DATA = __MED_DATA__;
+</script>
+<script>
+__APP_JS__
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+const { JSDOM } = require("jsdom");
+const fs = require("fs");
+const html = fs.readFileSync("/sessions/wizardly-loving-rubin/mnt/outputs/Case_Intake_App.html", "utf8");
+const dom = new JSDOM(html, { runScripts: "dangerously", resources: "usable", url: "http://localhost/" });
+const win = dom.window;
+setTimeout(() => {
+  win.goToStep(4);
+  console.log("--- daySurgeryNeeded = no (default) ---");
+  console.log("ASA field present:", win.document.body.innerHTML.includes("ASA classification"));
+  win.state.daySurgeryNeeded = "yes";
+  win.renderStep();
+  console.log("--- daySurgeryNeeded = yes ---");
+  console.log("ASA field present:", win.document.body.innerHTML.includes("ASA classification"));
+  console.log("Anaesthesia requested present:", win.document.body.innerHTML.includes("Anaesthesia requested"));
+  console.log("Estimated duration present:", win.document.body.innerHTML.includes("Estimated duration"));
+  console.log("Fasting present:", win.document.body.innerHTML.includes("Fasting requirement discussed"));
+  console.log("Escort present:", win.document.body.innerHTML.includes("Escort & aftercare arranged"));
+  console.log("Medication instructions present:", win.document.body.innerHTML.includes("Medication instructions"));
+  console.log("Allergies present:", win.document.body.innerHTML.includes("Allergies"));
+  console.log("DONE");
+}, 500);

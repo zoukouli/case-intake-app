@@ -1,0 +1,24 @@
+const { JSDOM } = require("jsdom");
+const fs = require("fs");
+const html = fs.readFileSync("/sessions/wizardly-loving-rubin/mnt/outputs/Case_Intake_App.html", "utf8");
+const dom = new JSDOM(html, { runScripts: "dangerously", resources: "usable", url: "http://localhost/" });
+const win = dom.window;
+setTimeout(() => {
+  win.goToStep(3);
+  win.state.pendingAnaesthetic = "Lignocaine";
+  win.addAnaesthetic();
+  win.state.pendingAnaesthetic = "Marcaine";
+  win.addAnaesthetic();
+  console.log("selectedAnaesthetics:", win.state.selectedAnaesthetics);
+  win.removeAnaesthetic(0);
+  console.log("after remove:", win.state.selectedAnaesthetics);
+  console.log("fileNo field removed from step0:", (() => { win.goToStep(0); return !win.document.getElementById("f_fileNo"); })());
+  console.log("referredBy field removed:", !win.document.getElementById("f_referredBy"));
+  console.log("implantKit checkbox removed:", !win.document.body.innerHTML.includes("Implant kit & drivers (system-specific)"));
+  win.goToStep(4);
+  console.log("admission field removed:", !win.document.getElementById("f_admission"));
+  console.log("bloodLoss field removed:", !win.document.getElementById("f_bloodLoss"));
+  console.log("fasting relabeled:", win.document.body.innerHTML.includes("Fasting requirement discussed"));
+  console.log("VOCAB SAMPLE:", win.buildDomainVocabulary ? win.buildDomainVocabulary().slice(0,3) : "not exposed (ok, internal only)");
+  console.log("ALL LAYOUT TESTS OK");
+}, 500);
